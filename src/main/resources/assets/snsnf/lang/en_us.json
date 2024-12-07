@@ -1,0 +1,17 @@
+{
+  "block.snsnf.candy_cane_cobblestone": "Candy Cane Cobblestone",
+  "block.snsnf.candy_cane_cobblestone_button": "Candy Cane Cobblestone Button",
+  "block.snsnf.candy_cane_cobblestone_coal_ore": "Candy Cane Cobblestone Coal Ore",
+  "block.snsnf.candy_cane_cobblestone_door": "Candy Cane Cobblestone Door",
+  "block.snsnf.candy_cane_cobblestone_pressure_plate": "Candy Cane Cobblestone Pressure Plate",
+  "block.snsnf.candy_cane_cobblestone_slab": "Candy Cane Cobblestone Slab",
+  "block.snsnf.candy_cane_cobblestone_stairs": "Candy Cane Cobblestone Stairs",
+  "block.snsnf.candy_cane_cobblestone_trapdoor": "Candy Cane Cobblestone Trapdoor",
+  "block.snsnf.candy_cane_cobblestone_wall": "Candy Cane Cobblestone Wall",
+
+  "item.snsnf.candy_cane": "Candy Cane",
+  "item.snsnf.candy_cane_sugar": "Candy Cane Sugar",
+
+  "itemGroup.snsnf.sns_block": "Blocks - Sweet Not Savoury",
+  "itemGroup.snsnf.sns_item": "Items - Sweet Not Savoury"
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "snsnf:block/candy_cane_cat_teddy_spear"},
+    "facing=east":  { "model": "snsnf:block/candy_cane_cat_teddy_spear", "y":  90},
+    "facing=south": { "model": "snsnf:block/candy_cane_cat_teddy_spear", "y": 180},
+    "facing=west":  { "model": "snsnf:block/candy_cane_cat_teddy_spear", "y": 270}
+  }
+}

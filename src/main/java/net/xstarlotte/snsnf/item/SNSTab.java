@@ -22,6 +22,20 @@ public class SNSTab {
                     .title(Component.translatable("itemGroup.snsnf.sns_block"))
                     .icon(() -> new ItemStack(SNSBlock.CANDY_CANE_COBBLESTONE.get()))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(SNSBlock.CANDY_CANE_BUSH);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CARNATION);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_2);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_3);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_4);
+                        pOutput.accept(SNSBlock.CANDY_CANE_GRASS);
+                        pOutput.accept(SNSBlock.CANDY_CANE_GRASS_LONG);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY_APPLE);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY_ICE);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY_PEPPER);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY_SPEAR);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY_WATERMELON);
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE);
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE_BUTTON);
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE_DOOR);
@@ -31,6 +45,8 @@ public class SNSTab {
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE_STAIRS);
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE_TRAPDOOR);
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE_WALL);
+
+                        pOutput.accept(SNSBlock.MINT_HUMBUG_CAT_TEDDY);
                     }).build());
 
     public static final Supplier<CreativeModeTab> SNS_ITEM =
@@ -41,6 +57,9 @@ public class SNSTab {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(SNSItem.CANDY_CANE);
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR);
+                        pOutput.accept(SNSItem.CANDY_CANE_SUGAR_CANE);
+
+                        pOutput.accept(SNSItem.CANDY_CANE_CAT_SPAWN_EGG);
                     }).build());
 
     public static void register(IEventBus eventBus) {

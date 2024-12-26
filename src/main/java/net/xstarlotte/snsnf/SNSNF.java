@@ -1,8 +1,12 @@
 package net.xstarlotte.snsnf;
 
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.xstarlotte.snsnf.block.SNSBlock;
+import net.xstarlotte.snsnf.entity.SNSEntity;
 import net.xstarlotte.snsnf.item.SNSItem;
 import net.xstarlotte.snsnf.item.SNSTab;
+import net.xstarlotte.snsnf.entity.client.herb.CatRenderer;
 import net.xstarlotte.snsnf.util.SNSTag;
 import org.slf4j.Logger;
 
@@ -40,6 +44,7 @@ public class SNSNF
         modEventBus.addListener(this::commonSetup);
 
         SNSBlock.register(modEventBus);
+        SNSEntity.register(modEventBus);
         SNSItem.register(modEventBus);
         SNSTab.register(modEventBus);
 
@@ -47,12 +52,16 @@ public class SNSNF
         NeoForge.EVENT_BUS.register(this);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
-
-        LOGGER.info("HELLO FROM COMMON SETUP");
-        if (Config.logDirtBlock)
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_BUSH.getId(), SNSBlock.POTTED_CANDY_CANE_BUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_CARNATION.getId(), SNSBlock.POTTED_CANDY_CANE_CARNATION);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_FLOWER.getId(), SNSBlock.POTTED_CANDY_CANE_FLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_FLOWER_2.getId(), SNSBlock.POTTED_CANDY_CANE_FLOWER_2);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_FLOWER_3.getId(), SNSBlock.POTTED_CANDY_CANE_FLOWER_3);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_FLOWER_4.getId(), SNSBlock.POTTED_CANDY_CANE_FLOWER_4);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_GRASS.getId(), SNSBlock.POTTED_CANDY_CANE_GRASS);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_GRASS_LONG.getId(), SNSBlock.POTTED_CANDY_CANE_GRASS_LONG);
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -70,6 +79,8 @@ public class SNSNF
 
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+            EntityRenderers.register(SNSEntity.CANDY_CANE_CAT.get(), CatRenderer::new);
         }
     }
 }

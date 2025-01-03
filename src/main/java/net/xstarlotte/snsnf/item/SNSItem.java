@@ -14,7 +14,7 @@ public class SNSItem {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SNSNF.MOD_ID);
 
     public static final DeferredItem<Item> CANDY_CANE_CAT_SPAWN_EGG = ITEMS.register("candy_cane_cat_spawn_egg",
-            () -> new DeferredSpawnEggItem(SNSEntity.CANDY_CANE_CAT, 0xdebd47, 0xccbfbe,
+            () -> new DeferredSpawnEggItem(SNSEntity.CANDY_CANE_CAT, 0xffffff, 0xf1948a,
                     new Item.Properties()));
 
     public static final DeferredItem<Item> CANDY_CANE =

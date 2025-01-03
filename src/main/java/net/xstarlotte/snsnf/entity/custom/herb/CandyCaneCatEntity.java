@@ -14,6 +14,8 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -49,18 +51,29 @@ public class CandyCaneCatEntity extends TamableAnimal {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
+
+        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 3.0, true));
+        this.goalSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
+
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, Ingredient.of(SNSItem.CANDY_CANE_SUGAR.get()), true));
-        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.25d, 18f, 7f));
+        this.goalSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+
+        this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 2d, 10f, 2f));
+
+        this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1d));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(SNSItem.CANDY_CANE_SUGAR.get()), true));
+
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 4f));
+
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createLivingAttributes().add(Attributes.MAX_HEALTH, 35D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2)
-                .add(Attributes.ATTACK_DAMAGE, 2f)
+                .add(Attributes.ATTACK_DAMAGE, 5f)
                 .add(Attributes.FOLLOW_RANGE, 24D);
     }
     @Override

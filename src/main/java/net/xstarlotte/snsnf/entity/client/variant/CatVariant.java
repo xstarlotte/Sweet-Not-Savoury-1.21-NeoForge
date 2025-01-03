@@ -4,11 +4,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum CatVariant {
-    DEFAULT(0),
-    ICE(1),
-    PEPPER(2),
-    SPEAR(3),
-    WATERMELON(4);
+    APPLE(0),
+    DEFAULT(1),
+    ICE(2),
+    PEPPER(3),
+    SPEAR(4),
+    WATERMELON(5);
     private static final CatVariant[] BY_ID = Arrays.stream(values()).sorted(
             Comparator.comparingInt(CatVariant::getId)).toArray(CatVariant[]::new);
     private final int id;

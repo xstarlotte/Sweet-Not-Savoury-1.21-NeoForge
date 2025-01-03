@@ -31,6 +31,8 @@ public class CatRenderer extends MobRenderer<CandyCaneCatEntity, CatModel<CandyC
 
     private static final Map<CatVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(CatVariant.class), map -> {
+                map.put(CatVariant.APPLE,
+                        ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat_apple.png"));
                 map.put(CatVariant.DEFAULT,
                         ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat.png"));
                 map.put(CatVariant.ICE,

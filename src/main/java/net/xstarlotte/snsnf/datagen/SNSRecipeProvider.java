@@ -33,6 +33,11 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', SNSItem.CANDY_CANE_SUGAR.get())
                 .unlockedBy("has_candy_cane_sugar", has(SNSItem.CANDY_CANE_SUGAR.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItem.CANDY_CANE_SUGAR.get(), 1)
+                .pattern("C")
+                .define('C', SNSItem.CANDY_CANE_SUGAR_CANE.get())
+                .unlockedBy("has_candy_cane_sugar_cane", has(SNSItem.CANDY_CANE_SUGAR_CANE.get())).save(pRecipeOutput);
+
         buttonBuilder(SNSBlock.CANDY_CANE_COBBLESTONE_BUTTON.get(), Ingredient.of(SNSBlock.CANDY_CANE_COBBLESTONE.get())).group("candy_cane_cobblestone")
                 .unlockedBy("has_candy_cane_cobblestone", has(SNSBlock.CANDY_CANE_COBBLESTONE.get())).save(pRecipeOutput);
         doorBuilder(SNSBlock.CANDY_CANE_COBBLESTONE_DOOR.get(), Ingredient.of(SNSBlock.CANDY_CANE_COBBLESTONE.get())).group("candy_cane_cobblestone")

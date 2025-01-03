@@ -14,7 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneCatEntity;
 
 public class CatModel<T extends CandyCaneCatEntity> extends HierarchicalModel<T> {
-    // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+    private final ModelPart cat;
     private final ModelPart whole;
     private final ModelPart head;
     private final ModelPart ears;
@@ -32,7 +32,8 @@ public class CatModel<T extends CandyCaneCatEntity> extends HierarchicalModel<T>
     private final ModelPart tail3;
 
     public CatModel(ModelPart root) {
-        this.whole = root.getChild("whole");
+        this.cat = root.getChild("cat");
+        this.whole = this.cat.getChild("whole");
         this.head = this.whole.getChild("head");
         this.ears = this.head.getChild("ears");
         this.earR = this.ears.getChild("earR");
@@ -53,7 +54,9 @@ public class CatModel<T extends CandyCaneCatEntity> extends HierarchicalModel<T>
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition whole = partdefinition.addOrReplaceChild("whole", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -2.5F, -6.5F, 6.0F, 5.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 16.5F, -0.25F));
+        PartDefinition cat = partdefinition.addOrReplaceChild("cat", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+
+        PartDefinition whole = cat.addOrReplaceChild("whole", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -2.5F, -6.5F, 6.0F, 5.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -7.5F, -0.25F));
 
         PartDefinition head = whole.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 18).addBox(-2.5F, -2.9167F, -4.5833F, 5.0F, 5.0F, 5.0F, new CubeDeformation(0.0F))
                 .texOffs(29, 18).addBox(-2.0F, -0.1667F, -5.5833F, 4.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
@@ -110,7 +113,9 @@ public class CatModel<T extends CandyCaneCatEntity> extends HierarchicalModel<T>
     public void setupAnim(CandyCaneCatEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.applyHeadRotation(netHeadYaw, headPitch);
-        this.animateWalk(CatAnimations.ANIM_CAT_WALK, limbSwing, limbSwingAmount, 1f, 1f);
+
+        this.animateWalk(CatAnimations.ANIM_CAT_WALK, limbSwing, limbSwingAmount, 8f, 2.5f);
+
         this.animate(entity.idleAnimationState, CatAnimations.ANIM_CAT_IDLE, ageInTicks, 1f);
         this.animate(entity.sitDownAnimationState, CatAnimations.ANIM_CAT_SIT, ageInTicks, 1.0F);
         this.animate(entity.sitPoseAnimationState, CatAnimations.ANIM_CAT_SIT, ageInTicks, 1.0F);
@@ -126,10 +131,11 @@ public class CatModel<T extends CandyCaneCatEntity> extends HierarchicalModel<T>
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        whole.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+        cat.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
     }
+
     @Override
     public ModelPart root() {
-        return whole;
+        return cat;
     }
 }

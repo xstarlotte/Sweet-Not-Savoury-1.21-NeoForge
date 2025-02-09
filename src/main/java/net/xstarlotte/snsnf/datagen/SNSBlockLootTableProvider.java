@@ -57,6 +57,41 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SNSBlock.CANDY_CANE_GRASS_LONG.get());
         dropOther(SNSBlock.CANDY_CANE_SUGAR_CANE.get(), SNSItem.CANDY_CANE_SUGAR_CANE);
 
+        dropSelf(SNSBlock.CINNAMON_GRASS_BLOCK.get());
+
+        dropSelf(SNSBlock.HUMBUG_COBBLESTONE.get());
+        dropSelf(SNSBlock.HUMBUG_COBBLESTONE_BUTTON.get());
+        this.add(SNSBlock.HUMBUG_COBBLESTONE_DOOR.get(),
+                block -> createDoorTable(SNSBlock.HUMBUG_COBBLESTONE_DOOR.get()));
+        dropSelf(SNSBlock.HUMBUG_COBBLESTONE_PRESSURE_PLATE.get());
+        this.add(SNSBlock.HUMBUG_COBBLESTONE_SLAB.get(),
+                block -> createSlabItemTable(SNSBlock.HUMBUG_COBBLESTONE_SLAB.get()));
+        dropSelf(SNSBlock.HUMBUG_COBBLESTONE_STAIRS.get());
+        dropSelf(SNSBlock.HUMBUG_COBBLESTONE_TRAPDOOR.get());
+        dropSelf(SNSBlock.HUMBUG_COBBLESTONE_WALL.get());
+
+        dropSelf(SNSBlock.MINT_BLOCK.get());
+        dropSelf(SNSBlock.MINT_BLOCK_BUTTON.get());
+        this.add(SNSBlock.MINT_BLOCK_DOOR.get(),
+                block -> createDoorTable(SNSBlock.MINT_BLOCK_DOOR.get()));
+        dropSelf(SNSBlock.MINT_BLOCK_PRESSURE_PLATE.get());
+        this.add(SNSBlock.MINT_BLOCK_SLAB.get(),
+                block -> createSlabItemTable(SNSBlock.MINT_BLOCK_SLAB.get()));
+        dropSelf(SNSBlock.MINT_BLOCK_STAIRS.get());
+        dropSelf(SNSBlock.MINT_BLOCK_TRAPDOOR.get());
+        dropSelf(SNSBlock.MINT_BLOCK_WALL.get());
+        dropSelf(SNSBlock.MINT_BRICK.get());
+        dropSelf(SNSBlock.MINT_BRICK_BUTTON.get());
+        this.add(SNSBlock.MINT_BRICK_DOOR.get(),
+                block -> createDoorTable(SNSBlock.MINT_BRICK_DOOR.get()));
+        dropSelf(SNSBlock.MINT_BRICK_PRESSURE_PLATE.get());
+        this.add(SNSBlock.MINT_BRICK_SLAB.get(),
+                block -> createSlabItemTable(SNSBlock.MINT_BRICK_SLAB.get()));
+        dropSelf(SNSBlock.MINT_BRICK_STAIRS.get());
+        dropSelf(SNSBlock.MINT_BRICK_TRAPDOOR.get());
+        dropSelf(SNSBlock.MINT_BRICK_WALL.get());
+        dropSelf(SNSBlock.MINT_GRASS_BLOCK.get());
+
         this.add(SNSBlock.POTTED_CANDY_CANE_BUSH.get(), createPotFlowerItemTable(SNSBlock.CANDY_CANE_BUSH));
         this.add(SNSBlock.POTTED_CANDY_CANE_CARNATION.get(), createPotFlowerItemTable(SNSBlock.CANDY_CANE_CARNATION));
         this.add(SNSBlock.POTTED_CANDY_CANE_FLOWER.get(), createPotFlowerItemTable(SNSBlock.CANDY_CANE_FLOWER));

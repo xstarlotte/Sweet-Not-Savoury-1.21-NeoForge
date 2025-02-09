@@ -1,13 +1,14 @@
 {
+
+
+  "block.snsnf.candy_cane_bush": "Candy Cane Bush",
+  "block.snsnf.candy_cane_carnation": "Candy Cane Carnation",
   "block.snsnf.candy_cane_cat_teddy": "Candy Cane Cat Teddy",
   "block.snsnf.candy_cane_cat_teddy_apple": "Candy Cane Cat Teddy - Apple",
   "block.snsnf.candy_cane_cat_teddy_ice": "Candy Cane Cat Teddy - Ice",
   "block.snsnf.candy_cane_cat_teddy_pepper": "Candy Cane Cat Teddy - Peppermint",
   "block.snsnf.candy_cane_cat_teddy_spear": "Candy Cane Cat Teddy - Spearmint",
   "block.snsnf.candy_cane_cat_teddy_watermelon": "Candy Cane Cat Teddy - Watermelon",
-
-  "block.snsnf.candy_cane_bush": "Candy Cane Bush",
-  "block.snsnf.candy_cane_carnation": "Candy Cane Carnation",
   "block.snsnf.candy_cane_cobblestone": "Candy Cane Cobblestone",
   "block.snsnf.candy_cane_cobblestone_button": "Candy Cane Cobblestone Button",
   "block.snsnf.candy_cane_cobblestone_coal_ore": "Candy Cane Cobblestone Coal Ore",
@@ -24,6 +25,35 @@
   "block.snsnf.candy_cane_grass": "Candy Cane Grass",
   "block.snsnf.candy_cane_grass_long": "Long Candy Cane Grass",
   "block.snsnf.candy_cane_sugar_cane": "Candy Cane Sugar Cane",
+  "block.snsnf.cinnamon_grass_block": "Cinnamon Grass Block",
+
+  "block.snsnf.humbug_cobblestone": "Humbug Cobblestone",
+  "block.snsnf.humbug_cobblestone_button": "Humbug Cobblestone Button",
+  "block.snsnf.humbug_cobblestone_door": "Humbug Cobblestone Door",
+  "block.snsnf.humbug_cobblestone_pressure_plate": "Humbug Cobblestone Pressure Plate",
+  "block.snsnf.humbug_cobblestone_slab": "Humbug Cobblestone Slab",
+  "block.snsnf.humbug_cobblestone_stairs": "Humbug Cobblestone Stairs",
+  "block.snsnf.humbug_cobblestone_trapdoor": "Humbug Cobblestone Trapdoor",
+  "block.snsnf.humbug_cobblestone_wall": "Humbug Cobblestone Wall",
+
+  "block.snsnf.mint_block": "Mint Block",
+  "block.snsnf.mint_block_button": "Mint Block Button",
+  "block.snsnf.mint_block_door": "Mint Block Door",
+  "block.snsnf.mint_block_pressure_plate": "Mint Block Pressure Plate",
+  "block.snsnf.mint_block_slab": "Mint Block Slab",
+  "block.snsnf.mint_block_stairs": "Mint Block Stairs",
+  "block.snsnf.mint_block_trapdoor": "Mint Block Trapdoor",
+  "block.snsnf.mint_block_wall": "Mint Block Wall",
+  "block.snsnf.mint_brick": "Mint Brick",
+  "block.snsnf.mint_brick_button": "Mint Brick Button",
+  "block.snsnf.mint_brick_door": "Mint Brick Door",
+  "block.snsnf.mint_brick_pressure_plate": "Mint Brick Pressure Plate",
+  "block.snsnf.mint_brick_slab": "Mint Brick Slab",
+  "block.snsnf.mint_brick_stairs": "Mint Brick Stairs",
+  "block.snsnf.mint_brick_trapdoor": "Mint Brick Trapdoor",
+  "block.snsnf.mint_brick_wall": "Mint Brick Wall",
+  "block.snsnf.mint_grass_block": "Mint Grass Block",
+  "block.snsnf.mint_humbug_cat_teddy": "Mint Humbug Cat Teddy",
 
   "block.snsnf.potted_candy_cane_bush": "Potted Candy Cane Bush",
   "block.snsnf.potted_candy_cane_carnation": "Potted Candy Cane Carnation",
@@ -34,7 +64,7 @@
   "block.snsnf.potted_candy_cane_grass": "Potted Candy Cane Grass",
   "block.snsnf.potted_candy_cane_grass_long": "Potted Long Candy Cane Grass",
 
-  "block.snsnf.mint_humbug_cat_teddy": "Mint Humbug Cat Teddy",
+
 
   "item.snsnf.candy_cane": "Candy Cane",
   "item.snsnf.candy_cane_sugar": "Candy Cane Sugar",

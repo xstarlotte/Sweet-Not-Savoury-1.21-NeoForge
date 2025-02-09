@@ -50,6 +50,41 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_candy_cane_cobblestone", has(SNSBlock.CANDY_CANE_COBBLESTONE.get())).save(pRecipeOutput);
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.CANDY_CANE_COBBLESTONE_WALL.get(), SNSBlock.CANDY_CANE_COBBLESTONE.get());
 
+        buttonBuilder(SNSBlock.HUMBUG_COBBLESTONE_BUTTON.get(), Ingredient.of(SNSBlock.HUMBUG_COBBLESTONE.get())).group("humbug_cobblestone")
+                .unlockedBy("has_humbug_cobblestone", has(SNSBlock.HUMBUG_COBBLESTONE.get())).save(pRecipeOutput);
+        doorBuilder(SNSBlock.HUMBUG_COBBLESTONE_DOOR.get(), Ingredient.of(SNSBlock.HUMBUG_COBBLESTONE.get())).group("humbug_cobblestone")
+                .unlockedBy("has_humbug_cobblestone", has(SNSBlock.HUMBUG_COBBLESTONE.get())).save(pRecipeOutput);
+        pressurePlate(pRecipeOutput, SNSBlock.HUMBUG_COBBLESTONE_PRESSURE_PLATE.get(), SNSBlock.HUMBUG_COBBLESTONE.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.HUMBUG_COBBLESTONE_SLAB.get(), SNSBlock.HUMBUG_COBBLESTONE.get());
+        stairBuilder(SNSBlock.HUMBUG_COBBLESTONE_STAIRS.get(), Ingredient.of(SNSBlock.HUMBUG_COBBLESTONE.get())).group("humbug_cobblestone")
+                .unlockedBy("has_humbug_cobblestone", has(SNSBlock.HUMBUG_COBBLESTONE.get())).save(pRecipeOutput);
+        trapdoorBuilder(SNSBlock.HUMBUG_COBBLESTONE_TRAPDOOR.get(), Ingredient.of(SNSBlock.HUMBUG_COBBLESTONE.get())).group("humbug_cobblestone")
+                .unlockedBy("has_humbug_cobblestone", has(SNSBlock.HUMBUG_COBBLESTONE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.HUMBUG_COBBLESTONE_WALL.get(), SNSBlock.HUMBUG_COBBLESTONE.get());
+
+        buttonBuilder(SNSBlock.MINT_BLOCK_BUTTON.get(), Ingredient.of(SNSBlock.MINT_BLOCK.get())).group("mint_block")
+                .unlockedBy("has_mint_block", has(SNSBlock.MINT_BLOCK.get())).save(pRecipeOutput);
+        doorBuilder(SNSBlock.MINT_BLOCK_DOOR.get(), Ingredient.of(SNSBlock.MINT_BLOCK.get())).group("mint_block")
+                .unlockedBy("has_mint_block", has(SNSBlock.MINT_BLOCK.get())).save(pRecipeOutput);
+        pressurePlate(pRecipeOutput, SNSBlock.MINT_BLOCK_PRESSURE_PLATE.get(), SNSBlock.MINT_BLOCK.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.MINT_BLOCK_SLAB.get(), SNSBlock.MINT_BLOCK.get());
+        stairBuilder(SNSBlock.MINT_BLOCK_STAIRS.get(), Ingredient.of(SNSBlock.MINT_BLOCK.get())).group("mint_block")
+                .unlockedBy("has_mint_block", has(SNSBlock.MINT_BLOCK.get())).save(pRecipeOutput);
+        trapdoorBuilder(SNSBlock.MINT_BLOCK_TRAPDOOR.get(), Ingredient.of(SNSBlock.MINT_BLOCK.get())).group("mint_block")
+                .unlockedBy("has_mint_block", has(SNSBlock.MINT_BLOCK.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.MINT_BLOCK_WALL.get(), SNSBlock.MINT_BLOCK.get());
+        buttonBuilder(SNSBlock.MINT_BRICK_BUTTON.get(), Ingredient.of(SNSBlock.MINT_BRICK.get())).group("mint_brick")
+                .unlockedBy("has_mint_brick", has(SNSBlock.MINT_BRICK.get())).save(pRecipeOutput);
+        doorBuilder(SNSBlock.MINT_BRICK_DOOR.get(), Ingredient.of(SNSBlock.MINT_BRICK.get())).group("mint_brick")
+                .unlockedBy("has_mint_brick", has(SNSBlock.MINT_BRICK.get())).save(pRecipeOutput);
+        pressurePlate(pRecipeOutput, SNSBlock.MINT_BRICK_PRESSURE_PLATE.get(), SNSBlock.MINT_BRICK.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.MINT_BRICK_SLAB.get(), SNSBlock.MINT_BRICK.get());
+        stairBuilder(SNSBlock.MINT_BRICK_STAIRS.get(), Ingredient.of(SNSBlock.MINT_BRICK.get())).group("mint_brick")
+                .unlockedBy("has_mint_brick", has(SNSBlock.MINT_BRICK.get())).save(pRecipeOutput);
+        trapdoorBuilder(SNSBlock.MINT_BRICK_TRAPDOOR.get(), Ingredient.of(SNSBlock.MINT_BRICK.get())).group("mint_brick")
+                .unlockedBy("has_mint_brick", has(SNSBlock.MINT_BRICK.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.MINT_BRICK_WALL.get(), SNSBlock.MINT_BRICK.get());
+
     }
     protected static void oreSmelting(RecipeOutput pRecipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
                                       float pExperience, int pCookingTIme, String pGroup) {

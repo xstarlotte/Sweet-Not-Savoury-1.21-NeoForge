@@ -46,6 +46,35 @@ public class SNSTab {
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE_TRAPDOOR);
                         pOutput.accept(SNSBlock.CANDY_CANE_COBBLESTONE_WALL);
 
+                        pOutput.accept(SNSBlock.CINNAMON_GRASS_BLOCK);
+
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE);
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_BUTTON);
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_DOOR);
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_PRESSURE_PLATE);
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_SLAB);
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_STAIRS);
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_TRAPDOOR);
+                        pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_WALL);
+
+                        pOutput.accept(SNSBlock.MINT_GRASS_BLOCK);
+                        pOutput.accept(SNSBlock.MINT_BLOCK);
+                        pOutput.accept(SNSBlock.MINT_BLOCK_BUTTON);
+                        pOutput.accept(SNSBlock.MINT_BLOCK_DOOR);
+                        pOutput.accept(SNSBlock.MINT_BLOCK_PRESSURE_PLATE);
+                        pOutput.accept(SNSBlock.MINT_BLOCK_SLAB);
+                        pOutput.accept(SNSBlock.MINT_BLOCK_STAIRS);
+                        pOutput.accept(SNSBlock.MINT_BLOCK_TRAPDOOR);
+                        pOutput.accept(SNSBlock.MINT_BLOCK_WALL);
+                        pOutput.accept(SNSBlock.MINT_BRICK);
+                        pOutput.accept(SNSBlock.MINT_BRICK_BUTTON);
+                        pOutput.accept(SNSBlock.MINT_BRICK_DOOR);
+                        pOutput.accept(SNSBlock.MINT_BRICK_PRESSURE_PLATE);
+                        pOutput.accept(SNSBlock.MINT_BRICK_SLAB);
+                        pOutput.accept(SNSBlock.MINT_BRICK_STAIRS);
+                        pOutput.accept(SNSBlock.MINT_BRICK_TRAPDOOR);
+                        pOutput.accept(SNSBlock.MINT_BRICK_WALL);
+
                         pOutput.accept(SNSBlock.MINT_HUMBUG_CAT_TEDDY);
                     }).build());
 

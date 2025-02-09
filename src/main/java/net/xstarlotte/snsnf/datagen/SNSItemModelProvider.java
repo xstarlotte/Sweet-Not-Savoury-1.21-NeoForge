@@ -35,6 +35,17 @@ public class SNSItemModelProvider extends ItemModelProvider {
         flowerItem(SNSBlock.CANDY_CANE_GRASS);
         flowerItem(SNSBlock.CANDY_CANE_GRASS_LONG);
         basicItem(SNSItem.CANDY_CANE_SUGAR_CANE.get());
+
+        buttonItem(SNSBlock.HUMBUG_COBBLESTONE_BUTTON, SNSBlock.HUMBUG_COBBLESTONE);
+        basicItem(SNSBlock.HUMBUG_COBBLESTONE_DOOR.asItem());
+        wallItem(SNSBlock.HUMBUG_COBBLESTONE_WALL, SNSBlock.HUMBUG_COBBLESTONE);
+
+        buttonItem(SNSBlock.MINT_BLOCK_BUTTON, SNSBlock.MINT_BLOCK);
+        basicItem(SNSBlock.MINT_BLOCK_DOOR.asItem());
+        wallItem(SNSBlock.MINT_BLOCK_WALL, SNSBlock.MINT_BLOCK);
+        buttonItem(SNSBlock.MINT_BRICK_BUTTON, SNSBlock.MINT_BRICK);
+        basicItem(SNSBlock.MINT_BRICK_DOOR.asItem());
+        wallItem(SNSBlock.MINT_BRICK_WALL, SNSBlock.MINT_BRICK);
     }
 
         public void buttonItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {

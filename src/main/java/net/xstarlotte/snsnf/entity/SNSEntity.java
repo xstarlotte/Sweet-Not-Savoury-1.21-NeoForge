@@ -17,6 +17,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xstarlotte.snsnf.SNSNF;
 import net.xstarlotte.snsnf.entity.client.variant.CatVariant;
 import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneCatEntity;
+import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneflyEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
@@ -28,6 +29,10 @@ public class SNSEntity {
     public static final Supplier<EntityType<CandyCaneCatEntity>> CANDY_CANE_CAT =
             ENTITY_TYPES.register("candy_cane_cat", () -> EntityType.Builder.of(CandyCaneCatEntity::new, MobCategory.CREATURE)
                     .sized(0.64f, 0.64f).build("candy_cane_cat"));
+    public static final Supplier<EntityType<CandyCaneflyEntity>> CANDYCANEFLY =
+            ENTITY_TYPES.register("candycanefly", () -> EntityType.Builder.of(CandyCaneflyEntity::new, MobCategory.CREATURE)
+                    .sized(0.64f, 0.64f).build("candycanefly"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

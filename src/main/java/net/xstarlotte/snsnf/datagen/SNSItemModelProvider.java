@@ -2,12 +2,14 @@ package net.xstarlotte.snsnf.datagen;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.xstarlotte.snsnf.SNSNF;
 import net.xstarlotte.snsnf.block.SNSBlock;
 import net.xstarlotte.snsnf.item.SNSItem;
@@ -19,6 +21,7 @@ public class SNSItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(SNSItem.CANDY_CANE_CAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(SNSItem.CANDYCANEFLY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         basicItem(SNSItem.CANDY_CANE.get());
         basicItem(SNSItem.CANDY_CANE_SUGAR.get());
@@ -35,6 +38,7 @@ public class SNSItemModelProvider extends ItemModelProvider {
         flowerItem(SNSBlock.CANDY_CANE_GRASS);
         flowerItem(SNSBlock.CANDY_CANE_GRASS_LONG);
         basicItem(SNSItem.CANDY_CANE_SUGAR_CANE.get());
+        handheldItem(SNSItem.CANDY_CANE_SWORD);
 
         buttonItem(SNSBlock.HUMBUG_COBBLESTONE_BUTTON, SNSBlock.HUMBUG_COBBLESTONE);
         basicItem(SNSBlock.HUMBUG_COBBLESTONE_DOOR.asItem());
@@ -63,6 +67,13 @@ public class SNSItemModelProvider extends ItemModelProvider {
                 .texture("layer0",  ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID,
                         "block/" + block.getId().getPath()));
     }
+
+    private ItemModelBuilder handheldItem(DeferredItem<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
     public void wallItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
                 .texture("wall",  ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID,

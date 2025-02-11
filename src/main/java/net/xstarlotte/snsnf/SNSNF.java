@@ -4,6 +4,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.xstarlotte.snsnf.block.SNSBlock;
 import net.xstarlotte.snsnf.entity.SNSEntity;
+import net.xstarlotte.snsnf.entity.client.herb.CandyCaneflyRenderer;
 import net.xstarlotte.snsnf.item.SNSItem;
 import net.xstarlotte.snsnf.item.SNSTab;
 import net.xstarlotte.snsnf.entity.client.herb.CatRenderer;
@@ -81,6 +82,7 @@ public class SNSNF
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 
             EntityRenderers.register(SNSEntity.CANDY_CANE_CAT.get(), CatRenderer::new);
+            EntityRenderers.register(SNSEntity.CANDYCANEFLY.get(), CandyCaneflyRenderer::new);
         }
     }
 }

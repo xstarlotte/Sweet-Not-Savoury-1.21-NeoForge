@@ -1,24 +1,13 @@
 package net.xstarlotte.snsnf.entity;
 
-import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.level.ServerLevelAccessor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xstarlotte.snsnf.SNSNF;
-import net.xstarlotte.snsnf.entity.client.variant.CatVariant;
 import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneCatEntity;
 import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneflyEntity;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 

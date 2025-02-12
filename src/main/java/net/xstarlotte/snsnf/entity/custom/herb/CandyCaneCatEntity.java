@@ -11,6 +11,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -26,25 +27,50 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.neoforge.event.EventHooks;
 import net.xstarlotte.snsnf.entity.SNSEntity;
-import net.xstarlotte.snsnf.entity.client.variant.CatVariant;
+import net.xstarlotte.snsnf.entity.client.variant.CandyCaneCatVariant;
 import net.xstarlotte.snsnf.item.SNSItem;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.GeoAnimatable;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class CandyCaneCatEntity extends TamableAnimal {
-    public final AnimationState idleAnimationState = new AnimationState();
-    private int idleAnimationTimeout = 0;
-    public final AnimationState sitDownAnimationState = new AnimationState();
-    public final AnimationState sitPoseAnimationState = new AnimationState();
-    public final AnimationState sitUpAnimationState = new AnimationState();
-
-    public static final EntityDataAccessor<Long> LAST_POSE_CHANGE_TICK =
-            SynchedEntityData.defineId(CandyCaneCatEntity.class, EntityDataSerializers.LONG);
+public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
 
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(CandyCaneCatEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> SITTING =
+            SynchedEntityData.defineId(CandyCaneCatEntity.class, EntityDataSerializers.BOOLEAN);
 
-    public CandyCaneCatEntity(EntityType<? extends TamableAnimal> entityType, Level level) {
-        super(entityType, level);
+
+
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+
+    public CandyCaneCatEntity(EntityType<? extends TamableAnimal> type, Level level) {
+        super(type, level);
+    }
+    @Override
+    public void registerControllers(final AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
+    }
+
+    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
+        if(tAnimationState.isMoving()) {
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.cat.run", Animation.LoopType.LOOP));
+            return PlayState.CONTINUE;
+        }
+        if(this.isSitting()) {
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.cat.sit", Animation.LoopType.LOOP));
+            return PlayState.CONTINUE;
+        }
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.cat.idle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
+
+    }
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.geoCache;
     }
 
     @Override
@@ -85,55 +111,7 @@ public class CandyCaneCatEntity extends TamableAnimal {
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
         return SNSEntity.CANDY_CANE_CAT.get().create(level);
     }
-    /* ANIMATIONS */
-    private void setupAnimationStates() {
-        if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 40;
-            this.idleAnimationState.start(this.tickCount);
-        } else {
-            --this.idleAnimationTimeout;
-        }
-        if (this.isVisuallySitting()) {
-            this.sitUpAnimationState.stop();
-            if (this.isVisuallySittingDown()) {
-                this.sitDownAnimationState.startIfStopped(this.tickCount);
-                this.sitPoseAnimationState.stop();
-            } else {
-                this.sitDownAnimationState.stop();
-                this.sitPoseAnimationState.startIfStopped(this.tickCount);
-            }
-        } else {
-            this.sitDownAnimationState.stop();
-            this.sitPoseAnimationState.stop();
-            this.sitUpAnimationState.animateWhen(this.isInPoseTransition() && this.getPoseTime() >= 0L, this.tickCount);
-        }
-    }
-    public boolean isInPoseTransition() {
-        long i = this.getPoseTime();
-        return i < (long) (this.isSitting() ? 40 : 52);
-    }
-    public boolean isVisuallySitting() {
-        return this.getPoseTime() < 0L != this.isSitting();
-    }
-    private boolean isVisuallySittingDown() {
-        return this.isSitting() && this.getPoseTime() < 40L && this.getPoseTime() >= 0L;
-    }
-    public void resetLastPoseChangeTick(long pLastPoseChangeTick) {
-        this.entityData.set(LAST_POSE_CHANGE_TICK, pLastPoseChangeTick);
-    }
-    public long getPoseTime() {
-        return this.level().getGameTime() - Math.abs(this.entityData.get(LAST_POSE_CHANGE_TICK));
-    }
-    private void resetLastPoseChangeTickToFullStand(long pLastPoseChangedTick) {
-        this.resetLastPoseChangeTick(Math.max(0L, pLastPoseChangedTick - 52L - 1L));
-    }
-    @Override
-    public void tick() {
-        super.tick();
-        if (this.level().isClientSide()) {
-            this.setupAnimationStates();
-        }
-    }
+
     /* RIGHT CLICKING */
     @Override
     public InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
@@ -163,10 +141,10 @@ public class CandyCaneCatEntity extends TamableAnimal {
         }
         return super.mobInteract(pPlayer, pHand);
     }
-    /* SITTING */
     public boolean isSitting() {
-        return this.entityData.get(LAST_POSE_CHANGE_TICK) < 0L;
+        return this.entityData.get(SITTING);
     }
+    /* SITTING */
     public void toggleSitting() {
         if (this.isSitting()) {
             standUp();
@@ -179,60 +157,48 @@ public class CandyCaneCatEntity extends TamableAnimal {
             this.makeSound(SoundEvents.CAT_PURR);
             this.setPose(Pose.SITTING);
             this.gameEvent(GameEvent.ENTITY_ACTION);
-            this.resetLastPoseChangeTick(-this.level().getGameTime());
         }
         setOrderedToSit(true);
-        setInSittingPose(true);
     }
     public void standUp() {
         if (this.isSitting()) {
             this.makeSound(SoundEvents.CAT_PURR);
-            this.setPose(Pose.STANDING);
             this.gameEvent(GameEvent.ENTITY_ACTION);
-            this.resetLastPoseChangeTick(this.level().getGameTime());
         }
         setOrderedToSit(false);
-        setInSittingPose(false);
     }
+
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
         super.defineSynchedData(pBuilder);
-        pBuilder.define(LAST_POSE_CHANGE_TICK, 0L);
         pBuilder.define(VARIANT, 0);
     }
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
         pCompound.putInt("Variant", this.getTypeVariant());
-        pCompound.putLong("LastPoseTick", this.entityData.get(LAST_POSE_CHANGE_TICK));
     }
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         this.entityData.set(VARIANT, pCompound.getInt("Variant"));
-        long i = pCompound.getLong("LastPoseTick");
-        if (i < 0L) {
-            this.setPose(Pose.SITTING);
-        }
-        this.resetLastPoseChangeTick(i);
     }
 
     private int getTypeVariant() {
         return this.entityData.get(VARIANT);
     }
-    public CatVariant getVariant() {
-        return CatVariant.byId(this.getTypeVariant() & 255);
+    public CandyCaneCatVariant getVariant() {
+        return CandyCaneCatVariant.byId(this.getTypeVariant() & 255);
     }
-    private void setVariant(CatVariant variant) {
+    private void setVariant(CandyCaneCatVariant variant) {
         this.entityData.set(VARIANT, variant.getId() & 255);
     }
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
                                         @Nullable SpawnGroupData pSpawnData) {
-        CatVariant variant = Util.getRandom(CatVariant.values(), this.random);
+        CandyCaneCatVariant variant = Util.getRandom(CandyCaneCatVariant.values(), this.random);
         this.setVariant(variant);
-        this.resetLastPoseChangeTickToFullStand(pLevel.getLevel().getGameTime());
         return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 }

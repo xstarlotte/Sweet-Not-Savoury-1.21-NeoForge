@@ -20,7 +20,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.xstarlotte.snsnf.entity.client.variant.CandyCaneflyVariant;
-import net.xstarlotte.snsnf.entity.client.variant.CatVariant;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -39,6 +38,7 @@ public class CandyCaneflyEntity extends PathfinderMob implements GeoEntity {
     //animations
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+
     public CandyCaneflyEntity(EntityType<? extends CandyCaneflyEntity> type, Level level) {
         super(type, level);
         this.moveControl = new FlyingMoveControl(this, 4, true);

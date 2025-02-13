@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.candycanecat.idle": {
+		"animation.candy_cane_cat.idle": {
 			"animation_length": 14.8,
 			"bones": {
 				"tail": {
@@ -108,7 +108,7 @@
 				}
 			}
 		},
-		"animation.candycanecat.sit": {
+		"animation.candy_cane_cat.sit": {
 			"loop": true,
 			"animation_length": 2,
 			"bones": {
@@ -176,7 +176,7 @@
 				}
 			}
 		},
-		"animation.candycanecat.run": {
+		"animation.candy_cane_cat.run": {
 			"loop": true,
 			"bones": {
 				"cat": {

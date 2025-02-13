@@ -2,14 +2,14 @@ package net.xstarlotte.snsnf.entity.client.herb;
 
 
 import com.google.common.collect.Maps;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.Util;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.xstarlotte.snsnf.SNSNF;
 import net.xstarlotte.snsnf.entity.client.variant.CandyCaneCatVariant;
-import net.xstarlotte.snsnf.entity.client.variant.CandyCaneflyVariant;
 import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneCatEntity;
-import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneflyEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 import java.util.Map;
@@ -19,7 +19,12 @@ public class CandyCaneCatRenderer extends GeoEntityRenderer<CandyCaneCatEntity> 
 
     private static final Map<CandyCaneCatVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(CandyCaneCatVariant.class), map -> {
-                map.put(CandyCaneCatVariant.DEFAULT, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candycanecat.png"));
+                map.put(CandyCaneCatVariant.APPLE, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat_apple.png"));
+                map.put(CandyCaneCatVariant.DEFAULT, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat.png"));
+                map.put(CandyCaneCatVariant.ICE, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat_ice.png"));
+                map.put(CandyCaneCatVariant.PEPPER, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat_pepper.png"));
+                map.put(CandyCaneCatVariant.SPEAR, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat_spear.png"));
+                map.put(CandyCaneCatVariant.WATERMELON, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_cat_watermelon.png"));
             });
 
     public CandyCaneCatRenderer(EntityRendererProvider.Context context) {
@@ -29,5 +34,17 @@ public class CandyCaneCatRenderer extends GeoEntityRenderer<CandyCaneCatEntity> 
     @Override
     public ResourceLocation getTextureLocation(CandyCaneCatEntity animatable) {
         return LOCATION_BY_VARIANT.get(animatable.getVariant());
+    }
+    @Override
+    public void render(CandyCaneCatEntity entity, float entityYaw, float partialTick, PoseStack poseStack,
+                       MultiBufferSource bufferSource, int packedLight) {
+        if(entity.isBaby()) {
+            poseStack.scale(0.4f, 0.4f, 0.4f);
+        }
+        else {
+            poseStack.scale(0.8f, 0.8f, 0.8f);
+        }
+
+        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }
 }

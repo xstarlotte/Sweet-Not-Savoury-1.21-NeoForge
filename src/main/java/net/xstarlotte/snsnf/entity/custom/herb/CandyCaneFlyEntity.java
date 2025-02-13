@@ -19,7 +19,7 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.xstarlotte.snsnf.entity.client.variant.CandyCaneflyVariant;
+import net.xstarlotte.snsnf.entity.client.variant.CandyCaneFlyVariant;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -30,16 +30,14 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nonnull;
 
-public class CandyCaneflyEntity extends PathfinderMob implements GeoEntity {
+public class CandyCaneFlyEntity extends PathfinderMob implements GeoEntity {
 
     private static final EntityDataAccessor<Integer> VARIANT =
-            SynchedEntityData.defineId(CandyCaneflyEntity.class, EntityDataSerializers.INT);
+            SynchedEntityData.defineId(CandyCaneFlyEntity.class, EntityDataSerializers.INT);
 
     //animations
 
-    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-
-    public CandyCaneflyEntity(EntityType<? extends CandyCaneflyEntity> type, Level level) {
+    public CandyCaneFlyEntity(EntityType<? extends CandyCaneFlyEntity> type, Level level) {
         super(type, level);
         this.moveControl = new FlyingMoveControl(this, 4, true);
     }
@@ -49,10 +47,10 @@ public class CandyCaneflyEntity extends PathfinderMob implements GeoEntity {
     }
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candycanefly.flying", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_fly.flying", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candycanefly.idle", Animation.LoopType.LOOP));
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_fly.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
     @Override
@@ -60,20 +58,33 @@ public class CandyCaneflyEntity extends PathfinderMob implements GeoEntity {
         return this.geoCache;
     }
 
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+
 //AI
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new WaterAvoidingRandomFlyingGoal(this, 1f));
-        this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 4f));
-        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 4f));
+        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 10D)
                 .add(Attributes.FLYING_SPEED, 5D);
     }
+
+    @Override
+    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
+        return false;
+    }
+
+    public boolean canBeLeashed(Player player) {
+        return true;
+    }
+
     //flying
+
     @Nonnull
     @Override
     protected PathNavigation createNavigation(@Nonnull Level level) {
@@ -83,41 +94,9 @@ public class CandyCaneflyEntity extends PathfinderMob implements GeoEntity {
         flyingPathNavigator.setCanPassDoors(true);
         return flyingPathNavigator;
     }
-    @Override
-    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
-        return false;
-    }
+
 
     //data
-
-
-    @Override
-    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
-        super.defineSynchedData(pBuilder);
-        pBuilder.define(VARIANT, 0);
-    }
-
-    //variant
-
-    public CandyCaneflyVariant getVariant() {
-        return CandyCaneflyVariant.byId(this.getTypeVariant() & 255);
-    }
-
-    private int getTypeVariant() {
-        return this.entityData.get(VARIANT);
-    }
-
-    private void setVariant(CandyCaneflyVariant variant) {
-        this.entityData.set(VARIANT, variant.getId() & 255);
-    }
-
-    @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
-                                        @Nullable SpawnGroupData pSpawnData) {
-        CandyCaneflyVariant variant = Util.getRandom(CandyCaneflyVariant.values(), this.random);
-        this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
-    }
 
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
@@ -130,4 +109,35 @@ public class CandyCaneflyEntity extends PathfinderMob implements GeoEntity {
         super.addAdditionalSaveData(pCompound);
         pCompound.putInt("Variant", this.getTypeVariant());
     }
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(VARIANT, 0);
+    }
+
+    //variant
+
+    public CandyCaneFlyVariant getVariant() {
+        return CandyCaneFlyVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    private int getTypeVariant() {
+        return this.entityData.get(VARIANT);
+    }
+
+    private void setVariant(CandyCaneFlyVariant variant) {
+        this.entityData.set(VARIANT, variant.getId() & 255);
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
+                                        @Nullable SpawnGroupData pSpawnData) {
+        CandyCaneFlyVariant variant = Util.getRandom(CandyCaneFlyVariant.values(), this.random);
+        this.setVariant(variant);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
+    }
+
+
+
 }

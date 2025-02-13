@@ -4,17 +4,18 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.xstarlotte.snsnf.block.SNSBlock;
 import net.xstarlotte.snsnf.entity.SNSEntity;
-import net.xstarlotte.snsnf.entity.client.herb.CandyCaneflyRenderer;
+import net.xstarlotte.snsnf.entity.client.herb.CandyCaneCatRenderer;
+import net.xstarlotte.snsnf.entity.client.herb.CandyCaneCrookRenderer;
+import net.xstarlotte.snsnf.entity.client.herb.CandyCaneFlyRenderer;
+import net.xstarlotte.snsnf.entity.client.herb.MintMarshmallowSheepRenderer;
 import net.xstarlotte.snsnf.item.SNSItem;
 import net.xstarlotte.snsnf.item.SNSTab;
-import net.xstarlotte.snsnf.entity.client.herb.CatRenderer;
-import net.xstarlotte.snsnf.util.SNSTag;
+import net.xstarlotte.snsnf.mob_effects.SNSEffects;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -47,6 +48,7 @@ public class SNSNF
         SNSBlock.register(modEventBus);
         SNSEntity.register(modEventBus);
         SNSItem.register(modEventBus);
+        SNSEffects.register(modEventBus);
         SNSTab.register(modEventBus);
 
 
@@ -81,8 +83,11 @@ public class SNSNF
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 
-            EntityRenderers.register(SNSEntity.CANDY_CANE_CAT.get(), CatRenderer::new);
-            EntityRenderers.register(SNSEntity.CANDYCANEFLY.get(), CandyCaneflyRenderer::new);
+            EntityRenderers.register(SNSEntity.CANDY_CANE_CAT.get(), CandyCaneCatRenderer::new);
+            EntityRenderers.register(SNSEntity.CANDY_CANE_CROOK.get(), CandyCaneCrookRenderer::new);
+            EntityRenderers.register(SNSEntity.CANDY_CANE_FLY.get(), CandyCaneFlyRenderer::new);
+
+            EntityRenderers.register(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), MintMarshmallowSheepRenderer::new);
         }
     }
 }

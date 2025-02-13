@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_candy_cane_sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "snsnf:candy_cane_sugar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "snsnf:candy_cane"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_candy_cane_sugar"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "snsnf:candy_cane"
+    ]
+  }
+}

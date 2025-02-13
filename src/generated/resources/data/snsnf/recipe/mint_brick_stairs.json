@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "mint_brick",
+  "key": {
+    "#": {
+      "item": "snsnf:mint_brick"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "snsnf:mint_brick_stairs"
+  }
+}

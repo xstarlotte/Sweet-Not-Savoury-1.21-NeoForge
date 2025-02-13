@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "snsnf:block/mint_block"
+    }
+  }
+}

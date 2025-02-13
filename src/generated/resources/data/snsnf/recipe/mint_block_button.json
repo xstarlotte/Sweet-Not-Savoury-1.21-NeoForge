@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "mint_block",
+  "ingredients": [
+    {
+      "item": "snsnf:mint_block"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "snsnf:mint_block_button"
+  }
+}

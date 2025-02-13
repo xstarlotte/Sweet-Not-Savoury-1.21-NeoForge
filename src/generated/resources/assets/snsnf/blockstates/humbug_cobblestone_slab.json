@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snsnf:block/humbug_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "snsnf:block/humbug_cobblestone"
+    },
+    "type=top": {
+      "model": "snsnf:block/humbug_cobblestone_slab_top"
+    }
+  }
+}

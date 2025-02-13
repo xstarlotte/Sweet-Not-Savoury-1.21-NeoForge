@@ -10,10 +10,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
@@ -25,6 +26,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.scores.Team;
 import net.neoforged.neoforge.event.EventHooks;
 import net.xstarlotte.snsnf.entity.SNSEntity;
 import net.xstarlotte.snsnf.entity.client.variant.CandyCaneCatVariant;
@@ -34,6 +36,7 @@ import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
@@ -43,35 +46,34 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
     private static final EntityDataAccessor<Boolean> SITTING =
             SynchedEntityData.defineId(CandyCaneCatEntity.class, EntityDataSerializers.BOOLEAN);
 
+    //animations
 
-
-    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-
-    public CandyCaneCatEntity(EntityType<? extends TamableAnimal> type, Level level) {
+    public CandyCaneCatEntity(EntityType<? extends CandyCaneCatEntity> type, Level level) {
         super(type, level);
     }
     @Override
     public void registerControllers(final AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
     }
-
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.cat.run", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_cat.run", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         if(this.isSitting()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.cat.sit", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_cat.sit", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.cat.idle", Animation.LoopType.LOOP));
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_cat.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
-
     }
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.geoCache;
     }
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+
+    //AI
 
     @Override
     protected void registerGoals() {
@@ -102,6 +104,9 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
                 .add(Attributes.ATTACK_DAMAGE, 5f)
                 .add(Attributes.FOLLOW_RANGE, 24D);
     }
+
+    //breeding
+
     @Override
     public boolean isFood(ItemStack stack) {
         return stack.is(SNSItem.CANDY_CANE_SUGAR.get());
@@ -112,7 +117,8 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
         return SNSEntity.CANDY_CANE_CAT.get().create(level);
     }
 
-    /* RIGHT CLICKING */
+    //tameable
+
     @Override
     public InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
@@ -130,59 +136,63 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
                     this.navigation.recomputePath();
                     this.setTarget(null);
                     this.level().broadcastEntityEvent(this, (byte)7);
-                    toggleSitting();
+                    setSitting(true);
                 }
                 return InteractionResult.SUCCESS;
             }
         }
         if(isTame() && pHand == InteractionHand.MAIN_HAND && !isFood(itemstack)) {
-            toggleSitting();
+            setSitting(!isSitting());
             return InteractionResult.SUCCESS;
         }
         return super.mobInteract(pPlayer, pHand);
     }
+
     public boolean isSitting() {
         return this.entityData.get(SITTING);
     }
-    /* SITTING */
-    public void toggleSitting() {
-        if (this.isSitting()) {
-            standUp();
-        } else {
-            sitDown();
-        }
+
+    public void setSitting(boolean sitting) {
+        this.entityData.set(SITTING, sitting);
+        this.setOrderedToSit(sitting);
     }
-    public void sitDown() {
-        if (!this.isSitting()) {
-            this.makeSound(SoundEvents.CAT_PURR);
-            this.setPose(Pose.SITTING);
-            this.gameEvent(GameEvent.ENTITY_ACTION);
-        }
-        setOrderedToSit(true);
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
+                                        @Nullable SpawnGroupData pSpawnData) {
+        CandyCaneCatVariant variant = Util.getRandom(CandyCaneCatVariant.values(), this.random);
+        this.setVariant(variant);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
-    public void standUp() {
-        if (this.isSitting()) {
-            this.makeSound(SoundEvents.CAT_PURR);
-            this.gameEvent(GameEvent.ENTITY_ACTION);
-        }
-        setOrderedToSit(false);
+    @Override
+    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
+        return false;
     }
+    public boolean canBeLeashed(Player player) {
+        return false;
+    }
+
+    //data
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
         super.defineSynchedData(pBuilder);
+        pBuilder.define(SITTING, false);
         pBuilder.define(VARIANT, 0);
     }
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
+        pCompound.putBoolean("isSitting", this.isSitting());
         pCompound.putInt("Variant", this.getTypeVariant());
     }
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
+        setSitting(pCompound.getBoolean("isSitting"));
         this.entityData.set(VARIANT, pCompound.getInt("Variant"));
     }
+
+    //variant
 
     private int getTypeVariant() {
         return this.entityData.get(VARIANT);
@@ -194,11 +204,5 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
         this.entityData.set(VARIANT, variant.getId() & 255);
     }
 
-    @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
-                                        @Nullable SpawnGroupData pSpawnData) {
-        CandyCaneCatVariant variant = Util.getRandom(CandyCaneCatVariant.values(), this.random);
-        this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
-    }
+
 }

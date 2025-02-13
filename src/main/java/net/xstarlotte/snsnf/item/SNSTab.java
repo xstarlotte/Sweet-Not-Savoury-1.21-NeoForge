@@ -88,9 +88,11 @@ public class SNSTab {
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR);
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR_CANE);
                         pOutput.accept(SNSItem.CANDY_CANE_SWORD);
-
                         pOutput.accept(SNSItem.CANDY_CANE_CAT_SPAWN_EGG);
-                        pOutput.accept(SNSItem.CANDYCANEFLY_SPAWN_EGG);
+                        pOutput.accept(SNSItem.CANDY_CANE_CROOK_SPAWN_EGG);
+                        pOutput.accept(SNSItem.CANDY_CANE_FLY_SPAWN_EGG);
+
+                        pOutput.accept(SNSItem.MINT_MARSHMALLOW_SHEEP_SPAWN_EGG);
                     }).build());
 
     public static void register(IEventBus eventBus) {

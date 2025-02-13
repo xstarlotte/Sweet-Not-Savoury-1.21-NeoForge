@@ -21,7 +21,10 @@ public class SNSItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(SNSItem.CANDY_CANE_CAT_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(SNSItem.CANDYCANEFLY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(SNSItem.CANDY_CANE_CROOK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(SNSItem.CANDY_CANE_FLY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        withExistingParent(SNSItem.MINT_MARSHMALLOW_SHEEP_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         basicItem(SNSItem.CANDY_CANE.get());
         basicItem(SNSItem.CANDY_CANE_SUGAR.get());

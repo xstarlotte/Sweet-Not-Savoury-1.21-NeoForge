@@ -64,7 +64,11 @@
   "block.snsnf.potted_candy_cane_grass": "Potted Candy Cane Grass",
   "block.snsnf.potted_candy_cane_grass_long": "Potted Long Candy Cane Grass",
 
+  "entity.snsnf.candy_cane_cat": "Candy Cane Cat",
+  "entity.snsnf.candy_cane_crook": "Candy Cane Crook",
+  "entity.snsnf.candy_cane_fly": "Candy Canefly",
 
+  "entity.snsnf.mint_marshmallow_sheep": "Mint Marshmallow Sheep",
 
   "item.snsnf.candy_cane": "Candy Cane",
   "item.snsnf.candy_cane_sugar": "Candy Cane Sugar",
@@ -72,7 +76,10 @@
   "item.snsnf.candy_cane_sword": "Candy Cane Sword",
 
   "item.snsnf.candy_cane_cat_spawn_egg": "Candy Cane Cat Spawn Egg",
-  "item.snsnf.candycanefly_spawn_egg": "Candy Canefly Spawn Egg",
+  "item.snsnf.candy_cane_crook_spawn_egg": "Candy Cane Crook Spawn Egg",
+  "item.snsnf.candy_cane_fly_spawn_egg": "Candy Canefly Spawn Egg",
+
+  "item.snsnf.mint_marshmallow_sheep_spawn_egg": "Mint Marshmallow Sheep Spawn Egg",
 
   "itemGroup.snsnf.sns_block": "Blocks - Sweet Not Savoury",
   "itemGroup.snsnf.sns_item": "Items - Sweet Not Savoury",

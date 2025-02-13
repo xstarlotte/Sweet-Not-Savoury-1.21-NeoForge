@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.candycanefly.idle": {
+		"animation.candy_cane_fly.idle": {
 			"loop": true,
 			"bones": {
 				"wholebody": {
@@ -25,7 +25,7 @@
 				}
 			}
 		},
-		"animation.candycanefly.flying": {
+		"animation.candy_cane_fly.flying": {
 			"loop": true,
 			"bones": {
 				"wholebody": {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "snsnf:item/humbug_cobblestone_door"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "snsnf:block/candy_cane_cobblestone"
+  }
+}

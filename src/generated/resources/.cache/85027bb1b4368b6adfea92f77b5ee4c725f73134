@@ -1,0 +1,6 @@
+// 1.21.1	2025-02-09T10:03:26.1892923	Tags for minecraft:block mod id snsnf
+1e235431d70f405b25ffa7c0e7250e9d01b4598c data/minecraft/tags/block/crops.json
+356acd42e35c3187167dfbaf9f602c6d39c95963 data/minecraft/tags/block/flowers.json
+a016d821e9e5358d65bd0c693982a52c0d16aad9 data/minecraft/tags/block/mineable/pickaxe.json
+a016d821e9e5358d65bd0c693982a52c0d16aad9 data/minecraft/tags/block/needs_stone_tool.json
+9cac9fb90a6ec717c702281ba52309271f892c70 data/minecraft/tags/block/walls.json

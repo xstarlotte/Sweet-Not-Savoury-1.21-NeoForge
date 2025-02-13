@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "mint_brick",
+  "ingredients": [
+    {
+      "item": "snsnf:mint_brick"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "snsnf:mint_brick_button"
+  }
+}

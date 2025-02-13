@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "bottom": "snsnf:block/humbug_cobblestone_door_bottom",
+    "top": "snsnf:block/humbug_cobblestone_door_top"
+  }
+}

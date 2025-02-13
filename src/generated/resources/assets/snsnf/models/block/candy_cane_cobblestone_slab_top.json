@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "snsnf:block/candy_cane_cobblestone",
+    "side": "snsnf:block/candy_cane_cobblestone",
+    "top": "snsnf:block/candy_cane_cobblestone"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snsnf:block/candy_cane_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "snsnf:block/candy_cane_cobblestone"
+    },
+    "type=top": {
+      "model": "snsnf:block/candy_cane_cobblestone_slab_top"
+    }
+  }
+}

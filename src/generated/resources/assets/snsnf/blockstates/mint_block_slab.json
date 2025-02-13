@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snsnf:block/mint_block_slab"
+    },
+    "type=double": {
+      "model": "snsnf:block/mint_block"
+    },
+    "type=top": {
+      "model": "snsnf:block/mint_block_slab_top"
+    }
+  }
+}

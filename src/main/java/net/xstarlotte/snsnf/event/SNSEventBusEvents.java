@@ -11,10 +11,7 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.xstarlotte.snsnf.SNSNF;
 import net.xstarlotte.snsnf.entity.SNSEntity;
-import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneCatEntity;
-import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneCrookEntity;
-import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneFlyEntity;
-import net.xstarlotte.snsnf.entity.custom.herb.MintMarshmallowSheepEntity;
+import net.xstarlotte.snsnf.entity.custom.herb.*;
 
 @EventBusSubscriber(modid = SNSNF.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class SNSEventBusEvents {
@@ -25,6 +22,7 @@ public class SNSEventBusEvents {
         event.put(SNSEntity.CANDY_CANE_CROOK.get(), CandyCaneCrookEntity.createAttributes().build());
         event.put(SNSEntity.CANDY_CANE_FLY.get(), CandyCaneFlyEntity.createAttributes().build());
 
+        event.put(SNSEntity.MINT_IMPERIAL.get(), MintImperialEntity.createAttributes().build());
         event.put(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), MintMarshmallowSheepEntity.createAttributes().build());
     }
     @SubscribeEvent
@@ -36,6 +34,8 @@ public class SNSEventBusEvents {
         event.register(SNSEntity.CANDY_CANE_FLY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(SNSEntity.MINT_IMPERIAL.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }

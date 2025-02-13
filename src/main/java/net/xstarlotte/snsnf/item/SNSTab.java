@@ -84,14 +84,22 @@ public class SNSTab {
                     .icon(() -> new ItemStack(SNSItem.CANDY_CANE.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "sns_block"))
                     .displayItems((pParameters, pOutput) -> {
+
+                        pOutput.accept(SNSItem.CANDY_CANE_SWORD);
+
                         pOutput.accept(SNSItem.CANDY_CANE);
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR);
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR_CANE);
-                        pOutput.accept(SNSItem.CANDY_CANE_SWORD);
+
+                        pOutput.accept(SNSItem.HUMBUG);
+
+                        pOutput.accept(SNSItem.MINT_MARSHMALLOW);
+
                         pOutput.accept(SNSItem.CANDY_CANE_CAT_SPAWN_EGG);
                         pOutput.accept(SNSItem.CANDY_CANE_CROOK_SPAWN_EGG);
                         pOutput.accept(SNSItem.CANDY_CANE_FLY_SPAWN_EGG);
 
+                        pOutput.accept(SNSItem.MINT_IMPERIAL_SPAWN_EGG);
                         pOutput.accept(SNSItem.MINT_MARSHMALLOW_SHEEP_SPAWN_EGG);
                     }).build());
 

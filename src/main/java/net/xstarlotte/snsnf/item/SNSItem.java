@@ -37,6 +37,14 @@ public class SNSItem {
     public static final DeferredItem<Item> CANDY_CANE_SWORD = ITEMS.register("candy_cane_sword",
             () -> new HerbEffectSwordItem(SNSToolTiers.HERB, new Item.Properties().attributes(SwordItem.createAttributes(SNSToolTiers.HERB, 4, -2.4f)), SNSEffects.HERB_EFFECT));
 
+    public static final DeferredItem<Item> HUMBUG =
+            ITEMS.registerItem("humbug", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
+
+    public static final DeferredItem<Item> MINT_IMPERIAL_SPAWN_EGG = ITEMS.register("mint_imperial_spawn_egg",
+            () -> new DeferredSpawnEggItem(SNSEntity.MINT_IMPERIAL, 0x1aa578, 0x4bc49d,
+                    new Item.Properties()));
+    public static final DeferredItem<Item> MINT_MARSHMALLOW =
+            ITEMS.registerItem("mint_marshmallow", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
     public static final DeferredItem<Item> MINT_MARSHMALLOW_SHEEP_SPAWN_EGG = ITEMS.register("mint_marshmallow_sheep_spawn_egg",
             () -> new DeferredSpawnEggItem(SNSEntity.MINT_MARSHMALLOW_SHEEP, 0x1aa578, 0x4bc49d,
                     new Item.Properties()));

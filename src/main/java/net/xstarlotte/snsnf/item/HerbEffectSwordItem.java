@@ -9,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.xstarlotte.snsnf.mob_effects.SNSEffects;
 
 public class HerbEffectSwordItem extends SwordItem {
     private final Holder<MobEffect> effect;
@@ -19,9 +20,10 @@ public class HerbEffectSwordItem extends SwordItem {
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
         if(entity instanceof LivingEntity livingEntity) {
-            livingEntity.addEffect(new MobEffectInstance(effect, 400), player);
+            livingEntity.addEffect(new MobEffectInstance(SNSEffects.HERB_EFFECT, 400), player);
         }
         return super.onLeftClickEntity(stack, player, entity);
     }
+
 }
 

@@ -1,30 +1,21 @@
 package net.xstarlotte.snsnf.entity.custom.herb;
 
-import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.xstarlotte.snsnf.entity.SNSEntity;
-import net.xstarlotte.snsnf.entity.client.variant.CandyCaneFlyVariant;
 import net.xstarlotte.snsnf.item.SNSItem;
-import org.checkerframework.checker.units.qual.A;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -33,17 +24,14 @@ import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import javax.annotation.Nonnull;
+public class MintmunkEntity extends Animal implements GeoEntity {
 
-public class MintMarshmallowSheepEntity extends Animal implements GeoEntity {
-
-    public MintMarshmallowSheepEntity(EntityType<? extends MintMarshmallowSheepEntity> type, Level level) {
+    public MintmunkEntity(EntityType<? extends MintmunkEntity> type, Level level) {
         super(type, level);
-    }
-
-    public int eggTime = this.random.nextInt(6000) + 6000;
 
     //animations
+
+    }
     @Override
     public void registerControllers(final AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
@@ -99,22 +87,10 @@ public class MintMarshmallowSheepEntity extends Animal implements GeoEntity {
         return SNSEntity.MINT_MARSHMALLOW_SHEEP.get().create(level);
     }
 
-    public void aiStep() {
-        super.aiStep();
-        if(this.level().isClientSide() && this.isAlive()  && --this.eggTime <= 0) {
-            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            this.spawnAtLocation(SNSItem.MINT_MARSHMALLOW.get());
-            this.eggTime = this.random.nextInt(6000) + 6000;
-        }
-    }
-
     //data
 
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
-        if (pCompound.contains("EggLayTime")) {
-            this.eggTime = pCompound.getInt("EggLayTime");
-        }
         super.readAdditionalSaveData(pCompound);
     }
 
@@ -122,7 +98,6 @@ public class MintMarshmallowSheepEntity extends Animal implements GeoEntity {
 
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
-        pCompound.putInt("EggLayTime", this.eggTime);
         super.addAdditionalSaveData(pCompound);
     }
 

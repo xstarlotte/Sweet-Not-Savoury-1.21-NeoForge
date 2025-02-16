@@ -34,6 +34,10 @@ public class SNSEntity {
             ENTITY_TYPES.register("mint_marshmallow_sheep", () -> EntityType.Builder.of(MintMarshmallowSheepEntity::new, MobCategory.CREATURE)
                     .sized(1f, 1f).build("mint_marshmallow_sheep"));
 
+    public static final Supplier<EntityType<PeppermintChurlEntity>> PEPPERMINT_CHURL =
+            ENTITY_TYPES.register("peppermint_churl", () -> EntityType.Builder.of(PeppermintChurlEntity::new, MobCategory.MONSTER)
+                    .sized(1f, 1f).build("peppermint_churl"));
+
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

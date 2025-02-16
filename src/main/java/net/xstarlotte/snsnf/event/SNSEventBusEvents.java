@@ -25,6 +25,8 @@ public class SNSEventBusEvents {
         event.put(SNSEntity.MINTMUNK.get(), MintmunkEntity.createAttributes().build());
         event.put(SNSEntity.MINT_IMPERIAL.get(), MintImperialEntity.createAttributes().build());
         event.put(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), MintMarshmallowSheepEntity.createAttributes().build());
+
+        event.put(SNSEntity.PEPPERMINT_CHURL.get(), PeppermintChurlEntity.createAttributes().build());
     }
     @SubscribeEvent
     public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
@@ -41,5 +43,8 @@ public class SNSEventBusEvents {
                 Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(SNSEntity.PEPPERMINT_CHURL.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

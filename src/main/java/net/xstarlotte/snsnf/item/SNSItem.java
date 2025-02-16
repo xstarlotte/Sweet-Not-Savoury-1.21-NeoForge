@@ -37,6 +37,10 @@ public class SNSItem {
             () -> new DeferredSpawnEggItem(SNSEntity.MINT_MARSHMALLOW_SHEEP, 0x1aa578, 0x4bc49d,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> PEPPERMINT_CHURL_SPAWN_EGG = ITEMS.register("peppermint_churl_spawn_egg",
+            () -> new DeferredSpawnEggItem(SNSEntity.PEPPERMINT_CHURL, 0xffffff, 0xf1948a,
+                    new Item.Properties()));
+
    //items
 
     public static final DeferredItem<Item> CANDY_CANE =
@@ -47,9 +51,16 @@ public class SNSItem {
     public static final DeferredItem<Item> CANDY_CANE_SWORD = ITEMS.register("candy_cane_sword",
             () -> new HerbEffectSwordItem(SNSToolTiers.HERB, new Item.Properties().attributes(SwordItem.createAttributes(SNSToolTiers.HERB, 4, -2.4f)), SNSEffects.HERB_EFFECT));
 
+    public static final DeferredItem<Item> HUMBUG =
+            ITEMS.registerItem("humbug", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
+
     public static final DeferredItem<Item> MINT_MARSHMALLOW =
             ITEMS.registerItem("mint_marshmallow", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
 
+    public static final DeferredItem<Item> PEPPERMINT_SWIRL =
+            ITEMS.registerItem("peppermint_swirl", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
+    public static final DeferredItem<Item> POLO =
+            ITEMS.registerItem("polo", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

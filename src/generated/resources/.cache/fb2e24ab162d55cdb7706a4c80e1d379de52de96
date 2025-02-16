@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-16T12:45:12.746922	Item Models: snsnf
+// 1.21.1	2025-02-16T17:42:12.4813706	Item Models: snsnf
 7381f3937359d7a7cb4e8cf2db10323bb64f6924 assets/snsnf/models/item/candy_cane.json
 c9fa659d1e058aa30b8b6e9a323453b75a9dc131 assets/snsnf/models/item/candy_cane_bush.json
 0c37ebd606917970d887723804c9091cd13b7b09 assets/snsnf/models/item/candy_cane_carnation.json
@@ -17,6 +17,7 @@ a2c9bdcc59706bd8a3871511fc87a421341a8544 assets/snsnf/models/item/candy_cane_flo
 3be7642e5611574e70fc71e4548973ac92a740da assets/snsnf/models/item/candy_cane_sugar.json
 fa3b9a4d14ee2e47127d01d07565a825707e4d92 assets/snsnf/models/item/candy_cane_sugar_cane.json
 efe648805a73fe4eeb1f53fa8c195817a25c5b69 assets/snsnf/models/item/candy_cane_sword.json
+12b50a1a466515f95e8887074e15f858c7f55aa9 assets/snsnf/models/item/humbug.json
 3958affd15a8c9375113a82e786dd3c6962c4899 assets/snsnf/models/item/humbug_cobblestone_button.json
 f10e5cd117130845f43c5fbf4b6a3db990a7bd03 assets/snsnf/models/item/humbug_cobblestone_door.json
 2a56996243c4886e524ee11e0c314c8ddd41a868 assets/snsnf/models/item/humbug_cobblestone_wall.json
@@ -30,3 +31,6 @@ b353e80b7d2ad2eba358238b086006579ad03364 assets/snsnf/models/item/mint_brick_but
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/mint_imperial_spawn_egg.json
 c1d5773384a2149a503bf729fe728fc4c2092246 assets/snsnf/models/item/mint_marshmallow.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/mint_marshmallow_sheep_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/peppermint_churl_spawn_egg.json
+671ec13d8561e8a280358bb12fc4ac19eab20a3b assets/snsnf/models/item/peppermint_swirl.json
+d67ce47df77e4b67969c41edf715ce85d5e98296 assets/snsnf/models/item/polo.json

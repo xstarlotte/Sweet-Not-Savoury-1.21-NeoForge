@@ -92,6 +92,8 @@ public class SNSTab {
                         pOutput.accept(SNSItem.MINT_IMPERIAL_SPAWN_EGG);
                         pOutput.accept(SNSItem.MINT_MARSHMALLOW_SHEEP_SPAWN_EGG);
 
+                        pOutput.accept(SNSItem.PEPPERMINT_CHURL_SPAWN_EGG);
+
                         pOutput.accept(SNSItem.CANDY_CANE);
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR);
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR_CANE);

@@ -87,6 +87,8 @@ public class SNSNF
             EntityRenderers.register(SNSEntity.MINTMUNK.get(), MintmunkRenderer::new);
             EntityRenderers.register(SNSEntity.MINT_IMPERIAL.get(), MintImperialRenderer::new);
             EntityRenderers.register(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), MintMarshmallowSheepRenderer::new);
+
+            EntityRenderers.register(SNSEntity.PEPPERMINT_CHURL.get(), PeppermintChurlRenderer::new);
         }
     }
 }

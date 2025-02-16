@@ -31,13 +31,20 @@ public class SNSItemModelProvider extends ItemModelProvider {
         withExistingParent(SNSItem.MINT_IMPERIAL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(SNSItem.MINT_MARSHMALLOW_SHEEP_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
+        withExistingParent(SNSItem.PEPPERMINT_CHURL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
         //items
 
         basicItem(SNSItem.CANDY_CANE.get());
         basicItem(SNSItem.CANDY_CANE_SUGAR.get());
         handheldItem(SNSItem.CANDY_CANE_SWORD);
 
+        basicItem(SNSItem.HUMBUG.get());
+
         basicItem(SNSItem.MINT_MARSHMALLOW.get());
+
+        basicItem(SNSItem.PEPPERMINT_SWIRL.get());
+        basicItem(SNSItem.POLO.get());
 
        //block items
 

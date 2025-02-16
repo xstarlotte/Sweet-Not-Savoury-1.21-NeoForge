@@ -27,6 +27,9 @@ public class SNSItemModelProvider extends ItemModelProvider {
         withExistingParent(SNSItem.CANDY_CANE_CROOK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(SNSItem.CANDY_CANE_FLY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
+        withExistingParent(SNSItem.HUMBUG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(SNSItem.HUMPUG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
         withExistingParent(SNSItem.MINTMUNK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(SNSItem.MINT_IMPERIAL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(SNSItem.MINT_MARSHMALLOW_SHEEP_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -48,6 +51,9 @@ public class SNSItemModelProvider extends ItemModelProvider {
 
        //block items
 
+        buttonItem(SNSBlock.CANDY_CANE_BRICK_BUTTON, SNSBlock.CANDY_CANE_BRICK);
+        basicItem(SNSBlock.CANDY_CANE_BRICK_DOOR.asItem());
+        wallItem(SNSBlock.CANDY_CANE_BRICK_WALL, SNSBlock.CANDY_CANE_BRICK);
         flowerItem(SNSBlock.CANDY_CANE_BUSH);
         flowerItem(SNSBlock.CANDY_CANE_CARNATION);
         buttonItem(SNSBlock.CANDY_CANE_COBBLESTONE_BUTTON, SNSBlock.CANDY_CANE_COBBLESTONE);
@@ -61,7 +67,9 @@ public class SNSItemModelProvider extends ItemModelProvider {
         flowerItem(SNSBlock.CANDY_CANE_GRASS_LONG);
         basicItem(SNSItem.CANDY_CANE_SUGAR_CANE.get());
 
-
+        buttonItem(SNSBlock.HUMBUG_BRICK_BUTTON, SNSBlock.HUMBUG_BRICK);
+        basicItem(SNSBlock.HUMBUG_BRICK_DOOR.asItem());
+        wallItem(SNSBlock.HUMBUG_BRICK_WALL, SNSBlock.HUMBUG_BRICK);
         buttonItem(SNSBlock.HUMBUG_COBBLESTONE_BUTTON, SNSBlock.HUMBUG_COBBLESTONE);
         basicItem(SNSBlock.HUMBUG_COBBLESTONE_DOOR.asItem());
         wallItem(SNSBlock.HUMBUG_COBBLESTONE_WALL, SNSBlock.HUMBUG_COBBLESTONE);

@@ -1,6 +1,13 @@
 {
 
-
+  "block.snsnf.candy_cane_brick": "Candy Cane Brick",
+  "block.snsnf.candy_cane_brick_button": "Candy Cane Brick Button",
+  "block.snsnf.candy_cane_brick_door": "Candy Cane Brick Door",
+  "block.snsnf.candy_cane_brick_pressure_plate": "Candy Cane Brick Pressure Plate",
+  "block.snsnf.candy_cane_brick_slab": "Candy Cane Brick Slab",
+  "block.snsnf.candy_cane_brick_stairs": "Candy Cane Brick Stairs",
+  "block.snsnf.candy_cane_brick_trapdoor": "Candy Cane Brick Trapdoor",
+  "block.snsnf.candy_cane_brick_wall": "Candy Cane Brick Wall",
   "block.snsnf.candy_cane_bush": "Candy Cane Bush",
   "block.snsnf.candy_cane_carnation": "Candy Cane Carnation",
   "block.snsnf.candy_cane_cat_teddy": "Candy Cane Cat Teddy",
@@ -27,6 +34,15 @@
   "block.snsnf.candy_cane_sugar_cane": "Candy Cane Sugar Cane",
   "block.snsnf.cinnamon_grass_block": "Cinnamon Grass Block",
 
+  "block.snsnf.humbug_brick": "Humbug Brick",
+  "block.snsnf.humbug_brick_button": "Humbug Brick Button",
+  "block.snsnf.humbug_brick_door": "Humbug Brick Door",
+  "block.snsnf.humbug_brick_pressure_plate": "Humbug Brick Pressure Plate",
+  "block.snsnf.humbug_brick_slab": "Humbug Brick Slab",
+  "block.snsnf.humbug_brick_stairs": "Humbug Brick Stairs",
+  "block.snsnf.humbug_brick_trapdoor": "Humbug Brick Trapdoor",
+  "block.snsnf.humbug_brick_wall": "Humbug Brick Wall",
+  "block.snsnf.humbug_cat_teddy": "Humbug Cat Teddy",
   "block.snsnf.humbug_cobblestone": "Humbug Cobblestone",
   "block.snsnf.humbug_cobblestone_button": "Humbug Cobblestone Button",
   "block.snsnf.humbug_cobblestone_door": "Humbug Cobblestone Door",
@@ -53,7 +69,7 @@
   "block.snsnf.mint_brick_trapdoor": "Mint Brick Trapdoor",
   "block.snsnf.mint_brick_wall": "Mint Brick Wall",
   "block.snsnf.mint_grass_block": "Mint Grass Block",
-  "block.snsnf.mint_humbug_cat_teddy": "Mint Humbug Cat Teddy",
+
 
   "block.snsnf.potted_candy_cane_bush": "Potted Candy Cane Bush",
   "block.snsnf.potted_candy_cane_carnation": "Potted Candy Cane Carnation",
@@ -67,6 +83,9 @@
   "entity.snsnf.candy_cane_cat": "Candy Cane Cat",
   "entity.snsnf.candy_cane_crook": "Candy Cane Crook",
   "entity.snsnf.candy_cane_fly": "Candy Canefly",
+
+  "entity.snsnf.humbug": "Humbug",
+  "entity.snsnf.humpug": "Humpug",
 
   "entity.snsnf.mintmunk": "Mintmunk",
   "entity.snsnf.mint_imperial": "Mint Imperial",
@@ -87,6 +106,9 @@
   "item.snsnf.candy_cane_cat_spawn_egg": "Candy Cane Cat Spawn Egg",
   "item.snsnf.candy_cane_crook_spawn_egg": "Candy Cane Crook Spawn Egg",
   "item.snsnf.candy_cane_fly_spawn_egg": "Candy Canefly Spawn Egg",
+
+  "item.snsnf.humbug_spawn_egg": "Humbug Spawn Egg",
+  "item.snsnf.humpug_spawn_egg": "Humpug Spawn Egg",
 
   "item.snsnf.mintmunk_spawn_egg": "Mintmunk Spawn Egg",
   "item.snsnf.mint_imperial_spawn_egg": "Mint Imperial Spawn Egg",
@@ -109,8 +131,8 @@
   "painting.snsnf.candy_cane_cat_spear.title": "Spearmint Candy Cane Cat",
   "painting.snsnf.candy_cane_cat_watermelon.author": "xStarlotte",
   "painting.snsnf.candy_cane_cat_watermelon.title": "Watermelon Candy Cane Cat",
-  "painting.snsnf.mint_humbug_cat.author": "xStarlotte",
-  "painting.snsnf.mint_humbug_cat.title": "Mint Humbug Cat",
+  "painting.snsnf.humbug_cat.author": "xStarlotte",
+  "painting.snsnf.humbug_cat.title": "Humbug Cat",
   "painting.snsnf.plain.author": "xStarlotte",
   "painting.snsnf.plain.title": "Plain"
 

@@ -50,6 +50,23 @@ public class SNSBlock {
     public static final DeferredBlock<Block> CANDY_CANE_CAT_TEDDY_WATERMELON = registerBlock("candy_cane_cat_teddy_watermelon",
             () -> new CatTeddyBlock());
 
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK = registerBlock("candy_cane_brick",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK_BUTTON = registerBlock("candy_cane_brick_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noCollission()));
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK_DOOR = registerBlock("candy_cane_brick_door",
+            () -> new DoorBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK_PRESSURE_PLATE = registerBlock("candy_cane_brick_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK_SLAB = registerBlock("candy_cane_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK_STAIRS = registerBlock("candy_cane_brick_stairs",
+            () -> new StairBlock(SNSBlock.CANDY_CANE_BRICK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK_TRAPDOOR = registerBlock("candy_cane_brick_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
+    public static final DeferredBlock<Block> CANDY_CANE_BRICK_WALL = registerBlock("candy_cane_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> CANDY_CANE_COBBLESTONE = registerBlock("candy_cane_cobblestone",
             () -> new Block(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
@@ -76,6 +93,25 @@ public class SNSBlock {
     public static final DeferredBlock<Block> CINNAMON_GRASS_BLOCK = registerBlock("cinnamon_grass_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(1f)));
 
+    public static final DeferredBlock<Block> HUMBUG_BRICK = registerBlock("humbug_brick",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HUMBUG_BRICK_BUTTON = registerBlock("humbug_brick_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noCollission()));
+    public static final DeferredBlock<Block> HUMBUG_BRICK_DOOR = registerBlock("humbug_brick_door",
+            () -> new DoorBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
+    public static final DeferredBlock<Block> HUMBUG_BRICK_PRESSURE_PLATE = registerBlock("humbug_brick_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HUMBUG_BRICK_SLAB = registerBlock("humbug_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HUMBUG_BRICK_STAIRS = registerBlock("humbug_brick_stairs",
+            () -> new StairBlock(SNSBlock.HUMBUG_BRICK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HUMBUG_BRICK_TRAPDOOR = registerBlock("humbug_brick_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
+    public static final DeferredBlock<Block> HUMBUG_BRICK_WALL = registerBlock("humbug_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HUMBUG_CAT_TEDDY = registerBlock("humbug_cat_teddy",
+            () -> new CatTeddyBlock());
     public static final DeferredBlock<Block> HUMBUG_COBBLESTONE = registerBlock("humbug_cobblestone",
             () -> new Block(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> HUMBUG_COBBLESTONE_BUTTON = registerBlock("humbug_cobblestone_button",
@@ -131,8 +167,7 @@ public class SNSBlock {
     public static final DeferredBlock<Block> MINT_GRASS_BLOCK = registerBlock("mint_grass_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(1f)));
 
-    public static final DeferredBlock<Block> MINT_HUMBUG_CAT_TEDDY = registerBlock("mint_humbug_cat_teddy",
-            () -> new CatTeddyBlock());
+
 
     public static final DeferredBlock<Block> POTTED_CANDY_CANE_BUSH = BLOCKS.register("potted_candy_cane_bush",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), CANDY_CANE_BUSH, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_DANDELION)));

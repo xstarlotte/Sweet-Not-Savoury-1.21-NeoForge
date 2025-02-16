@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "humbug_brick",
+  "key": {
+    "#": {
+      "item": "snsnf:humbug_brick"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "snsnf:humbug_brick_stairs"
+  }
+}

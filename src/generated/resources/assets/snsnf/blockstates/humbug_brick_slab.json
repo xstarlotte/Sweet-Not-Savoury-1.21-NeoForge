@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snsnf:block/humbug_brick_slab"
+    },
+    "type=double": {
+      "model": "snsnf:block/humbug_brick"
+    },
+    "type=top": {
+      "model": "snsnf:block/humbug_brick_slab_top"
+    }
+  }
+}

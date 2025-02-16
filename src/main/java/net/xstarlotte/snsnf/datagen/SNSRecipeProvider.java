@@ -26,6 +26,8 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pRecipeOutput, HERB_SMELTABLES, RecipeCategory.MISC, Items.COAL, 0.25f, 200, "coal");
         oreBlasting(pRecipeOutput, HERB_SMELTABLES, RecipeCategory.MISC, Items.COAL, 0.25f, 100, "coal");
 
+        //items
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItem.CANDY_CANE.get(), 2)
                 .pattern("CCC")
                 .pattern("C C")
@@ -38,6 +40,23 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', SNSItem.CANDY_CANE_SUGAR_CANE.get())
                 .unlockedBy("has_candy_cane_sugar_cane", has(SNSItem.CANDY_CANE_SUGAR_CANE.get())).save(pRecipeOutput);
 
+        //blocks
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.CANDY_CANE_BRICK.get(), 4)
+                .pattern("CC")
+                .pattern("CC")
+                .define('C', SNSBlock.CANDY_CANE_COBBLESTONE.get())
+                .unlockedBy("has_candy_cane_brick", has(SNSBlock.CANDY_CANE_BRICK.get())).save(pRecipeOutput);
+        buttonBuilder(SNSBlock.CANDY_CANE_BRICK_BUTTON.get(), Ingredient.of(SNSBlock.CANDY_CANE_BRICK.get())).group("candy_cane_brick")
+                .unlockedBy("has_candy_cane_brick", has(SNSBlock.CANDY_CANE_BRICK.get())).save(pRecipeOutput);
+        doorBuilder(SNSBlock.CANDY_CANE_BRICK_DOOR.get(), Ingredient.of(SNSBlock.CANDY_CANE_BRICK.get())).group("candy_cane_brick")
+                .unlockedBy("has_candy_cane_brick", has(SNSBlock.CANDY_CANE_BRICK.get())).save(pRecipeOutput);
+        pressurePlate(pRecipeOutput, SNSBlock.CANDY_CANE_BRICK_PRESSURE_PLATE.get(), SNSBlock.CANDY_CANE_BRICK.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.CANDY_CANE_BRICK_SLAB.get(), SNSBlock.CANDY_CANE_BRICK.get());
+        stairBuilder(SNSBlock.CANDY_CANE_BRICK_STAIRS.get(), Ingredient.of(SNSBlock.CANDY_CANE_BRICK.get())).group("candy_cane_brick")
+                .unlockedBy("has_candy_cane_brick", has(SNSBlock.CANDY_CANE_BRICK.get())).save(pRecipeOutput);
+        trapdoorBuilder(SNSBlock.CANDY_CANE_BRICK_TRAPDOOR.get(), Ingredient.of(SNSBlock.CANDY_CANE_BRICK.get())).group("candy_cane_brick")
+                .unlockedBy("has_candy_cane_brick", has(SNSBlock.CANDY_CANE_BRICK.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.CANDY_CANE_BRICK_WALL.get(), SNSBlock.CANDY_CANE_BRICK.get());
         buttonBuilder(SNSBlock.CANDY_CANE_COBBLESTONE_BUTTON.get(), Ingredient.of(SNSBlock.CANDY_CANE_COBBLESTONE.get())).group("candy_cane_cobblestone")
                 .unlockedBy("has_candy_cane_cobblestone", has(SNSBlock.CANDY_CANE_COBBLESTONE.get())).save(pRecipeOutput);
         doorBuilder(SNSBlock.CANDY_CANE_COBBLESTONE_DOOR.get(), Ingredient.of(SNSBlock.CANDY_CANE_COBBLESTONE.get())).group("candy_cane_cobblestone")
@@ -50,6 +69,22 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_candy_cane_cobblestone", has(SNSBlock.CANDY_CANE_COBBLESTONE.get())).save(pRecipeOutput);
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.CANDY_CANE_COBBLESTONE_WALL.get(), SNSBlock.CANDY_CANE_COBBLESTONE.get());
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.HUMBUG_BRICK.get(), 4)
+                .pattern("CC")
+                .pattern("CC")
+                .define('C', SNSBlock.HUMBUG_COBBLESTONE.get())
+                .unlockedBy("has_humbug_brick", has(SNSBlock.HUMBUG_BRICK.get())).save(pRecipeOutput);
+        buttonBuilder(SNSBlock.HUMBUG_BRICK_BUTTON.get(), Ingredient.of(SNSBlock.HUMBUG_BRICK.get())).group("humbug_brick")
+                .unlockedBy("has_humbug_brick", has(SNSBlock.HUMBUG_BRICK.get())).save(pRecipeOutput);
+        doorBuilder(SNSBlock.HUMBUG_BRICK_DOOR.get(), Ingredient.of(SNSBlock.HUMBUG_BRICK.get())).group("humbug_brick")
+                .unlockedBy("has_humbug_brick", has(SNSBlock.HUMBUG_BRICK.get())).save(pRecipeOutput);
+        pressurePlate(pRecipeOutput, SNSBlock.HUMBUG_BRICK_PRESSURE_PLATE.get(), SNSBlock.HUMBUG_BRICK.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.HUMBUG_BRICK_SLAB.get(), SNSBlock.HUMBUG_BRICK.get());
+        stairBuilder(SNSBlock.HUMBUG_BRICK_STAIRS.get(), Ingredient.of(SNSBlock.HUMBUG_BRICK.get())).group("humbug_brick")
+                .unlockedBy("has_humbug_brick", has(SNSBlock.HUMBUG_BRICK.get())).save(pRecipeOutput);
+        trapdoorBuilder(SNSBlock.HUMBUG_BRICK_TRAPDOOR.get(), Ingredient.of(SNSBlock.HUMBUG_BRICK.get())).group("humbug_brick")
+                .unlockedBy("has_humbug_brick", has(SNSBlock.HUMBUG_BRICK.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.HUMBUG_BRICK_WALL.get(), SNSBlock.HUMBUG_BRICK.get());
         buttonBuilder(SNSBlock.HUMBUG_COBBLESTONE_BUTTON.get(), Ingredient.of(SNSBlock.HUMBUG_COBBLESTONE.get())).group("humbug_cobblestone")
                 .unlockedBy("has_humbug_cobblestone", has(SNSBlock.HUMBUG_COBBLESTONE.get())).save(pRecipeOutput);
         doorBuilder(SNSBlock.HUMBUG_COBBLESTONE_DOOR.get(), Ingredient.of(SNSBlock.HUMBUG_COBBLESTONE.get())).group("humbug_cobblestone")

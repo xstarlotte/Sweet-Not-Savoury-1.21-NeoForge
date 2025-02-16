@@ -1,5 +1,8 @@
-// 1.21.1	2025-02-16T17:42:12.4813706	Item Models: snsnf
+// 1.21.1	2025-02-19T10:16:56.8258226	Item Models: snsnf
 7381f3937359d7a7cb4e8cf2db10323bb64f6924 assets/snsnf/models/item/candy_cane.json
+b10d97ebd251acbd8e21a9eacbbd696de0d99533 assets/snsnf/models/item/candy_cane_brick_button.json
+b10c42fdda2b9f8a57d089a211b162f9b7dc7ce5 assets/snsnf/models/item/candy_cane_brick_door.json
+14e6e190189fddadc56d7dd86cb7fbfd24786610 assets/snsnf/models/item/candy_cane_brick_wall.json
 c9fa659d1e058aa30b8b6e9a323453b75a9dc131 assets/snsnf/models/item/candy_cane_bush.json
 0c37ebd606917970d887723804c9091cd13b7b09 assets/snsnf/models/item/candy_cane_carnation.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/candy_cane_cat_spawn_egg.json
@@ -18,9 +21,14 @@ a2c9bdcc59706bd8a3871511fc87a421341a8544 assets/snsnf/models/item/candy_cane_flo
 fa3b9a4d14ee2e47127d01d07565a825707e4d92 assets/snsnf/models/item/candy_cane_sugar_cane.json
 efe648805a73fe4eeb1f53fa8c195817a25c5b69 assets/snsnf/models/item/candy_cane_sword.json
 12b50a1a466515f95e8887074e15f858c7f55aa9 assets/snsnf/models/item/humbug.json
+3a0291b19e8acef016b139ee7d0b1053a6739c29 assets/snsnf/models/item/humbug_brick_button.json
+9cd1eb3d4a6537d07cbcd99e8770910eea5118d4 assets/snsnf/models/item/humbug_brick_door.json
+8c705c8c96a641cda7c70174fe6cdd7ce3266edd assets/snsnf/models/item/humbug_brick_wall.json
 3958affd15a8c9375113a82e786dd3c6962c4899 assets/snsnf/models/item/humbug_cobblestone_button.json
 f10e5cd117130845f43c5fbf4b6a3db990a7bd03 assets/snsnf/models/item/humbug_cobblestone_door.json
 2a56996243c4886e524ee11e0c314c8ddd41a868 assets/snsnf/models/item/humbug_cobblestone_wall.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/humbug_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/humpug_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/mintmunk_spawn_egg.json
 367e759ee5b2296b5fd9837157aa6cd9772b7340 assets/snsnf/models/item/mint_block_button.json
 0f107fe1099ff5bb66fcd8c80ba58004e3581937 assets/snsnf/models/item/mint_block_door.json

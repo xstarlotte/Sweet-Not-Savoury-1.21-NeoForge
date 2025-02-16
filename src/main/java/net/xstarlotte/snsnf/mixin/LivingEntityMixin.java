@@ -7,7 +7,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.xstarlotte.snsnf.mob_effects.SNSEffects;
+import net.xstarlotte.snsnf.mob_effects.SNSEffect;
 import net.xstarlotte.snsnf.util.IEntityHerbEffect;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -27,7 +27,7 @@ public abstract class LivingEntityMixin implements IEntityHerbEffect {
 
     @Inject(method = "tick", at = @At("HEAD"))
     public void SNS$tick(CallbackInfo ci){
-        if(livingEntity.level().getGameTime() % 20 == 0 && livingEntity.hasEffect(SNSEffects.HERB_EFFECT)){
+        if(livingEntity.level().getGameTime() % 20 == 0 && livingEntity.hasEffect(SNSEffect.HERB_EFFECT)){
             Registry<DamageType> dTypeReg = livingEntity.damageSources().damageTypes;
             Holder.Reference<DamageType> dType = dTypeReg.getHolderOrThrow(DamageTypes.MAGIC);
             livingEntity.hurt(new DamageSource(dType), 2.0F);

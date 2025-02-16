@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [128, 128],
+	"textures": {
+		"particle": "snsnf:block/candy_cane_brick_bed",
+		"0": "snsnf:block/candy_cane_brick_bed"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 5.5, 16],
+			"faces": {
+				"north": {"uv": [4, 5.125, 6, 5.8125], "texture": "#0"},
+				"east": {"uv": [2, 5.375, 4, 6.0625], "texture": "#0"},
+				"south": {"uv": [0, 5.75, 2, 6.4375], "texture": "#0"},
+				"west": {"uv": [4, 5.875, 6, 6.5625], "texture": "#0"},
+				"up": {"uv": [4, 2, 2, 0], "texture": "#0"},
+				"down": {"uv": [4, 2, 2, 4], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				0,
+				{
+					"name": "group",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": []
+				},
+				{
+					"name": "group",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": []
+				},
+				{
+					"name": "group",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": []
+				}
+			]
+		}
+	]
+}

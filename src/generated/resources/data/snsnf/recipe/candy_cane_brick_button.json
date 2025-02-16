@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "candy_cane_brick",
+  "ingredients": [
+    {
+      "item": "snsnf:candy_cane_brick"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "snsnf:candy_cane_brick_button"
+  }
+}

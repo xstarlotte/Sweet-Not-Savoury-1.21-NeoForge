@@ -22,6 +22,14 @@ public class SNSTab {
                     .title(Component.translatable("itemGroup.snsnf.sns_block"))
                     .icon(() -> new ItemStack(SNSBlock.CANDY_CANE_COBBLESTONE.get()))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK);
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK_BUTTON);
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK_DOOR);
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK_PRESSURE_PLATE);
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK_SLAB);
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK_STAIRS);
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK_TRAPDOOR);
+                        pOutput.accept(SNSBlock.CANDY_CANE_BRICK_WALL);
                         pOutput.accept(SNSBlock.CANDY_CANE_BUSH);
                         pOutput.accept(SNSBlock.CANDY_CANE_CARNATION);
                         pOutput.accept(SNSBlock.CANDY_CANE_FLOWER);
@@ -48,6 +56,15 @@ public class SNSTab {
 
                         pOutput.accept(SNSBlock.CINNAMON_GRASS_BLOCK);
 
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK);
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK_BUTTON);
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK_DOOR);
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK_PRESSURE_PLATE);
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK_SLAB);
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK_STAIRS);
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK_TRAPDOOR);
+                        pOutput.accept(SNSBlock.HUMBUG_BRICK_WALL);
+                        pOutput.accept(SNSBlock.HUMBUG_CAT_TEDDY);
                         pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE);
                         pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_BUTTON);
                         pOutput.accept(SNSBlock.HUMBUG_COBBLESTONE_DOOR);
@@ -75,7 +92,7 @@ public class SNSTab {
                         pOutput.accept(SNSBlock.MINT_BRICK_TRAPDOOR);
                         pOutput.accept(SNSBlock.MINT_BRICK_WALL);
 
-                        pOutput.accept(SNSBlock.MINT_HUMBUG_CAT_TEDDY);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> SNS_ITEM =
@@ -88,6 +105,9 @@ public class SNSTab {
                         pOutput.accept(SNSItem.CANDY_CANE_CROOK_SPAWN_EGG);
                         pOutput.accept(SNSItem.CANDY_CANE_FLY_SPAWN_EGG);
 
+                        pOutput.accept(SNSItem.HUMBUG_SPAWN_EGG);
+                        pOutput.accept(SNSItem.HUMPUG_SPAWN_EGG);
+
                         pOutput.accept(SNSItem.MINTMUNK_SPAWN_EGG);
                         pOutput.accept(SNSItem.MINT_IMPERIAL_SPAWN_EGG);
                         pOutput.accept(SNSItem.MINT_MARSHMALLOW_SHEEP_SPAWN_EGG);
@@ -99,6 +119,7 @@ public class SNSTab {
                         pOutput.accept(SNSItem.CANDY_CANE_SUGAR_CANE);
                         pOutput.accept(SNSItem.CANDY_CANE_SWORD);
 
+                        pOutput.accept(SNSItem.HUMBUG);
 
                         pOutput.accept(SNSItem.MINT_MARSHMALLOW);
                     }).build());

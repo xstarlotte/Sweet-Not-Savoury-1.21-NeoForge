@@ -24,6 +24,18 @@ public class SNSBlockStateProvider extends BlockStateProvider {
     }
     @Override
     protected void registerStatesAndModels() {
+        blockWithItem(SNSBlock.CANDY_CANE_BRICK);
+        buttonBlock(((ButtonBlock) SNSBlock.CANDY_CANE_BRICK_BUTTON.get()), blockTexture(SNSBlock.CANDY_CANE_BRICK.get()));
+        doorBlockWithRenderType(((DoorBlock) SNSBlock.CANDY_CANE_BRICK_DOOR.get()), modLoc("block/candy_cane_brick_door_bottom"), modLoc("block/candy_cane_brick_door_top"), "translucent");
+        blockItem(SNSBlock.CANDY_CANE_BRICK_PRESSURE_PLATE);
+        pressurePlateBlock(((PressurePlateBlock) SNSBlock.CANDY_CANE_BRICK_PRESSURE_PLATE.get()), blockTexture(SNSBlock.CANDY_CANE_BRICK.get()));
+        blockItem(SNSBlock.CANDY_CANE_BRICK_SLAB);
+        slabBlock(((SlabBlock) SNSBlock.CANDY_CANE_BRICK_SLAB.get()), blockTexture(SNSBlock.CANDY_CANE_BRICK.get()), blockTexture(SNSBlock.CANDY_CANE_BRICK.get()));
+        blockItem(SNSBlock.CANDY_CANE_BRICK_STAIRS);
+        stairsBlock(((StairBlock) SNSBlock.CANDY_CANE_BRICK_STAIRS.get()), blockTexture(SNSBlock.CANDY_CANE_BRICK.get()));
+        blockItem(SNSBlock.CANDY_CANE_BRICK_TRAPDOOR, "_bottom");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) SNSBlock.CANDY_CANE_BRICK_TRAPDOOR.get()), modLoc("block/candy_cane_brick_trapdoor"), true, "translucent");
+        wallBlock(((WallBlock) SNSBlock.CANDY_CANE_BRICK_WALL.get()), blockTexture(SNSBlock.CANDY_CANE_BRICK.get()));
         simpleBlock(SNSBlock.CANDY_CANE_BUSH.get(),
                 models().cross(blockTexture(SNSBlock.CANDY_CANE_BUSH.get()).getPath(), blockTexture(SNSBlock.CANDY_CANE_BUSH.get())).renderType("cutout"));
         simpleBlock(SNSBlock.CANDY_CANE_CARNATION.get(),
@@ -56,6 +68,18 @@ public class SNSBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(SNSBlock.CINNAMON_GRASS_BLOCK);
 
+        blockWithItem(SNSBlock.HUMBUG_BRICK);
+        buttonBlock(((ButtonBlock) SNSBlock.HUMBUG_BRICK_BUTTON.get()), blockTexture(SNSBlock.HUMBUG_BRICK.get()));
+        doorBlockWithRenderType(((DoorBlock) SNSBlock.HUMBUG_BRICK_DOOR.get()), modLoc("block/humbug_brick_door_bottom"), modLoc("block/humbug_brick_door_top"), "translucent");
+        blockItem(SNSBlock.HUMBUG_BRICK_PRESSURE_PLATE);
+        pressurePlateBlock(((PressurePlateBlock) SNSBlock.HUMBUG_BRICK_PRESSURE_PLATE.get()), blockTexture(SNSBlock.HUMBUG_BRICK.get()));
+        blockItem(SNSBlock.HUMBUG_BRICK_SLAB);
+        slabBlock(((SlabBlock) SNSBlock.HUMBUG_BRICK_SLAB.get()), blockTexture(SNSBlock.HUMBUG_BRICK.get()), blockTexture(SNSBlock.HUMBUG_BRICK.get()));
+        blockItem(SNSBlock.HUMBUG_BRICK_STAIRS);
+        stairsBlock(((StairBlock) SNSBlock.HUMBUG_BRICK_STAIRS.get()), blockTexture(SNSBlock.HUMBUG_BRICK.get()));
+        blockItem(SNSBlock.HUMBUG_BRICK_TRAPDOOR, "_bottom");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) SNSBlock.HUMBUG_BRICK_TRAPDOOR.get()), modLoc("block/humbug_brick_trapdoor"), true, "translucent");
+        wallBlock(((WallBlock) SNSBlock.HUMBUG_BRICK_WALL.get()), blockTexture(SNSBlock.HUMBUG_BRICK.get()));
         blockWithItem(SNSBlock.HUMBUG_COBBLESTONE);
         buttonBlock(((ButtonBlock) SNSBlock.HUMBUG_COBBLESTONE_BUTTON.get()), blockTexture(SNSBlock.HUMBUG_COBBLESTONE.get()));
         doorBlockWithRenderType(((DoorBlock) SNSBlock.HUMBUG_COBBLESTONE_DOOR.get()), modLoc("block/humbug_cobblestone_door_bottom"), modLoc("block/humbug_cobblestone_door_top"), "translucent");

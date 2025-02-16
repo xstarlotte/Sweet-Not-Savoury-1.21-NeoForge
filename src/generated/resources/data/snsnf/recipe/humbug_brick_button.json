@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "humbug_brick",
+  "ingredients": [
+    {
+      "item": "snsnf:humbug_brick"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "snsnf:humbug_brick_button"
+  }
+}

@@ -19,7 +19,12 @@ public class CandyCaneFlyRenderer extends GeoEntityRenderer<CandyCaneFlyEntity> 
 
     private static final Map<CandyCaneFlyVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(CandyCaneFlyVariant.class), map -> {
+                map.put(CandyCaneFlyVariant.APPLE, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_fly_apple.png"));
                 map.put(CandyCaneFlyVariant.DEFAULT, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_fly.png"));
+                map.put(CandyCaneFlyVariant.ICE, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_fly_ice.png"));
+                map.put(CandyCaneFlyVariant.PEPPER, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_fly_pepper.png"));
+                map.put(CandyCaneFlyVariant.SPEAR, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_fly_spear.png"));
+                map.put(CandyCaneFlyVariant.WATERMELON, ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "textures/entity/herb/candy_cane_fly_watermelon.png"));
             });
 
     public CandyCaneFlyRenderer(EntityRendererProvider.Context context) {

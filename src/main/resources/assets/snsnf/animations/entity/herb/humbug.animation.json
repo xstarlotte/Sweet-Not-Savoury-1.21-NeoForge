@@ -1,0 +1,157 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.humbug.idle": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": [0, "5+math.sin(query.anim_time*600)*0.6", -3.7]
+				},
+				"antennae": {
+					"rotation": [47.5, 0, 0]
+				},
+				"antenna1": {
+					"rotation": ["-math.sin(query.anim_time*600)*5", 0, 45]
+				},
+				"upperanntenna1": {
+					"rotation": ["50-math.sin(query.anim_time*600-100)*10", 0, 0]
+				},
+				"antenna2": {
+					"rotation": ["-math.sin(query.anim_time*600-20)*5", 0, -45]
+				},
+				"upperanntenna2": {
+					"rotation": ["50-math.sin(query.anim_time*600-120)*10", 0, 0]
+				},
+				"wing1": {
+					"rotation": [0, 0, "-50+math.sin(query.anim_time*2000)*35"]
+				},
+				"wing2": {
+					"rotation": [0, 0, "50-math.sin(query.anim_time*2000)*35"]
+				},
+				"legs1": {
+					"rotation": [0, 0, "27.5-math.sin(query.anim_time*600+300)*5"]
+				},
+				"nleg2": {
+					"rotation": [0, 0, "37.5-math.sin(query.anim_time*600+200)*10"]
+				},
+				"nleg4": {
+					"rotation": [0, 0, "37.5-math.sin(query.anim_time*600+250)*10"]
+				},
+				"nleg6": {
+					"rotation": [0, 0, "37.5-math.sin(query.anim_time*600+300)*10"]
+				},
+				"legs2": {
+					"rotation": [0, 0, "-27.5+math.sin(query.anim_time*600+300)*5"]
+				},
+				"nleg8": {
+					"rotation": [0, 0, "-37.5+math.sin(query.anim_time*600+200)*10"]
+				},
+				"nleg10": {
+					"rotation": [0, 0, "-37.5+math.sin(query.anim_time*600+250)*10"]
+				},
+				"nleg12": {
+					"rotation": [0, 0, "-37.5+math.sin(query.anim_time*600+300)*10"]
+				},
+				"head": {
+					"rotation": ["math.sin(query.anim_time*600)*2", 0, 0]
+				},
+				"nwing2": {
+					"rotation": [0, 0, 0]
+				},
+				"nleg1": {
+					"rotation": [0, 0, 0]
+				},
+				"nleg3": {
+					"rotation": [0, 0, 5]
+				},
+				"nleg5": {
+					"rotation": [0, 0, 15]
+				},
+				"nleg9": {
+					"rotation": [0, 0, -5]
+				},
+				"nleg11": {
+					"rotation": [0, 0, -15]
+				}
+			}
+		},
+		"animation.humbug.flying": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"rotation": [20, 0, 0],
+					"position": [0, "5+math.sin(query.anim_time*600)*0.6", -3.7]
+				},
+				"antennae": {
+					"rotation": [47.5, 0, 0]
+				},
+				"antenna1": {
+					"rotation": ["-math.sin(query.anim_time*600)*5", 0, 45]
+				},
+				"upperanntenna1": {
+					"rotation": ["50-math.sin(query.anim_time*600-100)*10", 0, 0]
+				},
+				"antenna2": {
+					"rotation": ["-math.sin(query.anim_time*600-20)*5", 0, -45]
+				},
+				"upperanntenna2": {
+					"rotation": ["50-math.sin(query.anim_time*600-120)*10", 0, 0]
+				},
+				"wing1": {
+					"rotation": [0, 0, "-50+math.sin(query.anim_time*2000)*35"]
+				},
+				"wing2": {
+					"rotation": [0, 0, "50-math.sin(query.anim_time*2000)*35"]
+				},
+				"legs1": {
+					"rotation": [0, 0, "27.5-math.sin(query.anim_time*600+300)*5"]
+				},
+				"nleg2": {
+					"rotation": [0, 0, "37.5-math.sin(query.anim_time*600+200)*10"]
+				},
+				"nleg4": {
+					"rotation": [0, 0, "37.5-math.sin(query.anim_time*600+250)*10"]
+				},
+				"nleg6": {
+					"rotation": [0, 0, "37.5-math.sin(query.anim_time*600+300)*10"]
+				},
+				"legs2": {
+					"rotation": [0, 0, "-27.5+math.sin(query.anim_time*600+300)*5"]
+				},
+				"nleg8": {
+					"rotation": [0, 0, "-37.5+math.sin(query.anim_time*600+200)*10"]
+				},
+				"nleg10": {
+					"rotation": [0, 0, "-37.5+math.sin(query.anim_time*600+250)*10"]
+				},
+				"nleg12": {
+					"rotation": [0, 0, "-37.5+math.sin(query.anim_time*600+300)*10"]
+				},
+				"head": {
+					"rotation": ["-20-math.sin(query.anim_time*600-50)*4", 0, 0]
+				},
+				"nwing2": {
+					"rotation": [0, 0, 0]
+				},
+				"nleg1": {
+					"rotation": [307.18642, 79.11513, 275.51943]
+				},
+				"nleg3": {
+					"rotation": [0, -27.5, 5]
+				},
+				"nleg5": {
+					"rotation": [0, -37.5, 15]
+				},
+				"nleg9": {
+					"rotation": [0, -27.5, -5]
+				},
+				"nleg11": {
+					"rotation": [0, -37.5, -15]
+				},
+				"nleg7": {
+					"rotation": [63.45833, 77.36537, 104.39038]
+				}
+			}
+		}
+	}
+}

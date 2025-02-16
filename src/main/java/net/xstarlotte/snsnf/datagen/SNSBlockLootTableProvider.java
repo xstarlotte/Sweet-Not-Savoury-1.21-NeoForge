@@ -28,7 +28,16 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-
+        dropSelf(SNSBlock.CANDY_CANE_BRICK.get());
+        dropSelf(SNSBlock.CANDY_CANE_BRICK_BUTTON.get());
+        this.add(SNSBlock.CANDY_CANE_BRICK_DOOR.get(),
+                block -> createDoorTable(SNSBlock.CANDY_CANE_BRICK_DOOR.get()));
+        dropSelf(SNSBlock.CANDY_CANE_BRICK_PRESSURE_PLATE.get());
+        this.add(SNSBlock.CANDY_CANE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(SNSBlock.CANDY_CANE_BRICK_SLAB.get()));
+        dropSelf(SNSBlock.CANDY_CANE_BRICK_STAIRS.get());
+        dropSelf(SNSBlock.CANDY_CANE_BRICK_TRAPDOOR.get());
+        dropSelf(SNSBlock.CANDY_CANE_BRICK_WALL.get());
         dropSelf(SNSBlock.CANDY_CANE_BUSH.get());
         dropSelf(SNSBlock.CANDY_CANE_CARNATION.get());
         dropSelf(SNSBlock.CANDY_CANE_CAT_TEDDY.get());
@@ -59,6 +68,17 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(SNSBlock.CINNAMON_GRASS_BLOCK.get());
 
+        dropSelf(SNSBlock.HUMBUG_BRICK.get());
+        dropSelf(SNSBlock.HUMBUG_BRICK_BUTTON.get());
+        this.add(SNSBlock.HUMBUG_BRICK_DOOR.get(),
+                block -> createDoorTable(SNSBlock.HUMBUG_BRICK_DOOR.get()));
+        dropSelf(SNSBlock.HUMBUG_BRICK_PRESSURE_PLATE.get());
+        this.add(SNSBlock.HUMBUG_BRICK_SLAB.get(),
+                block -> createSlabItemTable(SNSBlock.HUMBUG_BRICK_SLAB.get()));
+        dropSelf(SNSBlock.HUMBUG_BRICK_STAIRS.get());
+        dropSelf(SNSBlock.HUMBUG_BRICK_TRAPDOOR.get());
+        dropSelf(SNSBlock.HUMBUG_BRICK_WALL.get());
+        dropSelf(SNSBlock.HUMBUG_CAT_TEDDY.get());
         dropSelf(SNSBlock.HUMBUG_COBBLESTONE.get());
         dropSelf(SNSBlock.HUMBUG_COBBLESTONE_BUTTON.get());
         this.add(SNSBlock.HUMBUG_COBBLESTONE_DOOR.get(),
@@ -101,7 +121,7 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
         this.add(SNSBlock.POTTED_CANDY_CANE_GRASS.get(), createPotFlowerItemTable(SNSBlock.CANDY_CANE_GRASS));
         this.add(SNSBlock.POTTED_CANDY_CANE_GRASS_LONG.get(), createPotFlowerItemTable(SNSBlock.CANDY_CANE_GRASS_LONG));
 
-        dropSelf(SNSBlock.MINT_HUMBUG_CAT_TEDDY.get());
+
 
     }
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

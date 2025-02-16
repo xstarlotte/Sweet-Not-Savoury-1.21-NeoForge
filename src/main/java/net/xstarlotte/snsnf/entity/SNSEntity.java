@@ -24,6 +24,13 @@ public class SNSEntity {
             ENTITY_TYPES.register("candy_cane_fly", () -> EntityType.Builder.of(CandyCaneFlyEntity::new, MobCategory.AMBIENT)
                     .sized(1f, 0.64f).build("candy_cane_fly"));
 
+    public static final Supplier<EntityType<HumbugEntity>> HUMBUG =
+            ENTITY_TYPES.register("humbug", () -> EntityType.Builder.of(HumbugEntity::new, MobCategory.MONSTER)
+                    .sized(1f, 1f).build("humbug"));
+    public static final Supplier<EntityType<HumpugEntity>> HUMPUG =
+            ENTITY_TYPES.register("humpug", () -> EntityType.Builder.of(HumpugEntity::new, MobCategory.CREATURE)
+                    .sized(1f, 1f).build("humpug"));
+
     public static final Supplier<EntityType<MintmunkEntity>> MINTMUNK =
             ENTITY_TYPES.register("mintmunk", () -> EntityType.Builder.of(MintmunkEntity::new, MobCategory.CREATURE)
                     .sized(1f, 1f).build("mintmunk"));

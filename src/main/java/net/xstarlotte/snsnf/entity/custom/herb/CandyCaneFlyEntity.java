@@ -14,6 +14,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomFlyingGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
@@ -69,6 +70,9 @@ public class CandyCaneFlyEntity extends PathfinderMob implements GeoEntity {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new WaterAvoidingRandomFlyingGoal(this, 1f));
+        this.goalSelector.addGoal(1, new TemptGoal(this, 1.1, (stack) -> {
+            return stack.is(SNSItem.CANDY_CANE_SUGAR);
+        }, false));
         this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 4f));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }

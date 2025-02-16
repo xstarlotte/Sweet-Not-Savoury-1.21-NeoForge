@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "snsnf:block/candy_cane_brick_slab"
+    },
+    "type=double": {
+      "model": "snsnf:block/candy_cane_brick"
+    },
+    "type=top": {
+      "model": "snsnf:block/candy_cane_brick_slab_top"
+    }
+  }
+}

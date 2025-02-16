@@ -7,7 +7,7 @@ import net.xstarlotte.snsnf.entity.SNSEntity;
 import net.xstarlotte.snsnf.entity.client.herb.*;
 import net.xstarlotte.snsnf.item.SNSItem;
 import net.xstarlotte.snsnf.item.SNSTab;
-import net.xstarlotte.snsnf.mob_effects.SNSEffects;
+import net.xstarlotte.snsnf.mob_effects.SNSEffect;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -45,7 +45,7 @@ public class SNSNF
         SNSBlock.register(modEventBus);
         SNSEntity.register(modEventBus);
         SNSItem.register(modEventBus);
-        SNSEffects.register(modEventBus);
+        SNSEffect.register(modEventBus);
         SNSTab.register(modEventBus);
 
 
@@ -83,6 +83,9 @@ public class SNSNF
             EntityRenderers.register(SNSEntity.CANDY_CANE_CAT.get(), CandyCaneCatRenderer::new);
             EntityRenderers.register(SNSEntity.CANDY_CANE_CROOK.get(), CandyCaneCrookRenderer::new);
             EntityRenderers.register(SNSEntity.CANDY_CANE_FLY.get(), CandyCaneFlyRenderer::new);
+
+            EntityRenderers.register(SNSEntity.HUMBUG.get(), HumbugRenderer::new);
+            EntityRenderers.register(SNSEntity.HUMPUG.get(), HumpugRenderer::new);
 
             EntityRenderers.register(SNSEntity.MINTMUNK.get(), MintmunkRenderer::new);
             EntityRenderers.register(SNSEntity.MINT_IMPERIAL.get(), MintImperialRenderer::new);

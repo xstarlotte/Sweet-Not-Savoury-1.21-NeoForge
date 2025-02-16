@@ -22,6 +22,9 @@ public class SNSEventBusEvents {
         event.put(SNSEntity.CANDY_CANE_CROOK.get(), CandyCaneCrookEntity.createAttributes().build());
         event.put(SNSEntity.CANDY_CANE_FLY.get(), CandyCaneFlyEntity.createAttributes().build());
 
+        event.put(SNSEntity.HUMBUG.get(), HumbugEntity.createAttributes().build());
+        event.put(SNSEntity.HUMPUG.get(), HumpugEntity.createAttributes().build());
+
         event.put(SNSEntity.MINTMUNK.get(), MintmunkEntity.createAttributes().build());
         event.put(SNSEntity.MINT_IMPERIAL.get(), MintImperialEntity.createAttributes().build());
         event.put(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), MintMarshmallowSheepEntity.createAttributes().build());
@@ -36,6 +39,11 @@ public class SNSEventBusEvents {
                 Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(SNSEntity.CANDY_CANE_FLY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(SNSEntity.HUMBUG.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(SNSEntity.HUMPUG.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         event.register(SNSEntity.MINTMUNK.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);

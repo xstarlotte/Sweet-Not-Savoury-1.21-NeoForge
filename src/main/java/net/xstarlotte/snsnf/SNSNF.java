@@ -4,10 +4,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.xstarlotte.snsnf.block.SNSBlock;
 import net.xstarlotte.snsnf.entity.SNSEntity;
-import net.xstarlotte.snsnf.entity.client.herb.CandyCaneCatRenderer;
-import net.xstarlotte.snsnf.entity.client.herb.CandyCaneCrookRenderer;
-import net.xstarlotte.snsnf.entity.client.herb.CandyCaneFlyRenderer;
-import net.xstarlotte.snsnf.entity.client.herb.MintMarshmallowSheepRenderer;
+import net.xstarlotte.snsnf.entity.client.herb.*;
 import net.xstarlotte.snsnf.item.SNSItem;
 import net.xstarlotte.snsnf.item.SNSTab;
 import net.xstarlotte.snsnf.mob_effects.SNSEffects;
@@ -87,6 +84,8 @@ public class SNSNF
             EntityRenderers.register(SNSEntity.CANDY_CANE_CROOK.get(), CandyCaneCrookRenderer::new);
             EntityRenderers.register(SNSEntity.CANDY_CANE_FLY.get(), CandyCaneFlyRenderer::new);
 
+            EntityRenderers.register(SNSEntity.MINTMUNK.get(), MintmunkRenderer::new);
+            EntityRenderers.register(SNSEntity.MINT_IMPERIAL.get(), MintImperialRenderer::new);
             EntityRenderers.register(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), MintMarshmallowSheepRenderer::new);
         }
     }

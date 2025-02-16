@@ -1,12 +1,10 @@
 package net.xstarlotte.snsnf.entity.custom.herb;
 
-import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -14,7 +12,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
@@ -25,31 +22,27 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.scores.Team;
 import net.neoforged.neoforge.event.EventHooks;
 import net.xstarlotte.snsnf.entity.SNSEntity;
-import net.xstarlotte.snsnf.entity.client.variant.CandyCaneCatVariant;
 import net.xstarlotte.snsnf.item.SNSItem;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
+public class MintmunkEntity extends TamableAnimal implements GeoEntity {
 
-    private static final EntityDataAccessor<Integer> VARIANT =
-            SynchedEntityData.defineId(CandyCaneCatEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> SITTING =
-            SynchedEntityData.defineId(CandyCaneCatEntity.class, EntityDataSerializers.BOOLEAN);
+            SynchedEntityData.defineId(MintmunkEntity.class, EntityDataSerializers.BOOLEAN);
+
+    public MintmunkEntity(EntityType<? extends MintmunkEntity> type, Level level) {
+        super(type, level);
 
     //animations
 
-    public CandyCaneCatEntity(EntityType<? extends CandyCaneCatEntity> type, Level level) {
-        super(type, level);
     }
     @Override
     public void registerControllers(final AnimatableManager.ControllerRegistrar controllerRegistrar) {
@@ -57,38 +50,46 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
     }
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_cat.run", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mintmunk.running", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         if(this.isSitting()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_cat.sit", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mintmunk.sitting", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_cat.idle", Animation.LoopType.LOOP));
+        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mintmunk.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.geoCache;
     }
+
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    //AI
+//AI
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
+
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 3.0, true));
         this.goalSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
+
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+
         this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 2d, 10f, 2f));
+
         this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1d));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(SNSItem.CANDY_CANE_SUGAR.get()), true));
+
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 4f));
+
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
     public static AttributeSupplier.Builder createAttributes() {
@@ -98,7 +99,14 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
                 .add(Attributes.FOLLOW_RANGE, 24D);
     }
 
-    //breeding
+    @Override
+    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
+        return false;
+    }
+
+    public boolean canBeLeashed(Player player) {
+        return false;
+    }
 
     @Override
     public boolean isFood(ItemStack stack) {
@@ -107,7 +115,7 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        return SNSEntity.CANDY_CANE_CAT.get().create(level);
+        return SNSEntity.MINTMUNK.get().create(level);
     }
 
     //tameable
@@ -149,52 +157,33 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
         this.entityData.set(SITTING, sitting);
         this.setOrderedToSit(sitting);
     }
-    @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
-                                        @Nullable SpawnGroupData pSpawnData) {
-        CandyCaneCatVariant variant = Util.getRandom(CandyCaneCatVariant.values(), this.random);
-        this.setVariant(variant);
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
-    }
-    @Override
-    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
-        return false;
-    }
-    public boolean canBeLeashed(Player player) {
-        return false;
-    }
 
     //data
 
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
-        super.defineSynchedData(pBuilder);
-        pBuilder.define(SITTING, false);
-        pBuilder.define(VARIANT, 0);
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        setSitting(pCompound.getBoolean("isSitting"));
+        super.readAdditionalSaveData(pCompound);
     }
+
+
+
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
-        super.addAdditionalSaveData(pCompound);
         pCompound.putBoolean("isSitting", this.isSitting());
-        pCompound.putInt("Variant", this.getTypeVariant());
+        super.addAdditionalSaveData(pCompound);
     }
+
     @Override
-    public void readAdditionalSaveData(CompoundTag pCompound) {
-        super.readAdditionalSaveData(pCompound);
-        setSitting(pCompound.getBoolean("isSitting"));
-        this.entityData.set(VARIANT, pCompound.getInt("Variant"));
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        pBuilder.define(SITTING, false);
+        super.defineSynchedData(pBuilder);
     }
 
-    //variant
-
-    private int getTypeVariant() {
-        return this.entityData.get(VARIANT);
-    }
-    public CandyCaneCatVariant getVariant() {
-        return CandyCaneCatVariant.byId(this.getTypeVariant() & 255);
-    }
-    private void setVariant(CandyCaneCatVariant variant) {
-        this.entityData.set(VARIANT, variant.getId() & 255);
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason,
+                                        @Nullable SpawnGroupData pSpawnData) {
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
 

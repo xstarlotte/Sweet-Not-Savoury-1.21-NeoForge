@@ -7,9 +7,9 @@
     "minecraft:snowy_taiga"
   ],
   "spawners": {
-    "type": "snsnf:mint_marshmallow_sheep",
+    "type": "snsnf:mint_imperial",
     "maxCount": 1,
     "minCount": 1,
-    "weight": 40
+    "weight": 30
   }
 }

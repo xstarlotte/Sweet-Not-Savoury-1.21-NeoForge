@@ -45,10 +45,6 @@ public class SNSEvents {
                 new ItemStack(SNSItem.CANDY_CANE_SUGAR_CANE.get(), 1), 1, 10, 0.2f
         ));
 
-        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
-                new ItemCost(Items.NETHERITE_INGOT, 8),
-                new ItemStack(SNSItem.CANDY_CANE.get(), 1), 1, 10, 0.2f
-        ));
     }
 
 }

@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -19,7 +20,10 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 import net.xstarlotte.snsnf.entity.client.variant.CandyCaneFlyVariant;
+import net.xstarlotte.snsnf.item.SNSItem;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -34,7 +38,7 @@ public class CandyCaneFlyEntity extends PathfinderMob implements GeoEntity {
 
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(CandyCaneFlyEntity.class, EntityDataSerializers.INT);
-
+    public int eggTime = this.random.nextInt(6000) + 6000;
     //animations
 
     public CandyCaneFlyEntity(EntityType<? extends CandyCaneFlyEntity> type, Level level) {
@@ -70,8 +74,8 @@ public class CandyCaneFlyEntity extends PathfinderMob implements GeoEntity {
     }
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 10D)
-                .add(Attributes.FLYING_SPEED, 5D);
+                .add(Attributes.FLYING_SPEED)
+                .add(Attributes.MAX_HEALTH, 10D);
     }
 
     @Override
@@ -81,6 +85,16 @@ public class CandyCaneFlyEntity extends PathfinderMob implements GeoEntity {
 
     public boolean canBeLeashed(Player player) {
         return true;
+    }
+
+    public void aiStep() {
+        super.aiStep();
+        if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.eggTime <= 0) {
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.spawnAtLocation(SNSItem.CANDY_CANE);
+            this.gameEvent(GameEvent.ENTITY_PLACE);
+            this.eggTime = this.random.nextInt(6000) + 6000;
+        }
     }
 
     //flying
@@ -95,18 +109,28 @@ public class CandyCaneFlyEntity extends PathfinderMob implements GeoEntity {
         return flyingPathNavigator;
     }
 
+    @Override
+    public void travel(Vec3 pos)
+    {
+        this.setSpeed(0.1f);
+        super.travel(pos);
+    }
 
     //data
 
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
+        if (pCompound.contains("EggLayTime")) {
+            this.eggTime = pCompound.getInt("EggLayTime");
+        }
         this.entityData.set(VARIANT, pCompound.getInt("Variant"));
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
+        pCompound.putInt("EggLayTime", this.eggTime);
         pCompound.putInt("Variant", this.getTypeVariant());
     }
 

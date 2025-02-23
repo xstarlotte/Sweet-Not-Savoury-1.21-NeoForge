@@ -134,6 +134,10 @@
   "painting.snsnf.humbug_cat.author": "xStarlotte",
   "painting.snsnf.humbug_cat.title": "Humbug Cat",
   "painting.snsnf.plain.author": "xStarlotte",
-  "painting.snsnf.plain.title": "Plain"
+  "painting.snsnf.plain.title": "Plain",
+
+  "block.snsnf.candy_cane_brick_bed_head": "Bed Head",
+  "block.snsnf.candy_cane_brick_bed_feet": "Bed Feet",
+  "item.snsnf.candy_cane_brick_bed_item": "Candy Cane Brick Bed"
 
 }

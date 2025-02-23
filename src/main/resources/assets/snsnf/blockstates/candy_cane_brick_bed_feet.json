@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "snsnf:block/candy_cane_brick_bed_feet"
+        },
+        "facing=east": {
+            "model": "snsnf:block/candy_cane_brick_bed_feet",
+            "y": 90
+        },
+        "facing=south": {
+            "model": "snsnf:block/candy_cane_brick_bed_feet",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "snsnf:block/candy_cane_brick_bed_feet",
+            "y": 270
+        }
+    }
+}

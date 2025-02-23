@@ -10,6 +10,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xstarlotte.snsnf.SNSNF;
+import net.xstarlotte.snsnf.block.custom.bed.CandyCaneBrickBedFeetBlock;
+import net.xstarlotte.snsnf.block.custom.bed.CandyCaneBrickBedHeadBlock;
 import net.xstarlotte.snsnf.block.custom.teddy.CatTeddyBlock;
 import net.xstarlotte.snsnf.block.custom.CandyCaneCropBlock;
 import net.xstarlotte.snsnf.item.SNSItem;
@@ -186,6 +188,8 @@ public class SNSBlock {
     public static final DeferredBlock<Block> POTTED_CANDY_CANE_GRASS_LONG = BLOCKS.register("potted_candy_cane_grass_long",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), CANDY_CANE_GRASS_LONG, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_DANDELION)));
 
+    public static final DeferredBlock<Block> BED_FEET = BLOCKS.register("candy_cane_brick_bed_feet", CandyCaneBrickBedFeetBlock::new);
+    public static final DeferredBlock<Block> BED_HEAD = BLOCKS.register("candy_cane_brick_bed_head", CandyCaneBrickBedHeadBlock::new);
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

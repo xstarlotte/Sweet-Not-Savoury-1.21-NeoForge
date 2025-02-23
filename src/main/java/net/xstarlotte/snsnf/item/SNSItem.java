@@ -68,6 +68,8 @@ public class SNSItem {
     public static final DeferredItem<Item> POLO =
             ITEMS.registerItem("polo", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
 
+    public static final DeferredItem<Item> CANDY_CANE_BRICK_BED_ITEM = ITEMS.register("candy_cane_brick_bed_item", CandyCaneBrickBedItem::new);
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

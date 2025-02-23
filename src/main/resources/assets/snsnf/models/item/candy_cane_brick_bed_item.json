@@ -1,0 +1,7 @@
+{
+	"parent": "snsnf:custom/candy_cane_brick_bed",
+	"textures": {
+		"0": "snsnf:block/candy_cane_brick_bed",
+		"particle": "snsnf:item/candy_cane_brick_bed"
+	}
+}

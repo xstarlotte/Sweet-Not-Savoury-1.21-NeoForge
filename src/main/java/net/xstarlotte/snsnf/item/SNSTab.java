@@ -5,7 +5,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
@@ -91,6 +90,8 @@ public class SNSTab {
                         pOutput.accept(SNSBlock.MINT_BRICK_STAIRS);
                         pOutput.accept(SNSBlock.MINT_BRICK_TRAPDOOR);
                         pOutput.accept(SNSBlock.MINT_BRICK_WALL);
+
+                        pOutput.accept(SNSItem.CANDY_CANE_BRICK_BED_ITEM.get());
 
 
                     }).build());

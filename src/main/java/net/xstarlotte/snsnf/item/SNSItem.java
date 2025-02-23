@@ -60,9 +60,6 @@ public class SNSItem {
     public static final DeferredItem<Item> HUMBUG =
             ITEMS.registerItem("humbug", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
 
-    public static final DeferredItem<Item> HUMBUG =
-            ITEMS.registerItem("humbug", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
-
     public static final DeferredItem<Item> MINT_MARSHMALLOW =
             ITEMS.registerItem("mint_marshmallow", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
 

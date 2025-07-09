@@ -1,0 +1,6 @@
+{
+	"parent": "snsnf:block/waffle_bed",
+	"textures": {
+		"layer0": "snsnf:block/waffle_bed"
+	}
+}

@@ -202,6 +202,7 @@ public class SNSTab {
                         pOutput.accept(SNSBlock.PEPPERMINT_SWIRL_STONE_TRAPDOOR);
                         pOutput.accept(SNSBlock.PEPPERMINT_SWIRL_STONE_WALL);
 
+                        pOutput.accept(SNSBlock.WAFFLE_BED);
                         pOutput.accept(SNSBlock.WAFFLE_BLOCK);
                         pOutput.accept(SNSBlock.WAFFLE_BUTTON);
                         pOutput.accept(SNSBlock.WAFFLE_DOOR);

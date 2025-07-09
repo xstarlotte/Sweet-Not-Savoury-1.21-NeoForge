@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-02T16:16:56.774506	Loot Tables
+// 1.21.1	2025-07-09T13:05:08.2019033	Loot Tables
 aeebd2678dc905e9b432f9666592deeff46ece1a data/snsnf/loot_table/blocks/candyfloss_block.json
 5557e088fe095723278e4b2a10a82524ab2817ed data/snsnf/loot_table/blocks/candyfloss_blue_raspberry_block.json
 68baaa3681c75881e9fba47e937dee20e5676aa6 data/snsnf/loot_table/blocks/candyfloss_blue_raspberry_button.json
@@ -171,6 +171,7 @@ b6bccdb36ac3e05f387d75c97002b0681449f717 data/snsnf/loot_table/blocks/potted_can
 09f1b839b9b69999a1b59d61cd26cdaa92160100 data/snsnf/loot_table/blocks/potted_candy_cane_flower_4.json
 98a40636b0c4c37de55ce9171d6c5296c500dd3b data/snsnf/loot_table/blocks/potted_candy_cane_grass.json
 ca1f32ae3a3f594ff97cdaf6b4bff4ddaa858cd4 data/snsnf/loot_table/blocks/potted_candy_cane_grass_long.json
+d4c65635902234a6a2f5eface719f451e768a2f0 data/snsnf/loot_table/blocks/waffle_bed.json
 016864e82dd83539a2040458fda72cae15306ddc data/snsnf/loot_table/blocks/waffle_block.json
 c7729a4646038b0f55121a1be79d4fc0410c1c70 data/snsnf/loot_table/blocks/waffle_bricks.json
 1d52fc5b1a1e582cb98eb58b3bf88479665665b9 data/snsnf/loot_table/blocks/waffle_brick_button.json

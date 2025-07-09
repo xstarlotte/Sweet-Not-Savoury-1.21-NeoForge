@@ -1,20 +1,27 @@
 package net.xstarlotte.snsnf.block;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xstarlotte.snsnf.SNSNF;
+import net.xstarlotte.snsnf.block.custom.bed.WaffleBedBlock;
 import net.xstarlotte.snsnf.block.custom.teddy.CatTeddyBlock;
 import net.xstarlotte.snsnf.block.custom.CandyCaneCropBlock;
+import net.xstarlotte.snsnf.block.entity.custom.bed.WaffleBedBE;
 import net.xstarlotte.snsnf.item.SNSItem;
 
+import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public class SNSBlock {
@@ -409,6 +416,16 @@ public class SNSBlock {
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), CANDY_CANE_GRASS, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_DANDELION)));
     public static final DeferredBlock<Block> POTTED_CANDY_CANE_GRASS_LONG = BLOCKS.register("potted_candy_cane_grass_long",
             () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), CANDY_CANE_GRASS_LONG, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_DANDELION)));
+
+
+    public static final DeferredBlock<WaffleBedBlock> WAFFLE_BED = registerBlock("waffle_bed",
+            () -> new WaffleBedBlock(DyeColor.BROWN, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_BED)) {
+                @Nullable
+                public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+                    return new WaffleBedBE(pos, state) {
+                        @Override
+                        public boolean isValidBlockState(BlockState p_353131_) {
+                            return p_353131_.is(WAFFLE_BED);}};}});
 
     public static final DeferredBlock<Block> WAFFLE_BLOCK = registerBlock("waffle_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(2f)));

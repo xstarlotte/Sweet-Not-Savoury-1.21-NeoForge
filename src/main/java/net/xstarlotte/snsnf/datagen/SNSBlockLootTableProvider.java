@@ -254,6 +254,7 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
         this.add(SNSBlock.POTTED_CANDY_CANE_GRASS.get(), createPotFlowerItemTable(SNSBlock.CANDY_CANE_GRASS));
         this.add(SNSBlock.POTTED_CANDY_CANE_GRASS_LONG.get(), createPotFlowerItemTable(SNSBlock.CANDY_CANE_GRASS_LONG));
 
+        dropSelf(SNSBlock.WAFFLE_BED.get());
         dropSelf(SNSBlock.WAFFLE_BLOCK.get());
         dropSelf(SNSBlock.WAFFLE_BUTTON.get());
         this.add(SNSBlock.WAFFLE_DOOR.get(),

@@ -19,6 +19,9 @@ public class SNSBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
 
+        this.tag(BlockTags.BEDS)
+                .add(SNSBlock.WAFFLE_BED.get());
+
         this.tag(BlockTags.CROPS)
 
                 .add(SNSBlock.CANDY_CANE_SUGAR_CANE.get());

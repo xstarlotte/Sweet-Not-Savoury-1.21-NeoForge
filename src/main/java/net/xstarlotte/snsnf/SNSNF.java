@@ -6,12 +6,14 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.neoforged.fml.util.thread.SidedThreadGroups;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.handling.IPayloadHandler;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.xstarlotte.snsnf.block.SNSBlock;
+import net.xstarlotte.snsnf.block.entity.SNSBE;
 import net.xstarlotte.snsnf.entity.SNSEntity;
 import net.xstarlotte.snsnf.entity.client.berry.JamsterRenderer;
 import net.xstarlotte.snsnf.entity.client.cake.CakeRabbitRenderer;
@@ -56,11 +58,13 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class SNSNF
 {
 
+
     public static final String MOD_ID = "snsnf";
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public SNSNF(IEventBus modEventBus, ModContainer modContainer) {
+
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         modEventBus.addListener(this::addCreative);
@@ -68,6 +72,7 @@ public class SNSNF
         modEventBus.addListener(this::registerNetworking);
 
         SNSBlock.register(modEventBus);
+        SNSBE.register(modEventBus);
         SNSEntity.register(modEventBus);
         SNSItem.register(modEventBus);
         SNSEffect.register(modEventBus);
@@ -80,6 +85,8 @@ public class SNSNF
 
 
     }
+
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_BUSH.getId(), SNSBlock.POTTED_CANDY_CANE_BUSH);

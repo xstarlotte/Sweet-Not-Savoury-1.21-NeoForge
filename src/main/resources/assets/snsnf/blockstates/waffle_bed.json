@@ -1,0 +1,25 @@
+{
+    "variants":
+{
+    "facing=south,part=head":{
+        "model":"snsnf:block/waffle_bed_head"},
+    "facing=south,part=foot":{
+        "model":"snsnf:block/waffle_bed_foot"},
+
+    "facing=west,part=head":{
+        "model":"snsnf:block/waffle_bed_head","y": 90},
+    "facing=west,part=foot":{
+        "model":"snsnf:block/waffle_bed_foot","y": 90},
+
+    "facing=north,part=head":{
+        "model":"snsnf:block/waffle_bed_head","y": 180},
+    "facing=north,part=foot":{
+        "model":"snsnf:block/waffle_bed_foot","y": 180},
+
+    "facing=east,part=head":{
+        "model":"snsnf:block/waffle_bed_head","y": 270},
+    "facing=east,part=foot":{
+        "model":"snsnf:block/waffle_bed_foot","y": 270}
+
+}
+}

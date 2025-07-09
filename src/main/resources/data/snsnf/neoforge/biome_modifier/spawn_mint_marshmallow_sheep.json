@@ -10,6 +10,6 @@
     "type": "snsnf:mint_marshmallow_sheep",
     "maxCount": 1,
     "minCount": 1,
-    "weight": 20
+    "weight": 15
   }
 }

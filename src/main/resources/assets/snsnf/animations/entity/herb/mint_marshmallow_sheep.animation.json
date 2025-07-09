@@ -92,7 +92,7 @@
 			}
 		},
 
-		"animation.mint_marshmallow_sheep.running": {
+		"animation.mint_marshmallow_sheep.run": {
 			"loop": true,
 			"bones": {
 				"wholebody": {

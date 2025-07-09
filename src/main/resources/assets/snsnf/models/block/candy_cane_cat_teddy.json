@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "snsnf:block/candy_cane_cat",
-		"particle": "snsnf:block/candy_cane_cobblestone"
+		"particle": "snsnf:block/peppermint_swirl_stone"
 	},
 	"render_type": "cutout",
 	"elements": [

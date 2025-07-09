@@ -52,7 +52,7 @@ public class CandyCaneFlyEntity extends PathfinderMob implements GeoEntity {
     }
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_fly.flying", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_fly.fly", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.candy_cane_fly.idle", Animation.LoopType.LOOP));

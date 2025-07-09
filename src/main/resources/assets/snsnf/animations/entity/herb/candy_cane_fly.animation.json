@@ -25,7 +25,7 @@
 				}
 			}
 		},
-		"animation.candy_cane_fly.flying": {
+		"animation.candy_cane_fly.fly": {
 			"loop": true,
 			"bones": {
 				"wholebody": {

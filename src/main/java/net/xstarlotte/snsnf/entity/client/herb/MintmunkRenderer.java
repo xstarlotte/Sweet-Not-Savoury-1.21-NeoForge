@@ -23,7 +23,7 @@ public class MintmunkRenderer extends GeoEntityRenderer<MintmunkEntity> {
             poseStack.scale(0.4f, 0.4f, 0.4f);
         }
         else {
-            poseStack.scale(0.8f, 0.8f, 0.8f);
+            poseStack.scale(0.7f, 0.7f, 0.7f);
         }
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }

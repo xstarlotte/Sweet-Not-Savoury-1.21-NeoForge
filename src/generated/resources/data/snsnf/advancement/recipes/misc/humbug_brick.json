@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_humbug_brick": {
+    "has_humbug": {
       "conditions": {
         "items": [
           {
-            "items": "snsnf:humbug_brick"
+            "items": "snsnf:humbug"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_humbug_brick"
+      "has_humbug"
     ]
   ],
   "rewards": {

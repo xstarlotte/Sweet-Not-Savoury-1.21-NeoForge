@@ -6,6 +6,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -20,6 +21,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.xstarlotte.snsnf.entity.client.ai.HostileHerbAttackGoal;
@@ -49,7 +51,7 @@ public class MintImperialEntity extends Monster implements GeoEntity {
     }
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mint_imperial.running", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mint_imperial.run", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mint_imperial.idle", Animation.LoopType.LOOP));
@@ -90,6 +92,15 @@ public class MintImperialEntity extends Monster implements GeoEntity {
 
     public int getExperienceReward() {
         return 64;
+    }
+
+    @Override
+    protected void dropFromLootTable(DamageSource source, boolean hitByPlayer) {
+        super.dropFromLootTable(source, hitByPlayer); // Keep default drops
+
+        if (hitByPlayer && this.level().random.nextFloat() < 0.5) { // 50% chance
+            this.spawnAtLocation(Items.EMERALD);
+        }
     }
 
     //data

@@ -1,0 +1,210 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.bunana.idle": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*250)*0.1", 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*150)*5", "math.sin(query.anim_time*300)*2.5"]
+					}
+				},
+				"legs": {
+					"position": {
+						"vector": [0, "-math.sin(query.anim_time*250)*0.1", 0]
+					}
+				},
+				"leg3": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*800)*2.5"]
+					}
+				},
+				"ear2": {
+					"rotation": {
+						"vector": [0, "-math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"nose": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*800)*2.5"]
+					}
+				},
+				"whisker1": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"ear1": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"whisker2": {
+					"rotation": {
+						"vector": [0, "-math.sin(query.anim_time*250)*5", 0]
+					}
+				}
+			}
+		},
+		"animation.bunana.run": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": {
+						"vector": [0, "1+math.sin(query.anim_time*350)*1", 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*350)*10"]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*350+50)*10"]
+					}
+				},
+				"legs": {
+					"position": {
+						"vector": [0, "-math.sin(query.anim_time*250)*0.1", 0]
+					}
+				},
+				"leg1": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*350)*20"]
+					},
+					"position": {
+						"vector": [-2, 0, 0]
+					}
+				},
+				"leg3": {
+					"rotation": {
+						"vector": [0, 0, "-math.sin(query.anim_time*350)*20"]
+					},
+					"position": {
+						"vector": [1, 0, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*800)*2.5"]
+					}
+				},
+				"ear2": {
+					"rotation": {
+						"vector": [0, "-math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"nose": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*800)*2.5"]
+					}
+				},
+				"whisker1": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"ear1": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*350-25)*20"]
+					},
+					"position": {
+						"vector": [-2, 0, 0]
+					}
+				},
+				"leg4": {
+					"rotation": {
+						"vector": [0, 0, "-math.sin(query.anim_time*350)*20"]
+					},
+					"position": {
+						"vector": [1, 0, 0]
+					}
+				},
+				"whisker2": {
+					"rotation": {
+						"vector": [0, "-math.sin(query.anim_time*250)*5", 0]
+					}
+				}
+			}
+		},
+		"animation.bunana.sit": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*250)*0.1", 0]
+					}
+				},
+				"body": {
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"legs": {
+					"position": {
+						"vector": [0, "2-math.sin(query.anim_time*250)*0.1", 0]
+					}
+				},
+				"leg3": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*800)*2.5"]
+					}
+				},
+				"ear2": {
+					"rotation": {
+						"vector": [0, "-math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"nose": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*800)*2.5"]
+					}
+				},
+				"whisker1": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"ear1": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*250)*5", 0]
+					}
+				},
+				"whisker2": {
+					"rotation": {
+						"vector": [0, "-math.sin(query.anim_time*250)*5", 0]
+					}
+				}
+			}
+		}
+	}
+}

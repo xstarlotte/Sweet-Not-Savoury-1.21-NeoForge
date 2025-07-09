@@ -10,6 +10,6 @@
     "type": "snsnf:humpug",
     "maxCount": 1,
     "minCount": 1,
-    "weight": 40
+    "weight": 15
   }
 }

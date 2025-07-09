@@ -32,5 +32,6 @@ public class DataGenerator {
         generator.addProvider(event.includeClient(), new SNSItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new SNSBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeServer(), new SNSWorldGenProvider(packOutput, lookupProvider));
+
     }
 }

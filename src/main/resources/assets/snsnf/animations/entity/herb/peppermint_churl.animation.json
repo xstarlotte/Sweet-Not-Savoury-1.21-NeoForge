@@ -26,7 +26,7 @@
 				}
 			}
 		},
-		"animation.peppermint_churl.running": {
+		"animation.peppermint_churl.run": {
 			"loop": true,
 			"bones": {
 				"whole": {

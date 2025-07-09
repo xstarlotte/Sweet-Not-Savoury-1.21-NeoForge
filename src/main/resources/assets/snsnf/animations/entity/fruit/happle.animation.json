@@ -1,0 +1,99 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.happle.idle": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*350)*0.5", 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*350-50)*5", 0, "math.sin(query.anim_time*350-50)*5"]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"vector": [0, 0, "45+math.sin(query.anim_time*350)*5"]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"vector": [0, 0, "-45-math.sin(query.anim_time*350)*5"]
+					}
+				},
+				"leg1": {
+					"rotation": {
+						"vector": [0, 0, "-15+math.sin(query.anim_time*350-50)*5"]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"vector": [0, 0, "15-math.sin(query.anim_time*350-50)*5"]
+					}
+				},
+				"leaves": {
+					"rotation": {
+						"vector": [0, "query.anim_time*620", 0]
+					}
+				}
+			}
+		},
+		"animation.happle.run": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"rotation": {
+						"vector": [22.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*350)*0.5", 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*350-50)*5", 0, "math.sin(query.anim_time*350-50)*5"]
+					}
+				},
+				"arms": {
+					"rotation": {
+						"vector": [27.5, 0, 0]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"vector": [0, 0, "45+math.sin(query.anim_time*350)*5"]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"vector": [0, 0, "-45-math.sin(query.anim_time*350)*5"]
+					}
+				},
+				"legs": {
+					"rotation": {
+						"vector": [35, 0, 0]
+					}
+				},
+				"leg1": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*350+50)*5", 0, "-15+math.sin(query.anim_time*350-50)*5"]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*350-50)*10", 0, "15-math.sin(query.anim_time*350-50)*5"]
+					}
+				},
+				"leaves": {
+					"rotation": {
+						"vector": [0, "query.anim_time*620", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

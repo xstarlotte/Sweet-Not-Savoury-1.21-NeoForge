@@ -19,6 +19,9 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.horse.AbstractHorse;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -91,12 +94,7 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 4f));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
-    public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createLivingAttributes().add(Attributes.MAX_HEALTH, 35D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2)
-                .add(Attributes.ATTACK_DAMAGE, 5f)
-                .add(Attributes.FOLLOW_RANGE, 24D);
-    }
+
 
     //breeding
 
@@ -108,6 +106,23 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
         return SNSEntity.CANDY_CANE_CAT.get().create(level);
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return Animal.createLivingAttributes()
+                .add(Attributes.FOLLOW_RANGE, 24.0)
+                .add(Attributes.MAX_HEALTH, 8.0)
+                .add(Attributes.MOVEMENT_SPEED, 0.3)
+                .add(Attributes.ATTACK_DAMAGE, 6);
+    }
+    protected void applyTamingSideEffects() {
+        if (this.isTame()) {
+            this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0);
+            this.setHealth(40.0F);
+        } else {
+            this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(8.0);
+        }
+
     }
 
     //tameable
@@ -137,8 +152,27 @@ public class CandyCaneCatEntity extends TamableAnimal implements GeoEntity {
         if(isTame() && pHand == InteractionHand.MAIN_HAND && !isFood(itemstack)) {
             setSitting(!isSitting());
             return InteractionResult.SUCCESS;
+        } else { if(isTame() && this.getHealth() < this.getMaxHealth()) {
+            this.heal(5);
         }
-        return super.mobInteract(pPlayer, pHand);
+            return super.mobInteract(pPlayer, pHand);
+        }
+    }
+
+
+    public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
+        if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
+
+            if (pTarget instanceof Player && pOwner instanceof Player && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+                return false;
+            } else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
+                return false;
+            } else {
+                return !(pTarget instanceof TamableAnimal) || !((TamableAnimal)pTarget).isTame();
+            }
+        } else {
+            return false;
+        }
     }
 
     public boolean isSitting() {

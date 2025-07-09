@@ -16,6 +16,7 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
@@ -43,7 +44,7 @@ public class HumbugEntity extends Monster implements GeoEntity {
     }
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.humbug.flying", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.humbug.fly", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.humbug.idle", Animation.LoopType.LOOP));
@@ -84,6 +85,15 @@ public class HumbugEntity extends Monster implements GeoEntity {
 
     public int getExperienceReward() {
         return 64;
+    }
+
+    @Override
+    protected void dropFromLootTable(DamageSource source, boolean hitByPlayer) {
+        super.dropFromLootTable(source, hitByPlayer); // Keep default drops
+
+        if (hitByPlayer && this.level().random.nextFloat() < 0.5) { // 50% chance
+            this.spawnAtLocation(Items.EMERALD);
+        }
     }
 
     @Override

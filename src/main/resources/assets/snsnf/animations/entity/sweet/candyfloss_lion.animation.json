@@ -1,0 +1,157 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.lion.idle": {
+			"loop": true,
+			"bones": {
+				"mane": {
+					"scale": "1+math.sin(query.anim_time*120)*0.05"
+				},
+				"tail": {
+					"rotation": [-10, 0, "math.sin(query.anim_time*120)*6"]
+				},
+				"tail8": {
+					"rotation": [0, 0, "math.sin(query.anim_time*120)*12"]
+				},
+				"tail9": {
+					"rotation": [0, 0, "math.sin(query.anim_time*120)*6"],
+					"scale": "1+math.sin(query.anim_time*120)*0.05"
+				},
+				"head": {
+					"rotation": ["math.sin(query.anim_time*120)*2", 0, 0]
+				},
+				"jaw": {
+					"rotation": ["-10+math.sin(query.anim_time*120)*5", 0, 0]
+				},
+				"ear1": {
+					"rotation": [0, 0, "math.sin(query.anim_time*120)*4"]
+				},
+				"ear2": {
+					"rotation": [0, 0, "-math.sin(query.anim_time*120)*4"]
+				}
+			}
+		},
+		"animation.lion.sit": {
+			"loop": true,
+			"animation_length": 3.04,
+			"bones": {
+				"wholebody": {
+					"position": [0, -4, 0]
+				},
+				"leg4": {
+					"rotation": [90, 15, 0],
+					"position": [0, -5, -2]
+				},
+				"paw4": {
+					"rotation": [-15, 0, 0],
+					"position": [0, -0.25, -0.5]
+				},
+				"leg3": {
+					"rotation": [90, -17.5, 0],
+					"position": [0, -5, -2]
+				},
+				"paw3": {
+					"rotation": [-12.5, 0, 0],
+					"position": [0, -0.25, -0.5]
+				},
+				"leg1": {
+					"rotation": [87.5, 0, 0],
+					"position": [0, -4, -3]
+				},
+				"paw1": {
+					"rotation": [-92.5, 0, 0],
+					"position": [0, 0.25, -0.25]
+				},
+				"leg2": {
+					"rotation": [87.5, 0, 0],
+					"position": [0, -4, -3]
+				},
+				"paw2": {
+					"rotation": [-92.5, 0, 0],
+					"position": [0, 0.25, -0.25]
+				},
+				"mane": {
+					"rotation": [0, 0, -17.5],
+					"position": [0, -2, 0],
+					"scale": "1+math.sin(query.anim_time*120)*0.05"
+				},
+				"body": {
+					"position": [0, -1, 0]
+				},
+				"tail": {
+					"rotation": [-10, 0, "math.sin(query.anim_time*120)*6"],
+					"position": [0, -1, 0]
+				},
+				"tail8": {
+					"rotation": [-32.5, 0, "math.sin(query.anim_time*120)*2"]
+				},
+				"tail9": {
+					"rotation": [-47.5, 0, "math.sin(query.anim_time*120)*4"],
+					"position": [0, 0.5, -2],
+					"scale": "1+math.sin(query.anim_time*120)*0.05"
+				},
+				"head": {
+					"rotation": ["math.sin(query.anim_time*120)*2", 0, -17.5],
+					"position": [0, -2, 0]
+				},
+				"jaw": {
+					"rotation": ["-10+math.sin(query.anim_time*120)*5", 0, 0]
+				},
+				"ear1": {
+					"rotation": [0, 0, "math.sin(query.anim_time*120)*4"]
+				},
+				"ear2": {
+					"rotation": [0, 0, "-math.sin(query.anim_time*120)*4"]
+				}
+			}
+		},
+		"animation.lion.run": {
+			"loop": true,
+			"bones": {
+				"wholebody": {
+					"position": [0, "-math.sin(query.anim_time*600)*0.2", 0]
+				},
+				"leg4": {
+					"rotation": ["math.sin(query.anim_time*300-30)*12", 0, 0]
+				},
+				"leg3": {
+					"rotation": ["-math.sin(query.anim_time*300-30)*12", 0, 0]
+				},
+				"leg1": {
+					"rotation": ["math.sin(query.anim_time*300)*12", 0, 0]
+				},
+				"leg2": {
+					"rotation": ["-math.sin(query.anim_time*300)*12", 0, 0]
+				},
+				"mane": {
+					"rotation": ["math.sin(query.anim_time*300-30)*4", 0, 0],
+					"position": [0, 0, "-math.sin(query.anim_time*300)*0.25"],
+					"scale": "1+math.sin(query.anim_time*300)*0.05"
+				},
+				"tail": {
+					"rotation": ["-20-math.sin(query.anim_time*300)*12", 0, 0]
+				},
+				"tail8": {
+					"rotation": ["-7.5-math.sin(query.anim_time*300)*12", 0, 0]
+				},
+				"tail9": {
+					"rotation": ["-math.sin(query.anim_time*300)*6", 0, 0],
+					"scale": "1+math.sin(query.anim_time*300)*0.1"
+				},
+				"head": {
+					"rotation": ["math.sin(query.anim_time*300-30)*4", 0, 0],
+					"position": [0, 0, "-math.sin(query.anim_time*300)*0.25"]
+				},
+				"jaw": {
+					"rotation": ["-10+math.sin(query.anim_time*300)*8", 0, 0]
+				},
+				"ear1": {
+					"rotation": [0, 0, "math.sin(query.anim_time*300)*4"]
+				},
+				"ear2": {
+					"rotation": [0, 0, "-math.sin(query.anim_time*300)*4"]
+				}
+			}
+		}
+	}
+}

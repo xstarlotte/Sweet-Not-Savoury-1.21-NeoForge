@@ -75,7 +75,7 @@
 				}
 			}
 		},
-		"animation.humbug.flying": {
+		"animation.humbug.fly": {
 			"loop": true,
 			"bones": {
 				"whole": {

@@ -17,6 +17,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -44,7 +45,7 @@ public class PeppermintChurlEntity extends Monster implements GeoEntity {
     }
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.peppermint_churl.running", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.peppermint_churl.run", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.peppermint_churl.idle", Animation.LoopType.LOOP));
@@ -85,6 +86,15 @@ public class PeppermintChurlEntity extends Monster implements GeoEntity {
 
     public int getExperienceReward() {
         return 64;
+    }
+
+    @Override
+    protected void dropFromLootTable(DamageSource source, boolean hitByPlayer) {
+        super.dropFromLootTable(source, hitByPlayer); // Keep default drops
+
+        if (hitByPlayer && this.level().random.nextFloat() < 0.5) { // 50% chance
+            this.spawnAtLocation(Items.EMERALD);
+        }
     }
 
     //data

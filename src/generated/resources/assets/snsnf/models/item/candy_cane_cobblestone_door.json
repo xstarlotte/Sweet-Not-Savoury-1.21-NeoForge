@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "snsnf:item/candy_cane_cobblestone_door"
-  }
-}

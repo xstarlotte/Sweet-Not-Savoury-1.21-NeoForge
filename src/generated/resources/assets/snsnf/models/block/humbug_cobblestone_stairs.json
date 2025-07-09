@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "snsnf:block/humbug_cobblestone",
-    "side": "snsnf:block/humbug_cobblestone",
-    "top": "snsnf:block/humbug_cobblestone"
-  }
-}

@@ -57,7 +57,7 @@
 				}
 			}
 		},
-		"animation.mintmunk.sitting": {
+		"animation.mintmunk.sit": {
 			"loop": true,
 			"bones": {
 				"wholebody": {
@@ -128,7 +128,7 @@
 				}
 			}
 		},
-		"animation.mintmunk.running": {
+		"animation.mintmunk.run": {
 			"loop": true,
 			"bones": {
 				"wholebody": {

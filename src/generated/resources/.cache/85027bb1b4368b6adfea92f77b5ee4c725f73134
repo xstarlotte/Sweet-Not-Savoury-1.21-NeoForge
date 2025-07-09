@@ -1,6 +1,8 @@
-// 1.21.1	2025-02-19T10:16:56.8168461	Tags for minecraft:block mod id snsnf
+// 1.21.1	2025-06-02T16:16:56.7475772	Tags for minecraft:block mod id snsnf
 1e235431d70f405b25ffa7c0e7250e9d01b4598c data/minecraft/tags/block/crops.json
+e2d2c1619c67052b57a5aef29d74fe1e3b4a659f data/minecraft/tags/block/fences.json
+b1bea44cc2e577a9b485dbed58ee51d5b4d57c27 data/minecraft/tags/block/fence_gates.json
 356acd42e35c3187167dfbaf9f602c6d39c95963 data/minecraft/tags/block/flowers.json
-e4db8e660afada1618d0b20162fd2d1f6ca9a8dc data/minecraft/tags/block/mineable/pickaxe.json
-e4db8e660afada1618d0b20162fd2d1f6ca9a8dc data/minecraft/tags/block/needs_stone_tool.json
-1e606d710a8e2a420ea975757f5a3f7bc89ea587 data/minecraft/tags/block/walls.json
+ec8793c6898e1dcf655567ee24abd890ccf52ba8 data/minecraft/tags/block/mineable/pickaxe.json
+6d0ee7ce561cb81097ebe2cd9f24dd2dd472f143 data/minecraft/tags/block/needs_stone_tool.json
+e66f576c286c17c7f3810091435c61f2e9458b51 data/minecraft/tags/block/walls.json

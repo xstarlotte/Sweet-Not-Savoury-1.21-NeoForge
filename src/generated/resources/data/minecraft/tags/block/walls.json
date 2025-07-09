@@ -1,10 +1,22 @@
 {
   "values": [
-    "snsnf:candy_cane_brick_wall",
-    "snsnf:candy_cane_cobblestone_wall",
+    "snsnf:candyfloss_wall",
+    "snsnf:candyfloss_blue_raspberry_wall",
+    "snsnf:candy_cane_plank_wall",
+    "snsnf:chocolate_brick_wall",
+    "snsnf:chocolate_white_brick_wall",
+    "snsnf:gummy_apple_wall",
+    "snsnf:gummy_banana_wall",
+    "snsnf:gummy_blackberry_wall",
+    "snsnf:gummy_blueberry_wall",
+    "snsnf:gummy_raspberry_wall",
+    "snsnf:gummy_strawberry_wall",
     "snsnf:humbug_brick_wall",
-    "snsnf:humbug_cobblestone_wall",
     "snsnf:mint_block_wall",
-    "snsnf:mint_brick_wall"
+    "snsnf:mint_brick_wall",
+    "snsnf:peppermint_swirl_brick_wall",
+    "snsnf:peppermint_swirl_stone_wall",
+    "snsnf:waffle_wall",
+    "snsnf:waffle_brick_wall"
   ]
 }

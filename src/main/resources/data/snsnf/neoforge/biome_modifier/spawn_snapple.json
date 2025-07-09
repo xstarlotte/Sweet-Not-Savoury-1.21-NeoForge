@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "minecraft:jungle",
+    "minecraft:swamp"
+  ],
+  "spawners": {
+    "type": "snsnf:snapple",
+    "maxCount": 1,
+    "minCount": 1,
+    "weight": 15
+  }
+}

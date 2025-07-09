@@ -1,0 +1,155 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.peppermint_twirl.idle": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*200)*0.5", 0]
+					}
+				},
+				"earring1": {
+					"rotation": {
+						"vector": [0, 0, "-math.sin(query.anim_time*200-50)*10"]
+					}
+				},
+				"earring2": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*200-50)*10"]
+					}
+				},
+				"arms": {
+					"position": {
+						"vector": [0, 1, 0]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"vector": [0, 0, "45-math.sin(query.anim_time*200-100)*10"]
+					},
+					"position": {
+						"vector": [0.70711, 0.70711, 0]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"vector": [0, 0, "-45+math.sin(query.anim_time*200-100)*10"]
+					},
+					"position": {
+						"vector": [-0.70711, 0.70711, 0]
+					}
+				},
+				"dress": {
+					"rotation": {
+						"vector": [0, "query.anim_time*100", 0]
+					}
+				}
+			}
+		},
+		"animation.peppermint_twirl.sit": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": {
+						"vector": [0, "-1+math.sin(query.anim_time*200)*0.5", 0]
+					}
+				},
+				"earring1": {
+					"rotation": {
+						"vector": [0, 0, "-math.sin(query.anim_time*200-50)*10"]
+					}
+				},
+				"earring2": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*200-50)*10"]
+					}
+				},
+				"arms": {
+					"position": {
+						"vector": [0, 1, 0]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"vector": [0, 0, "45-math.sin(query.anim_time*200-100)*10"]
+					},
+					"position": {
+						"vector": [0.70711, 0.70711, 0]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"vector": [0, 0, "-45+math.sin(query.anim_time*200-100)*10"]
+					},
+					"position": {
+						"vector": [-0.70711, 0.70711, 0]
+					}
+				}
+			}
+		},
+		"animation.peppermint_twirl.run": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"rotation": {
+						"vector": [30, 0, 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*200)*0.5", 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [-22.5, 0, 0]
+					}
+				},
+				"earrings": {
+					"rotation": {
+						"vector": [70, 0, 0]
+					}
+				},
+				"earring1": {
+					"rotation": {
+						"vector": [0, 0, "-math.sin(query.anim_time*200-50)*10"]
+					}
+				},
+				"earring2": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*200-50)*10"]
+					}
+				},
+				"arms": {
+					"rotation": {
+						"vector": [47.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, 1, 0]
+					}
+				},
+				"arm1": {
+					"rotation": {
+						"vector": [0, 0, "45-math.sin(query.anim_time*200-100)*10"]
+					},
+					"position": {
+						"vector": [0.70711, 0.70711, 0]
+					}
+				},
+				"arm2": {
+					"rotation": {
+						"vector": [0, 0, "-45+math.sin(query.anim_time*200-100)*10"]
+					},
+					"position": {
+						"vector": [-0.70711, 0.70711, 0]
+					}
+				},
+				"dress": {
+					"rotation": {
+						"vector": [0, "query.anim_time*100", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

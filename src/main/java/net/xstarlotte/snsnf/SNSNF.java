@@ -1,13 +1,34 @@
 package net.xstarlotte.snsnf;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.neoforged.fml.util.thread.SidedThreadGroups;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.handling.IPayloadHandler;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.xstarlotte.snsnf.block.SNSBlock;
 import net.xstarlotte.snsnf.entity.SNSEntity;
+import net.xstarlotte.snsnf.entity.client.berry.JamsterRenderer;
+import net.xstarlotte.snsnf.entity.client.cake.CakeRabbitRenderer;
+import net.xstarlotte.snsnf.entity.client.cake.CheesecakeMouseRenderer;
+import net.xstarlotte.snsnf.entity.client.cake.SquirrollRenderer;
+import net.xstarlotte.snsnf.entity.client.fruit.*;
 import net.xstarlotte.snsnf.entity.client.herb.*;
+import net.xstarlotte.snsnf.entity.client.ice_cream.IceCreamCowRenderer;
+import net.xstarlotte.snsnf.entity.client.ice_cream.ParfaitPixieRenderer;
+import net.xstarlotte.snsnf.entity.client.ice_cream.WaferWitchRenderer;
+import net.xstarlotte.snsnf.entity.client.sweet.*;
+import net.xstarlotte.snsnf.entity.custom.fruit.FruitElfEntity;
+import net.xstarlotte.snsnf.entity.custom.herb.CandyCaneTigerEntity;
 import net.xstarlotte.snsnf.item.SNSItem;
 import net.xstarlotte.snsnf.item.SNSTab;
 import net.xstarlotte.snsnf.mob_effects.SNSEffect;
+import net.xstarlotte.snsnf.network.SNSNFModVariables;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -27,6 +48,9 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 
 @Mod(SNSNF.MOD_ID)
 public class SNSNF
@@ -41,6 +65,7 @@ public class SNSNF
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerNetworking);
 
         SNSBlock.register(modEventBus);
         SNSEntity.register(modEventBus);
@@ -48,8 +73,12 @@ public class SNSNF
         SNSEffect.register(modEventBus);
         SNSTab.register(modEventBus);
 
+        SNSNFModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
+
+
+
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
@@ -80,9 +109,35 @@ public class SNSNF
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 
+            //berry
+
+            EntityRenderers.register(SNSEntity.JAMSTER.get(), JamsterRenderer::new);
+
+            //cake
+
+            EntityRenderers.register(SNSEntity.CAKE_RABBIT.get(), CakeRabbitRenderer::new);
+            EntityRenderers.register(SNSEntity.CHEESECAKE_MOUSE.get(), CheesecakeMouseRenderer::new);
+
+            EntityRenderers.register(SNSEntity.SQUIRROLL.get(), SquirrollRenderer::new);
+
+            //fruit
+
+            EntityRenderers.register(SNSEntity.BUNANA.get(), BunanaRenderer::new);
+            EntityRenderers.register(SNSEntity.DUCKANA.get(), DuckanaRenderer::new);
+            EntityRenderers.register(SNSEntity.FRUIT_ELF.get(), FruitElfRenderer::new);
+            EntityRenderers.register(SNSEntity.FRUIT_PUG.get(), FruitPugRenderer::new);
+            EntityRenderers.register(SNSEntity.HAPPLE.get(), HappleRenderer::new);
+            EntityRenderers.register(SNSEntity.SNAPPLE.get(), SnappleRenderer::new);
+
+            //herb
+
             EntityRenderers.register(SNSEntity.CANDY_CANE_CAT.get(), CandyCaneCatRenderer::new);
             EntityRenderers.register(SNSEntity.CANDY_CANE_CROOK.get(), CandyCaneCrookRenderer::new);
             EntityRenderers.register(SNSEntity.CANDY_CANE_FLY.get(), CandyCaneFlyRenderer::new);
+            EntityRenderers.register(SNSEntity.CANDY_CANE_TIGER.get(), CandyCaneTigerRenderer::new);
+            EntityRenderers.register(SNSEntity.CINNABUN.get(), CinnabunRenderer::new);
+
+            EntityRenderers.register(SNSEntity.GINGERBREAD_MAN.get(), GingerbreadManRenderer::new);
 
             EntityRenderers.register(SNSEntity.HUMBUG.get(), HumbugRenderer::new);
             EntityRenderers.register(SNSEntity.HUMPUG.get(), HumpugRenderer::new);
@@ -92,6 +147,69 @@ public class SNSNF
             EntityRenderers.register(SNSEntity.MINT_MARSHMALLOW_SHEEP.get(), MintMarshmallowSheepRenderer::new);
 
             EntityRenderers.register(SNSEntity.PEPPERMINT_CHURL.get(), PeppermintChurlRenderer::new);
+            EntityRenderers.register(SNSEntity.PEPPERMINT_TWIRL.get(), PeppermintTwirlRenderer::new);
+
+            //ice_cream
+
+            EntityRenderers.register(SNSEntity.ICE_CREAM_COW.get(), IceCreamCowRenderer::new);
+
+            EntityRenderers.register(SNSEntity.PARFAIT_PIXIE.get(), ParfaitPixieRenderer::new);
+
+            EntityRenderers.register(SNSEntity.WAFER_WITCH.get(), WaferWitchRenderer::new);
+
+            //sweet
+
+
+            EntityRenderers.register(SNSEntity.BONBONBINI.get(), BonbonbiniRenderer::new);
+            EntityRenderers.register(SNSEntity.CANDYFLOSS_LION.get(), CandyflossLionRenderer::new);
+            EntityRenderers.register(SNSEntity.CANDYFLOSS_SHEEP.get(), CandyflossSheepRenderer::new);
+            EntityRenderers.register(SNSEntity.CHOCOLATE_CHICKEN.get(), ChocolateChickenRenderer::new);
+            EntityRenderers.register(SNSEntity.CHOCOLATE_PENGUIN.get(), ChocolatePenguinRenderer::new);
+
+            EntityRenderers.register(SNSEntity.GUMMY_BEAR.get(), GummyBearRenderer::new);
+
+            EntityRenderers.register(SNSEntity.JELLY_BABY.get(), JellyBabyRenderer::new);
+
+            EntityRenderers.register(SNSEntity.SUGARGLIDER.get(), SugargliderRenderer::new);
+
+            EntityRenderers.register(SNSEntity.TREAT_TOAD.get(), TreatToadRenderer::new);
+
         }
+    }
+    private static boolean networkingRegistered = false;
+    private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();
+
+    private record NetworkMessage<T extends CustomPacketPayload>(StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
+    }
+    public static <T extends CustomPacketPayload> void addNetworkMessage(CustomPacketPayload.Type<T> id, StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
+        if (networkingRegistered)
+            throw new IllegalStateException("Cannot register new network messages after networking has been registered");
+        MESSAGES.put(id, new NetworkMessage<>(reader, handler));
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private void registerNetworking(final RegisterPayloadHandlersEvent event) {
+        final PayloadRegistrar registrar = event.registrar(MOD_ID);
+        MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id, ((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler()));
+        networkingRegistered = true;
+    }
+
+    private static final Collection<Tuple<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
+
+    public static void queueServerWork(int tick, Runnable action) {
+        if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
+            workQueue.add(new Tuple<>(action, tick));
+    }
+
+    @SubscribeEvent
+    public void tick(ServerTickEvent.Post event) {
+        List<Tuple<Runnable, Integer>> actions = new ArrayList<>();
+        workQueue.forEach(work -> {
+            work.setB(work.getB() - 1);
+            if (work.getB() == 0)
+                actions.add(work);
+        });
+        actions.forEach(e -> e.getA().run());
+        workQueue.removeAll(actions);
     }
 }

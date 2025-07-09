@@ -1,0 +1,324 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.snapple.idle": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*100)*0.5", 0]
+					}
+				},
+				"lowjaw": {
+					"rotation": {
+						"vector": ["12.5+math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"applestalk": {
+					"rotation": {
+						"vector": ["-35+math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"apple": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100-40)*10", 0, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*100)*10", 0]
+					}
+				},
+				"tail2": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*100-40)*5", 0]
+					}
+				},
+				"tail3": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*100-60)*5", 0]
+					}
+				},
+				"tail4": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*100-80)*5", 0]
+					}
+				},
+				"applestalk7": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"apple7": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100-90)*10", 0, 0]
+					}
+				},
+				"applestalk6": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"apple6": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100-80)*10", 0, 0]
+					}
+				},
+				"applestalk5": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"apple5": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100-70)*10", 0, 0]
+					}
+				},
+				"applestalk3": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"apple3": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100-60)*10", 0, 0]
+					}
+				},
+				"legs": {
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"lowleg1": {
+					"position": {
+						"vector": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+					}
+				},
+				"lowleg4": {
+					"position": {
+						"vector": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+					}
+				},
+				"lowleg2": {
+					"position": {
+						"vector": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+					}
+				},
+				"lowleg3": {
+					"position": {
+						"vector": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+					}
+				},
+				"applestalk2": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"apple2": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100-50)*10", 0, 0]
+					}
+				},
+				"applestalk4": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100)*10", 0, 0]
+					}
+				},
+				"apple4": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*100-40)*10", 0, 0]
+					}
+				}
+			}
+		},
+		"animation.snapple.run": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"rotation": [0, 0, "math.sin(query.anim_time*200)*5"],
+					"position": [0, "-math.sin(query.anim_time*400)*0.5", 0]
+				},
+				"lowjaw": {
+					"rotation": ["22.5+math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"applestalk": {
+					"rotation": ["-35+math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple": {
+					"rotation": ["math.sin(query.anim_time*100-40)*10", 0, 0]
+				},
+				"tail": {
+					"rotation": [0, "math.sin(query.anim_time*100)*10", 0]
+				},
+				"tail2": {
+					"rotation": [0, "math.sin(query.anim_time*100-40)*5", 0]
+				},
+				"tail3": {
+					"rotation": [0, "math.sin(query.anim_time*100-60)*5", 0]
+				},
+				"tail4": {
+					"rotation": [0, "math.sin(query.anim_time*100-80)*5", 0]
+				},
+				"applestalk7": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple7": {
+					"rotation": ["math.sin(query.anim_time*100-90)*10", 0, 0]
+				},
+				"applestalk6": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple6": {
+					"rotation": ["math.sin(query.anim_time*100-80)*10", 0, 0]
+				},
+				"applestalk5": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple5": {
+					"rotation": ["math.sin(query.anim_time*100-70)*10", 0, 0]
+				},
+				"applestalk3": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple3": {
+					"rotation": ["math.sin(query.anim_time*100-60)*10", 0, 0]
+				},
+				"legs": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"lowleg1": {
+					"position": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"lowleg4": {
+					"rotation": [0, 0, 0],
+					"position": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"lowleg2": {
+					"position": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"lowleg3": {
+					"position": [0, "-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"applestalk2": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple2": {
+					"rotation": ["math.sin(query.anim_time*100-50)*10", 0, 0]
+				},
+				"applestalk4": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple4": {
+					"rotation": ["math.sin(query.anim_time*100-40)*10", 0, 0]
+				},
+				"head": {
+					"rotation": ["-math.sin(query.anim_time*200)*10", 0, 0]
+				},
+				"jaw": {
+					"rotation": [-10, 0, 0]
+				},
+				"leg1": {
+					"rotation": ["math.sin(query.anim_time*200)*20", 0, 0],
+					"position": [0, "-math.sin(query.anim_time*200)*0.5", 0]
+				},
+				"leg4": {
+					"rotation": ["math.sin(query.anim_time*200-100)*20", 0, 0],
+					"position": [0, "-math.sin(query.anim_time*200)*0.5", 0]
+				},
+				"leg2": {
+					"rotation": ["-math.sin(query.anim_time*200)*20", 0, 0],
+					"position": [0, "math.sin(query.anim_time*200)*0.5", 0]
+				},
+				"leg3": {
+					"rotation": ["-math.sin(query.anim_time*200-100)*20", 0, 0],
+					"position": [0, "math.sin(query.anim_time*200)*0.5", 0]
+				}
+			}
+		},
+		"animation.snapple.sit": {
+			"loop": true,
+			"bones": {
+				"whole": {
+					"position": [0, "-2+math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"lowjaw": {
+					"rotation": ["math.sin(query.anim_time*100)*2.5", 0, 0]
+				},
+				"applestalk": {
+					"rotation": ["-35+math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple": {
+					"rotation": ["math.sin(query.anim_time*100-40)*10", 0, 0]
+				},
+				"tail": {
+					"rotation": [-17.5, "math.sin(query.anim_time*100)*10", 0]
+				},
+				"tail2": {
+					"rotation": [7.87951, "-14.8667+math.sin(query.anim_time*100-40)*5", -2.03658]
+				},
+				"tail3": {
+					"rotation": [2.79324, "-22.4765+math.sin(query.anim_time*100-60)*5", -1.07163]
+				},
+				"tail4": {
+					"rotation": [8.60904, "-24.7621+math.sin(query.anim_time*100-80)*5", -3.64054]
+				},
+				"applestalk7": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple7": {
+					"rotation": ["math.sin(query.anim_time*100-90)*10", 0, 0]
+				},
+				"applestalk6": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple6": {
+					"rotation": ["math.sin(query.anim_time*100-80)*10", 0, 0]
+				},
+				"applestalk5": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple5": {
+					"rotation": ["math.sin(query.anim_time*100-70)*10", 0, 0]
+				},
+				"applestalk3": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple3": {
+					"rotation": ["math.sin(query.anim_time*100-60)*10", 0, 0]
+				},
+				"legs": {
+					"position": [0, 0, 0]
+				},
+				"lowleg1": {
+					"position": [0, "2-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"lowleg4": {
+					"position": [0, "2-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"lowleg2": {
+					"position": [0, "2-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"lowleg3": {
+					"position": [0, "2-math.sin(query.anim_time*100)*0.5", 0]
+				},
+				"applestalk2": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple2": {
+					"rotation": ["math.sin(query.anim_time*100-50)*10", 0, 0]
+				},
+				"applestalk4": {
+					"rotation": ["math.sin(query.anim_time*100)*10", 0, 0]
+				},
+				"apple4": {
+					"rotation": ["math.sin(query.anim_time*100-40)*10", 0, 0]
+				},
+				"head": {
+					"position": [0, -2, 0]
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

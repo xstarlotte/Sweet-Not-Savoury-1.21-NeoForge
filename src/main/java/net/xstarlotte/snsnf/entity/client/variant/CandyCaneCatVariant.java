@@ -4,12 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum CandyCaneCatVariant {
-    APPLE(0),
-    DEFAULT(1),
-    ICE(2),
-    PEPPER(3),
-    SPEAR(4),
-    WATERMELON(5);
+    DEFAULT(0);
     private static final CandyCaneCatVariant[] BY_ID = Arrays.stream(values()).sorted(
             Comparator.comparingInt(CandyCaneCatVariant::getId)).toArray(CandyCaneCatVariant[]::new);
     private final int id;

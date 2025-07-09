@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "snsnf:humbug_cobblestone"
+    "H": {
+      "item": "snsnf:humbug"
     }
   },
   "pattern": [
-    "CC",
-    "CC"
+    "HH",
+    "HH"
   ],
   "result": {
-    "count": 4,
+    "count": 16,
     "id": "snsnf:humbug_brick"
   }
 }

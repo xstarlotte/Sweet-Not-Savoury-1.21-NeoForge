@@ -33,7 +33,7 @@ public class SNSEvents {
                     new ItemStack(SNSItem.CANDY_CANE_SUGAR_CANE.get(), 1), 2, 10, 0.05f
             ));
         }
-        if (event.getType() == VillagerProfession.NONE) {
+        if (event.getType() == VillagerProfession.SHEPHERD) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
@@ -41,52 +41,21 @@ public class SNSEvents {
                     new ItemStack(SNSBlock.CANDY_CANE_CAT_TEDDY.get(), 1), 2, 10, 0.05f
             ));
         }
-        if (event.getType() == VillagerProfession.NONE) {
+
+        if (event.getType() == VillagerProfession.MASON) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 5),
-                    new ItemStack(SNSBlock.CANDY_CANE_CAT_TEDDY_APPLE.get(), 1), 2, 10, 0.05f
+                    new ItemCost(Items.COBBLESTONE, 5),
+                    new ItemStack(SNSBlock.PEPPERMINT_SWIRL_STONE.get(), 4), 999999, 10, 0.00f
             ));
         }
-        if (event.getType() == VillagerProfession.NONE) {
+        if (event.getType() == VillagerProfession.MASON) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 5),
-                    new ItemStack(SNSBlock.CANDY_CANE_CAT_TEDDY_ICE.get(), 1), 2, 10, 0.05f
-            ));
-        }
-        if (event.getType() == VillagerProfession.NONE) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 5),
-                    new ItemStack(SNSBlock.CANDY_CANE_CAT_TEDDY_PEPPER.get(), 1), 2, 10, 0.05f
-            ));
-        }
-        if (event.getType() == VillagerProfession.NONE) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 5),
-                    new ItemStack(SNSBlock.CANDY_CANE_CAT_TEDDY_SPEAR.get(), 1), 2, 10, 0.05f
-            ));
-        }
-        if (event.getType() == VillagerProfession.NONE) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 5),
-                    new ItemStack(SNSBlock.CANDY_CANE_CAT_TEDDY_WATERMELON.get(), 1), 2, 10, 0.05f
-            ));
-        }
-        if (event.getType() == VillagerProfession.NONE) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
-                    new ItemCost(Items.EMERALD, 5),
-                    new ItemStack(SNSBlock.HUMBUG_CAT_TEDDY.get(), 1), 2, 10, 0.05f
+                    new ItemCost(Items.COBBLESTONE, 5),
+                    new ItemStack(SNSBlock.MINT_BLOCK.get(), 4), 999999, 10, 0.00f
             ));
         }
 
@@ -100,6 +69,16 @@ public class SNSEvents {
         genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 1),
                 new ItemStack(SNSItem.CANDY_CANE_SUGAR_CANE.get(), 1), 1, 10, 0.2f
+        ));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 1),
+                new ItemStack(SNSItem.HUMBUG.get(), 4), 1, 10, 0.2f
+        ));
+
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 1),
+                new ItemStack(SNSItem.PEPPERMINT_SWIRL.get(), 4), 1, 10, 0.2f
         ));
 
     }

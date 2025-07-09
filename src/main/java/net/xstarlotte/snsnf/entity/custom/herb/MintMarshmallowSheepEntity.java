@@ -53,7 +53,7 @@ public class MintMarshmallowSheepEntity extends Animal implements GeoEntity {
     }
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mint_marshmallow_sheep.running", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mint_marshmallow_sheep.run", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
         tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.mint_marshmallow_sheep.idle", Animation.LoopType.LOOP));

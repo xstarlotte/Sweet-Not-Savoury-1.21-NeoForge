@@ -19,7 +19,7 @@
 				}
 			}
 		},
-		"animation.mint_imperial.running": {
+		"animation.mint_imperial.run": {
 			"loop": true,
 			"bones": {
 				"body": {

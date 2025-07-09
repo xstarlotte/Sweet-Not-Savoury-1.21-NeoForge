@@ -15,7 +15,7 @@
 				}
 			}
 		},
-		"animation.candy_cane_crook.running": {
+		"animation.candy_cane_crook.run": {
 			"loop": true,
 			"bones": {
 				"head": {

@@ -27,6 +27,10 @@ public class SNSItemModelProvider extends ItemModelProvider {
         //spawn eggs
         //berry
 
+        withExistingParent(SNSItem.BLACKBOARRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(SNSItem.BLUEBOARRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(SNSItem.RASPBOARRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(SNSItem.STRAWBOARRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(SNSItem.JAMSTER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         //cake
@@ -95,6 +99,11 @@ public class SNSItemModelProvider extends ItemModelProvider {
 
         //items
 
+        basicItem(SNSItem.BLACKBERRY_LOLLIPOP.get());
+        basicItem(SNSItem.BLUEBERRY_LOLLIPOP.get());
+        basicItem(SNSItem.RASPBERRY_LOLLIPOP.get());
+        basicItem(SNSItem.STRAWBERRY_LOLLIPOP.get());
+
         basicItem(SNSItem.CANDYFLOSS.get());
         basicItem(SNSItem.CANDYFLOSS_BLUE_RASPBERRY.get());
         basicItem(SNSItem.CANDY_CANE.get());
@@ -117,6 +126,7 @@ public class SNSItemModelProvider extends ItemModelProvider {
         basicItem(SNSItem.HUMBUG.get());
 
         basicItem(SNSItem.ICE_CREAM.get());
+        basicItem(SNSItem.VANILLA_ICE_CREAM.get());
 
         basicItem(SNSItem.MINT_MARSHMALLOW.get());
 

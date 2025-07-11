@@ -45,15 +45,7 @@ public class SNSTab {
                         pOutput.accept(SNSBlock.CANDYFLOSS_BLUE_RASPBERRY_TRAPDOOR);
                         pOutput.accept(SNSBlock.CANDYFLOSS_BLUE_RASPBERRY_WALL);
 
-                        pOutput.accept(SNSBlock.CANDY_CANE_BUSH);
-                        pOutput.accept(SNSBlock.CANDY_CANE_CARNATION);
-                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER);
-                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_2);
-                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_3);
-                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_4);
-                        pOutput.accept(SNSBlock.CANDY_CANE_GRASS);
-                        pOutput.accept(SNSBlock.CANDY_CANE_GRASS_LONG);
-                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY);
+
                         pOutput.accept(SNSBlock.CANDY_CANE_LOG);
                         pOutput.accept(SNSBlock.CANDY_CANE_PLANKS);
                         pOutput.accept(SNSBlock.CANDY_CANE_PLANK_BUTTON);
@@ -227,12 +219,92 @@ public class SNSTab {
 
                     }).build());
 
+    public static final Supplier<CreativeModeTab> SNS_DECORATION =
+            CREATIVE_MODE_TABS.register("sns_decoration", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.snsnf.sns_decoration"))
+                    .icon(() -> new ItemStack(SNSBlock.WAFFLE_BED.get()))
+                    .displayItems((pParameters, pOutput) -> {
+
+                        pOutput.accept(SNSBlock.BLACKBERRY_LANTERN);
+                        pOutput.accept(SNSBlock.BLUEBERRY_LANTERN);
+                        pOutput.accept(SNSBlock.RASPBERRY_LANTERN);
+                        pOutput.accept(SNSBlock.STRAWBERRY_LANTERN);
+                        pOutput.accept(SNSBlock.BLACKBERRY_LOLLIPOP_LANTERN);
+                        pOutput.accept(SNSBlock.BLUEBERRY_LOLLIPOP_LANTERN);
+                        pOutput.accept(SNSBlock.RASPBERRY_LOLLIPOP_LANTERN);
+                        pOutput.accept(SNSBlock.STRAWBERRY_LOLLIPOP_LANTERN);
+                        pOutput.accept(SNSBlock.CANDY_CANE_LANTERN);
+                        pOutput.accept(SNSBlock.ICE_CREAM_LANTERN);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CAT_TEDDY);
+                        pOutput.accept(SNSBlock.WAFFLE_BED);
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> SNS_FLORA =
+            CREATIVE_MODE_TABS.register("sns_flora", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.snsnf.sns_block"))
+                    .icon(() -> new ItemStack(SNSBlock.CANDY_CANE_SUGAR_CANE.get()))
+                    .displayItems((pParameters, pOutput) -> {
+
+                        pOutput.accept(SNSBlock.CANDY_CANE_BUSH);
+                        pOutput.accept(SNSBlock.CANDY_CANE_CARNATION);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_2);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_3);
+                        pOutput.accept(SNSBlock.CANDY_CANE_FLOWER_4);
+                        pOutput.accept(SNSBlock.CANDY_CANE_GRASS);
+                        pOutput.accept(SNSBlock.CANDY_CANE_GRASS_LONG);
+                        pOutput.accept(SNSBlock.CANDY_CANE_SUGAR_CANE);
+
+                    }).build());
+
     public static final Supplier<CreativeModeTab> SNS_ITEM =
             CREATIVE_MODE_TABS.register("sns_item", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.snsnf.sns_item"))
                     .icon(() -> new ItemStack(SNSItem.CANDY_CANE.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SNSNF.MOD_ID, "sns_block"))
                     .displayItems((pParameters, pOutput) -> {
+
+                        pOutput.accept(SNSItem.CANDYFLOSS);
+                        pOutput.accept(SNSItem.CANDYFLOSS_BLUE_RASPBERRY);
+                        pOutput.accept(SNSItem.CANDY_CANE);
+                        pOutput.accept(SNSItem.CANDY_CANE_SUGAR);
+                        pOutput.accept(SNSItem.CANDY_CANE_SWORD);
+                        pOutput.accept(SNSItem.CHOCOLATE_EGG);
+                        pOutput.accept(SNSItem.CHOCOLATE_WHITE_EGG);
+                        pOutput.accept(SNSItem.CINNAMON);
+                        pOutput.accept(SNSItem.CINNAMON_BUN);
+                        pOutput.accept(SNSItem.CONE);
+
+                        pOutput.accept(SNSItem.GELATIN);
+                        pOutput.accept(SNSItem.GUMMY_APPLE);
+                        pOutput.accept(SNSItem.GUMMY_BANANA);
+                        pOutput.accept(SNSItem.GUMMY_BLACKBERRY);
+                        pOutput.accept(SNSItem.GUMMY_BLUEBERRY);
+                        pOutput.accept(SNSItem.GUMMY_RASPBERRY);
+                        pOutput.accept(SNSItem.GUMMY_STRAWBERRY);
+
+                        pOutput.accept(SNSItem.HUMBUG);
+
+                        pOutput.accept(SNSItem.ICE_CREAM);
+
+                        pOutput.accept(SNSItem.MINT_MARSHMALLOW);
+
+                        pOutput.accept(SNSItem.VANILLA_ICE_CREAM);
+
+                        pOutput.accept(SNSItem.WAFFLE_STICK);
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> SNS_SPAWN_EGG =
+            CREATIVE_MODE_TABS.register("sns_spawn_egg", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.snsnf.sns_spawn_egg"))
+                    .icon(() -> new ItemStack(SNSItem.CHEESECAKE_MOUSE_SPAWN_EGG.get()))
+                    .displayItems((pParameters, pOutput) -> {
+
+                        pOutput.accept(SNSItem.BLACKBOARRY_SPAWN_EGG);
+                        pOutput.accept(SNSItem.BLUEBOARRY_SPAWN_EGG);
+                        pOutput.accept(SNSItem.RASPBOARRY_SPAWN_EGG);
+                        pOutput.accept(SNSItem.STRAWBOARRY_SPAWN_EGG);
                         pOutput.accept(SNSItem.BONBONBINI_SPAWN_EGG);
                         pOutput.accept(SNSItem.BUNANA_SPAWN_EGG);
 
@@ -281,36 +353,6 @@ public class SNSTab {
 
                         pOutput.accept(SNSItem.WAFER_WITCH_SPAWN_EGG);
 
-
-
-
-                        pOutput.accept(SNSItem.CANDYFLOSS);
-                        pOutput.accept(SNSItem.CANDYFLOSS_BLUE_RASPBERRY);
-                        pOutput.accept(SNSItem.CANDY_CANE);
-                        pOutput.accept(SNSItem.CANDY_CANE_SUGAR);
-                        pOutput.accept(SNSItem.CANDY_CANE_SUGAR_CANE);
-                        pOutput.accept(SNSItem.CANDY_CANE_SWORD);
-                        pOutput.accept(SNSItem.CHOCOLATE_EGG);
-                        pOutput.accept(SNSItem.CHOCOLATE_WHITE_EGG);
-                        pOutput.accept(SNSItem.CINNAMON);
-                        pOutput.accept(SNSItem.CINNAMON_BUN);
-                        pOutput.accept(SNSItem.CONE);
-
-                        pOutput.accept(SNSItem.GELATIN);
-                        pOutput.accept(SNSItem.GUMMY_APPLE);
-                        pOutput.accept(SNSItem.GUMMY_BANANA);
-                        pOutput.accept(SNSItem.GUMMY_BLACKBERRY);
-                        pOutput.accept(SNSItem.GUMMY_BLUEBERRY);
-                        pOutput.accept(SNSItem.GUMMY_RASPBERRY);
-                        pOutput.accept(SNSItem.GUMMY_STRAWBERRY);
-
-                        pOutput.accept(SNSItem.HUMBUG);
-
-                        pOutput.accept(SNSItem.ICE_CREAM);
-
-                        pOutput.accept(SNSItem.MINT_MARSHMALLOW);
-
-                        pOutput.accept(SNSItem.WAFFLE_STICK);
                     }).build());
 
     public static void register(IEventBus eventBus) {

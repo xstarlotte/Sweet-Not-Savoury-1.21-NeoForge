@@ -1,5 +1,14 @@
 {
 
+  "block.snsnf.blackberry_lantern": "Blackberry Lantern",
+  "block.snsnf.blueberry_lantern": "Blueberry Lantern",
+  "block.snsnf.raspberry_lantern": "Raspberry Lantern",
+  "block.snsnf.strawberry_lantern": "Strawberry Lantern",
+  "block.snsnf.blackberry_lollipop_lantern": "Blackberry Lollipop Lantern",
+  "block.snsnf.blueberry_lollipop_lantern": "Blueberry Lollipop Lantern",
+  "block.snsnf.raspberry_lollipop_lantern": "Raspberry Lollipop Lantern",
+  "block.snsnf.strawberry_lollipop_lantern": "Strawberry Lollipop Lantern",
+
   "block.snsnf.candyfloss_block": "Candyfloss",
   "block.snsnf.candyfloss_button": "Candyfloss Button",
   "block.snsnf.candyfloss_door": "Candyfloss Door",
@@ -31,6 +40,7 @@
   "block.snsnf.candy_cane_flower_4": "Candy Cane Flower",
   "block.snsnf.candy_cane_grass": "Candy Cane Grass",
   "block.snsnf.candy_cane_grass_long": "Long Candy Cane Grass",
+  "block.snsnf.candy_cane_lantern": "Candy Cane Lantern",
   "block.snsnf.candy_cane_log": "Candy Cane Log",
   "block.snsnf.candy_cane_planks": "Candy Cane Planks",
   "block.snsnf.candy_cane_plank_button": "Candy Cane Plank Button",
@@ -143,6 +153,8 @@
   "block.snsnf.humbug_brick_trapdoor": "Humbug Brick Trapdoor",
   "block.snsnf.humbug_brick_wall": "Humbug Brick Wall",
 
+  "block.snsnf.ice_cream_lantern": "Ice Cream Lantern",
+
   "block.snsnf.mint_block": "Mint Block",
   "block.snsnf.mint_block_button": "Mint Block Button",
   "block.snsnf.mint_block_door": "Mint Block Door",
@@ -189,6 +201,7 @@
   "block.snsnf.potted_candy_cane_grass_long": "Potted Long Candy Cane Grass",
 
   "block.snsnf.waffle_block": "Waffle Block",
+  "block.snsnf.waffle_bed": "Waffle Bed",
   "block.snsnf.waffle_button": "Waffle Button",
   "block.snsnf.waffle_door": "Waffle Door",
   "block.snsnf.waffle_fence": "Waffle Fence",
@@ -210,6 +223,10 @@
   "block.snsnf.waffle_brick_trapdoor": "Waffle Brick Trapdoor",
   "block.snsnf.waffle_brick_wall": "Waffle Brick Wall",
 
+  "entity.snsnf.blackboarry": "Blackboarry",
+  "entity.snsnf.blueboarry": "Blueboarry",
+  "entity.snsnf.raspboarry": "Raspboarry",
+  "entity.snsnf.strawboarry": "Strawboarry",
   "entity.snsnf.bonbonbini": "Bonbonbini",
   "entity.snsnf.bunana": "Bunana",
 
@@ -287,8 +304,14 @@
   "item.snsnf.peppermint_swirl": "Peppermint Swirl",
   "item.snsnf.polo": "Polo",
 
+  "item.snsnf.vanilla_ice_cream": "Vanilla Ice Cream",
+
   "item.snsnf.waffle_stick": "Waffle Stick",
 
+  "item.snsnf.blackboarry_spawn_egg": "Blackboarry Spawn Egg",
+  "item.snsnf.blueboarry_spawn_egg": "Blueboarry Spawn Egg",
+  "item.snsnf.raspboarry_spawn_egg": "Raspboarry Spawn Egg",
+  "item.snsnf.strawboarry_spawn_egg": "Strawboarry Spawn Egg",
   "item.snsnf.bonbonbini_spawn_egg": "Bonbonbini Spawn Egg",
   "item.snsnf.bunana_spawn_egg": "Bunana Spawn Egg",
 
@@ -342,7 +365,10 @@
 
 
   "itemGroup.snsnf.sns_block": "Blocks - Sweet Not Savoury",
+  "itemGroup.snsnf.sns_decoration": "Decorations - Sweet Not Savoury",
+  "itemGroup.snsnf.sns_flora": "Flora - Sweet Not Savoury",
   "itemGroup.snsnf.sns_item": "Items - Sweet Not Savoury",
+  "itemGroup.snsnf.sns_spawn_egg": "Spawn Eggs - Sweet Not Savoury",
 
   "painting.snsnf.candy_cane.author": "xStarlotte",
   "painting.snsnf.candy_cane.title": "Candy Cane",

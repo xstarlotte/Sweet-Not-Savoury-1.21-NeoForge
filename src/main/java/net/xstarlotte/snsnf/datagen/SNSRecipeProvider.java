@@ -42,6 +42,27 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //blocks
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.BLACKBERRY_LANTERN.get(), 1)
+                .pattern("BT")
+                .define('B', SNSItem.GUMMY_BLACKBERRY.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_gummy_blackberry", has(SNSItem.GUMMY_BLACKBERRY.get())).save(pRecipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.BLUEBERRY_LANTERN.get(), 1)
+                .pattern("BT")
+                .define('B', SNSItem.GUMMY_BLUEBERRY.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_gummy_blueberry", has(SNSItem.GUMMY_BLUEBERRY.get())).save(pRecipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.RASPBERRY_LANTERN.get(), 1)
+                .pattern("RT")
+                .define('R', SNSItem.GUMMY_RASPBERRY.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_gummy_raspberry", has(SNSItem.GUMMY_RASPBERRY.get())).save(pRecipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.STRAWBERRY_LANTERN.get(), 1)
+                .pattern("ST")
+                .define('S', SNSItem.GUMMY_STRAWBERRY.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_gummy_strawberry", has(SNSItem.GUMMY_STRAWBERRY.get())).save(pRecipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.CANDYFLOSS_BLOCK.get(), 16)
                 .pattern("CC")
                 .pattern("CC")
@@ -83,6 +104,12 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
         trapdoorBuilder(SNSBlock.CANDYFLOSS_BLUE_RASPBERRY_TRAPDOOR.get(), Ingredient.of(SNSBlock.CANDYFLOSS_BLUE_RASPBERRY_BLOCK.get())).group("candyfloss_blue_raspberry")
                 .unlockedBy("has_candyfloss_blue_raspberry_block", has(SNSBlock.CANDYFLOSS_BLUE_RASPBERRY_BLOCK.get())).save(pRecipeOutput);
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.CANDYFLOSS_BLUE_RASPBERRY_WALL.get(), SNSBlock.CANDYFLOSS_BLUE_RASPBERRY_BLOCK.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.CANDY_CANE_LANTERN.get(), 1)
+                .pattern("CT")
+                .define('C', SNSItem.CANDY_CANE.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_candy_cane", has(SNSItem.CANDY_CANE.get())).save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.CANDY_CANE_PLANKS.get(), 4)
                 .pattern("C")
@@ -289,6 +316,51 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_humbug_brick", has(SNSBlock.HUMBUG_BRICK.get())).save(pRecipeOutput);
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.HUMBUG_BRICK_WALL.get(), SNSBlock.HUMBUG_BRICK.get());
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItem.WAFFLE_STICK.get(), 9)
+                .pattern("W")
+                .define('W', SNSItem.CONE.get())
+                .unlockedBy("has_cone", has(SNSItem.CONE.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItem.CONE.get(), 9)
+                .pattern("W")
+                .define('W', SNSBlock.WAFFLE_BLOCK.get())
+                .unlockedBy("has_waffle_block", has(SNSBlock.WAFFLE_BLOCK.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItem.VANILLA_ICE_CREAM.get(), 1)
+                .pattern("I")
+                .pattern("W")
+                .define('I', SNSItem.ICE_CREAM.get())
+                .define('W', SNSItem.CONE.get())
+                .unlockedBy("has_ice_cream", has(SNSItem.ICE_CREAM.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.ICE_CREAM_LANTERN.get(), 1)
+                .pattern("VT")
+                .define('V', SNSItem.VANILLA_ICE_CREAM.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_ice_cream", has(SNSItem.ICE_CREAM.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.BLACKBERRY_LOLLIPOP_LANTERN.get(), 1)
+                .pattern("BT")
+                .define('B', SNSItem.BLACKBERRY_LOLLIPOP.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_blackberry_lollipop", has(SNSItem.BLACKBERRY_LOLLIPOP.get())).save(pRecipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.BLUEBERRY_LOLLIPOP_LANTERN.get(), 1)
+                .pattern("BT")
+                .define('B', SNSItem.BLUEBERRY_LOLLIPOP.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_blueberry_lollipop", has(SNSItem.BLUEBERRY_LOLLIPOP.get())).save(pRecipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.RASPBERRY_LOLLIPOP_LANTERN.get(), 1)
+                .pattern("RT")
+                .define('R', SNSItem.RASPBERRY_LOLLIPOP.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_raspberry_lollipop", has(SNSItem.RASPBERRY_LOLLIPOP.get())).save(pRecipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.STRAWBERRY_LOLLIPOP_LANTERN.get(), 1)
+                .pattern("ST")
+                .define('S', SNSItem.STRAWBERRY_LOLLIPOP.get())
+                .define('T', Items.TORCH)
+                .unlockedBy("has_strawberry_lollipop", has(SNSItem.STRAWBERRY_LOLLIPOP.get())).save(pRecipeOutput);
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.MINT_BRICK.get(), 4)
                 .pattern("MM")
                 .pattern("MM")
@@ -346,7 +418,13 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, SNSBlock.PEPPERMINT_SWIRL_STONE_WALL.get(), SNSBlock.PEPPERMINT_SWIRL_STONE.get());
 
 
-
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.WAFFLE_BED.get(), 1)
+                .pattern("MMM")
+                .pattern("WWW")
+                .define('W', SNSBlock.WAFFLE_BLOCK.get())
+                .define('M', SNSItem.MINT_MARSHMALLOW.get())
+                .unlockedBy("has_waffle_block", has(SNSBlock.WAFFLE_BLOCK.get()))
+                .unlockedBy("has_mint_marshmallow", has(SNSItem.MINT_MARSHMALLOW.get())).save(pRecipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlock.WAFFLE_BLOCK.get(), 16)
                 .pattern("WW")
                 .pattern("WW")

@@ -11,7 +11,7 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.xstarlotte.snsnf.SNSNF;
 import net.xstarlotte.snsnf.entity.SNSEntity;
-import net.xstarlotte.snsnf.entity.custom.berry.JamsterEntity;
+import net.xstarlotte.snsnf.entity.custom.berry.*;
 import net.xstarlotte.snsnf.entity.custom.cake.CakeRabbitEntity;
 import net.xstarlotte.snsnf.entity.custom.cake.CheesecakeMouseEntity;
 import net.xstarlotte.snsnf.entity.custom.cake.SquirrollEntity;
@@ -31,6 +31,10 @@ public class SNSEventBusEvents {
 
         //berry
 
+        event.put(SNSEntity.BLACKBOARRY.get(), BlackboarryEntity.createAttributes().build());
+        event.put(SNSEntity.BLUEBOARRY.get(), BlueboarryEntity.createAttributes().build());
+        event.put(SNSEntity.RASPBOARRY.get(), RaspboarryEntity.createAttributes().build());
+        event.put(SNSEntity.STRAWBOARRY.get(), StrawboarryEntity.createAttributes().build());
         event.put(SNSEntity.JAMSTER.get(), JamsterEntity.createAttributes().build());
 
         //cake

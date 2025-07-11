@@ -29,7 +29,10 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
 
 
-
+        dropSelf(SNSBlock.BLACKBERRY_LANTERN.get());
+        dropSelf(SNSBlock.BLUEBERRY_LANTERN.get());
+        dropSelf(SNSBlock.RASPBERRY_LANTERN.get());
+        dropSelf(SNSBlock.STRAWBERRY_LANTERN.get());
 
         dropSelf(SNSBlock.CANDYFLOSS_BLOCK.get());
         dropSelf(SNSBlock.CANDYFLOSS_BUTTON.get());
@@ -66,6 +69,7 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SNSBlock.CANDY_CANE_FLOWER_4.get());
         dropSelf(SNSBlock.CANDY_CANE_GRASS.get());
         dropSelf(SNSBlock.CANDY_CANE_GRASS_LONG.get());
+        dropSelf(SNSBlock.CANDY_CANE_LANTERN.get());
         dropSelf(SNSBlock.CANDY_CANE_LOG.get());
         dropSelf(SNSBlock.CANDY_CANE_PLANKS.get());
         dropSelf(SNSBlock.CANDY_CANE_PLANK_BUTTON.get());
@@ -198,6 +202,13 @@ public class SNSBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SNSBlock.HUMBUG_BRICK_STAIRS.get());
         dropSelf(SNSBlock.HUMBUG_BRICK_TRAPDOOR.get());
         dropSelf(SNSBlock.HUMBUG_BRICK_WALL.get());
+
+        dropSelf(SNSBlock.ICE_CREAM_LANTERN.get());
+
+        dropSelf(SNSBlock.BLACKBERRY_LOLLIPOP_LANTERN.get());
+        dropSelf(SNSBlock.BLUEBERRY_LOLLIPOP_LANTERN.get());
+        dropSelf(SNSBlock.RASPBERRY_LOLLIPOP_LANTERN.get());
+        dropSelf(SNSBlock.STRAWBERRY_LOLLIPOP_LANTERN.get());
 
         dropSelf(SNSBlock.MINT_BLOCK.get());
         dropSelf(SNSBlock.MINT_BLOCK_BUTTON.get());

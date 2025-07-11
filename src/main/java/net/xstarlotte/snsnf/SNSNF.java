@@ -15,6 +15,10 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.xstarlotte.snsnf.block.SNSBlock;
 import net.xstarlotte.snsnf.block.entity.SNSBE;
 import net.xstarlotte.snsnf.entity.SNSEntity;
+import net.xstarlotte.snsnf.entity.client.berry.BlackboarryRenderer;
+import net.xstarlotte.snsnf.entity.client.berry.BlueboarryRenderer;
+import net.xstarlotte.snsnf.entity.client.berry.RaspboarryRenderer;
+import net.xstarlotte.snsnf.entity.client.berry.StrawboarryRenderer;
 import net.xstarlotte.snsnf.entity.client.berry.JamsterRenderer;
 import net.xstarlotte.snsnf.entity.client.cake.CakeRabbitRenderer;
 import net.xstarlotte.snsnf.entity.client.cake.CheesecakeMouseRenderer;
@@ -118,6 +122,10 @@ public class SNSNF
 
             //berry
 
+            EntityRenderers.register(SNSEntity.BLACKBOARRY.get(), BlackboarryRenderer::new);
+            EntityRenderers.register(SNSEntity.BLUEBOARRY.get(), BlueboarryRenderer::new);
+            EntityRenderers.register(SNSEntity.RASPBOARRY.get(), RaspboarryRenderer::new);
+            EntityRenderers.register(SNSEntity.STRAWBOARRY.get(), StrawboarryRenderer::new);
             EntityRenderers.register(SNSEntity.JAMSTER.get(), JamsterRenderer::new);
 
             //cake

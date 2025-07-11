@@ -10,6 +10,6 @@
     "type": "snsnf:ice_cream_cow",
     "maxCount": 1,
     "minCount": 1,
-    "weight": 15
+    "weight": 25
   }
 }

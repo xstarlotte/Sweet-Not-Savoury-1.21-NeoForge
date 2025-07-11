@@ -11,11 +11,16 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xstarlotte.snsnf.SNSNF;
 import net.xstarlotte.snsnf.block.custom.bed.WaffleBedBlock;
+import net.xstarlotte.snsnf.block.custom.lamp.BlackberryLanternBlock;
+import net.xstarlotte.snsnf.block.custom.lamp.CandyCaneLanternBlock;
+import net.xstarlotte.snsnf.block.custom.lamp.LollipopLanternBlock;
 import net.xstarlotte.snsnf.block.custom.teddy.CatTeddyBlock;
 import net.xstarlotte.snsnf.block.custom.CandyCaneCropBlock;
 import net.xstarlotte.snsnf.block.entity.custom.bed.WaffleBedBE;
@@ -29,6 +34,22 @@ public class SNSBlock {
             DeferredRegister.createBlocks(SNSNF.MOD_ID);
 
 
+    public static final DeferredBlock<BlackberryLanternBlock> BLACKBERRY_LANTERN = registerBlock("blackberry_lantern",
+            () -> new BlackberryLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<BlackberryLanternBlock> BLUEBERRY_LANTERN = registerBlock("blueberry_lantern",
+            () -> new BlackberryLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<BlackberryLanternBlock> RASPBERRY_LANTERN = registerBlock("raspberry_lantern",
+            () -> new BlackberryLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<BlackberryLanternBlock> STRAWBERRY_LANTERN = registerBlock("strawberry_lantern",
+            () -> new BlackberryLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
     public static final DeferredBlock<Block> CANDYFLOSS_BLOCK = registerBlock("candyfloss_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(2f)));
@@ -90,6 +111,11 @@ public class SNSBlock {
             () -> new FlowerBlock(MobEffects.REGENERATION, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
     public static final DeferredBlock<Block> CANDY_CANE_GRASS_LONG = registerBlock("candy_cane_grass_long",
             () -> new FlowerBlock(MobEffects.REGENERATION, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.DANDELION)));
+
+    public static final DeferredBlock<CandyCaneLanternBlock> CANDY_CANE_LANTERN = registerBlock("candy_cane_lantern",
+            () -> new CandyCaneLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
     public static final DeferredBlock<Block> CANDY_CANE_LOG = registerBlock("candy_cane_log",
             () -> new Block(BlockBehaviour.Properties.of().strength(2f)));
@@ -320,6 +346,28 @@ public class SNSBlock {
     public static final DeferredBlock<Block> HUMBUG_BRICK_WALL = registerBlock("humbug_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<BlackberryLanternBlock> ICE_CREAM_LANTERN = registerBlock("ice_cream_lantern",
+            () -> new BlackberryLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final DeferredBlock<LollipopLanternBlock> BLACKBERRY_LOLLIPOP_LANTERN = registerBlock("blackberry_lollipop_lantern",
+            () -> new LollipopLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<LollipopLanternBlock> BLUEBERRY_LOLLIPOP_LANTERN = registerBlock("blueberry_lollipop_lantern",
+            () -> new LollipopLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<LollipopLanternBlock> RASPBERRY_LOLLIPOP_LANTERN = registerBlock("raspberry_lollipop_lantern",
+            () -> new LollipopLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<LollipopLanternBlock> STRAWBERRY_LOLLIPOP_LANTERN = registerBlock("strawberry_lollipop_lantern",
+            () -> new LollipopLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).forceSolidOn().strength(1F).sound(SoundType.LANTERN).lightLevel((p_187433_) -> {
+                return 15;
+            }).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
     public static final DeferredBlock<Block> MINT_BLOCK = registerBlock("mint_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(3f)));
     public static final DeferredBlock<Block> MINT_BLOCK_BUTTON = registerBlock("mint_block_button",
@@ -425,7 +473,9 @@ public class SNSBlock {
                     return new WaffleBedBE(pos, state) {
                         @Override
                         public boolean isValidBlockState(BlockState p_353131_) {
-                            return p_353131_.is(WAFFLE_BED);}};}});
+                            return p_353131_.is(WAFFLE_BED);
+                        }};
+                }});
 
     public static final DeferredBlock<Block> WAFFLE_BLOCK = registerBlock("waffle_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(2f)));

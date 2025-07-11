@@ -59,6 +59,15 @@ public class SNSEvents {
             ));
         }
 
+        if (event.getType() == VillagerProfession.MASON) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.COBBLESTONE, 5),
+                    new ItemStack(SNSBlock.WAFFLE_BLOCK.get(), 4), 999999, 10, 0.00f
+            ));
+        }
+
     }
 
     @SubscribeEvent

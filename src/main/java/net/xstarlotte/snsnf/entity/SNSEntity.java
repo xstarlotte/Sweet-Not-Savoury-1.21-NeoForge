@@ -21,6 +21,18 @@ public class SNSEntity {
 
     //berry
 
+    public static final Supplier<EntityType<BlackboarryEntity>> BLACKBOARRY =
+            ENTITY_TYPES.register("blackboarry", () -> EntityType.Builder.of(BlackboarryEntity::new, MobCategory.CREATURE)
+                    .sized(0.3f, 0.3f).build("blackboarry"));
+    public static final Supplier<EntityType<BlueboarryEntity>> BLUEBOARRY =
+            ENTITY_TYPES.register("blueboarry", () -> EntityType.Builder.of(BlueboarryEntity::new, MobCategory.CREATURE)
+                    .sized(0.3f, 0.3f).build("blackboarry"));
+    public static final Supplier<EntityType<RaspboarryEntity>> RASPBOARRY =
+            ENTITY_TYPES.register("raspboarry", () -> EntityType.Builder.of(RaspboarryEntity::new, MobCategory.CREATURE)
+                    .sized(0.3f, 0.3f).build("raspboarry"));
+    public static final Supplier<EntityType<StrawboarryEntity>> STRAWBOARRY =
+            ENTITY_TYPES.register("strawboarry", () -> EntityType.Builder.of(StrawboarryEntity::new, MobCategory.CREATURE)
+                    .sized(0.3f, 0.3f).build("strawboarry"));
     public static final Supplier<EntityType<JamsterEntity>> JAMSTER =
             ENTITY_TYPES.register("jamster", () -> EntityType.Builder.of(JamsterEntity::new, MobCategory.CREATURE)
                     .sized(0.2f, 0.2f).build("jamster"));

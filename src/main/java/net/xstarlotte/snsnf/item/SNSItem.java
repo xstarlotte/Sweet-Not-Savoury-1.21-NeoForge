@@ -18,6 +18,18 @@ public class SNSItem {
 //spawn eggs
     //berry
 
+    public static final DeferredItem<Item> BLACKBOARRY_SPAWN_EGG = ITEMS.register("blackboarry_spawn_egg",
+            () -> new DeferredSpawnEggItem(SNSEntity.BLACKBOARRY, 0x3f0e21, 0x3f0e14,
+                    new Item.Properties()));
+    public static final DeferredItem<Item> BLUEBOARRY_SPAWN_EGG = ITEMS.register("blueboarry_spawn_egg",
+            () -> new DeferredSpawnEggItem(SNSEntity.BLUEBOARRY, 0x3f0e21, 0x3f0e14,
+                    new Item.Properties()));
+    public static final DeferredItem<Item> RASPBOARRY_SPAWN_EGG = ITEMS.register("raspboarry_spawn_egg",
+            () -> new DeferredSpawnEggItem(SNSEntity.RASPBOARRY, 0x3f0e21, 0x3f0e14,
+                    new Item.Properties()));
+    public static final DeferredItem<Item> STRAWBOARRY_SPAWN_EGG = ITEMS.register("strawboarry_spawn_egg",
+            () -> new DeferredSpawnEggItem(SNSEntity.STRAWBOARRY, 0x3f0e21, 0x3f0e14,
+                    new Item.Properties()));
     public static final DeferredItem<Item> JAMSTER_SPAWN_EGG = ITEMS.register("jamster_spawn_egg",
             () -> new DeferredSpawnEggItem(SNSEntity.JAMSTER, 0x3f0e21, 0x3f0e14,
                     new Item.Properties()));
@@ -158,6 +170,15 @@ public class SNSItem {
 
    //items
 
+    public static final DeferredItem<Item> BLACKBERRY_LOLLIPOP =
+            ITEMS.registerItem("blackberry_lollipop", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET));
+    public static final DeferredItem<Item> BLUEBERRY_LOLLIPOP =
+            ITEMS.registerItem("blueberry_lollipop", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET));
+    public static final DeferredItem<Item> RASPBERRY_LOLLIPOP =
+            ITEMS.registerItem("raspberry_lollipop", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET));
+    public static final DeferredItem<Item> STRAWBERRY_LOLLIPOP =
+            ITEMS.registerItem("strawberry_lollipop", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET));
+
     public static final DeferredItem<Item> CANDYFLOSS =
             ITEMS.registerItem("candyfloss", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET));
     public static final DeferredItem<Item> CANDYFLOSS_BLUE_RASPBERRY =
@@ -199,7 +220,9 @@ public class SNSItem {
             ITEMS.registerItem("humbug", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));
 
     public static final DeferredItem<Item> ICE_CREAM =
-            ITEMS.registerItem("ice_cream", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET));
+            ITEMS.registerItem("ice_cream", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET_II));
+    public static final DeferredItem<Item> VANILLA_ICE_CREAM =
+            ITEMS.registerItem("vanilla_ice_cream", Item::new, new Item.Properties().food(SNSFoodProperties.SWEET));
 
     public static final DeferredItem<Item> MINT_MARSHMALLOW =
             ITEMS.registerItem("mint_marshmallow", Item::new, new Item.Properties().food(SNSFoodProperties.HERB));

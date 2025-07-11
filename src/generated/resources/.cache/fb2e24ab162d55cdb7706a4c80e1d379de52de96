@@ -1,4 +1,8 @@
-// 1.21.1	2025-06-29T22:12:27.376512	Item Models: snsnf
+// 1.21.1	2025-07-10T10:53:18.385535	Item Models: snsnf
+a8e0caad3c21ecf783140410ad6f16a92c74cee5 assets/snsnf/models/item/blackberry_lollipop.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/blackboarry_spawn_egg.json
+74cdf94b9d5597e57d79b43161637b1dd5748dfa assets/snsnf/models/item/blueberry_lollipop.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/blueboarry_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/bonbonbini_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/bunana_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/cake_rabbit_spawn_egg.json
@@ -119,10 +123,15 @@ deedb733b0777435b0cb79eaaa2fc146eb70fdd7 assets/snsnf/models/item/peppermint_swi
 2587e51f78e2db6335a0beb75419f6dca1616035 assets/snsnf/models/item/peppermint_swirl_stone_wall.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/peppermint_twirl_spawn_egg.json
 d67ce47df77e4b67969c41edf715ce85d5e98296 assets/snsnf/models/item/polo.json
+6d79e6f3306e08661a470d9d6d839f0920a0f292 assets/snsnf/models/item/raspberry_lollipop.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/raspboarry_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/snapple_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/squirroll_spawn_egg.json
+eebb01fff8baff72b11f182944b58b3031bd768e assets/snsnf/models/item/strawberry_lollipop.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/strawboarry_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/sugarglider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/treat_toad_spawn_egg.json
+dbd961bf9b99a0bd644065f6241e7c5a30f3e9be assets/snsnf/models/item/vanilla_ice_cream.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/snsnf/models/item/wafer_witch_spawn_egg.json
 3c18a5acb48d2106b806be014dea89471c399d44 assets/snsnf/models/item/waffle_brick_button.json
 776e958147117b65661711e4ed3f6ca001781f9e assets/snsnf/models/item/waffle_brick_door.json

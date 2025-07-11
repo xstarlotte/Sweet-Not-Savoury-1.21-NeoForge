@@ -1,4 +1,8 @@
-// 1.21.1	2025-07-09T13:05:08.2019033	Loot Tables
+// 1.21.1	2025-07-10T10:53:18.390522	Loot Tables
+bb99a53557668b95348fb51957361d4dc8d3c3c5 data/snsnf/loot_table/blocks/blackberry_lantern.json
+48216bce20a9719226580e2d2376c859adc1adc7 data/snsnf/loot_table/blocks/blackberry_lollipop_lantern.json
+12c1b1b99273ebfa35a5e08fc389ba7ad5f8d5f1 data/snsnf/loot_table/blocks/blueberry_lantern.json
+ecababdae789f730c5960ecaaaf64cb51459529d data/snsnf/loot_table/blocks/blueberry_lollipop_lantern.json
 aeebd2678dc905e9b432f9666592deeff46ece1a data/snsnf/loot_table/blocks/candyfloss_block.json
 5557e088fe095723278e4b2a10a82524ab2817ed data/snsnf/loot_table/blocks/candyfloss_blue_raspberry_block.json
 68baaa3681c75881e9fba47e937dee20e5676aa6 data/snsnf/loot_table/blocks/candyfloss_blue_raspberry_button.json
@@ -30,6 +34,7 @@ eedc247a47a4281a52e35103a8128cb0d42da2eb data/snsnf/loot_table/blocks/candy_cane
 99097f138c8aa5e200a2514e5ee2960fcb042c11 data/snsnf/loot_table/blocks/candy_cane_flower_4.json
 987f5ccdb54e1f9b0e976acc2d98e1479a2d1c62 data/snsnf/loot_table/blocks/candy_cane_grass.json
 8d2e813dec310f3eb85f09050dea6ff2e2afd41d data/snsnf/loot_table/blocks/candy_cane_grass_long.json
+3b94d2c59c5da5cce2340a1f0aa0da503917e206 data/snsnf/loot_table/blocks/candy_cane_lantern.json
 e16c191a7ea9513f5c9beefc22ee36b1fb8a51a2 data/snsnf/loot_table/blocks/candy_cane_log.json
 cfb92804baae2095812543c557a8aa7a2969fb2b data/snsnf/loot_table/blocks/candy_cane_planks.json
 fdcbae87f1995d24d93ada0ab7694bc69dbd59f6 data/snsnf/loot_table/blocks/candy_cane_plank_button.json
@@ -129,6 +134,7 @@ f72d2f1380f43fe164c4425055d0c14059ba838d data/snsnf/loot_table/blocks/humbug_bri
 df51f08a7296461f3bd5201fcea39df7ab840276 data/snsnf/loot_table/blocks/humbug_brick_stairs.json
 b233283ef5c6452e91a7ccbd6db1ceb3b8e59817 data/snsnf/loot_table/blocks/humbug_brick_trapdoor.json
 0fdd3b4ea71f04689b1d96853fb745b8d86d791e data/snsnf/loot_table/blocks/humbug_brick_wall.json
+fd0f074f38f84db198b4f17063f2ad4ee5db63a3 data/snsnf/loot_table/blocks/ice_cream_lantern.json
 55bbb97898483dc8125895c2c402f724ba123506 data/snsnf/loot_table/blocks/mint_block.json
 68689e1cd140a89e8a651052375a4bf70842d7db data/snsnf/loot_table/blocks/mint_block_button.json
 890261e2704d4fc477f7cd9ba81e164903dedc7c data/snsnf/loot_table/blocks/mint_block_door.json
@@ -171,6 +177,10 @@ b6bccdb36ac3e05f387d75c97002b0681449f717 data/snsnf/loot_table/blocks/potted_can
 09f1b839b9b69999a1b59d61cd26cdaa92160100 data/snsnf/loot_table/blocks/potted_candy_cane_flower_4.json
 98a40636b0c4c37de55ce9171d6c5296c500dd3b data/snsnf/loot_table/blocks/potted_candy_cane_grass.json
 ca1f32ae3a3f594ff97cdaf6b4bff4ddaa858cd4 data/snsnf/loot_table/blocks/potted_candy_cane_grass_long.json
+57884aa973ec1b1043529fc066cc580d292da22f data/snsnf/loot_table/blocks/raspberry_lantern.json
+d25eb720d7c128f8449ba45f0a857c8122159b74 data/snsnf/loot_table/blocks/raspberry_lollipop_lantern.json
+939b4287c06fb2fd7a742c102b656090958d9307 data/snsnf/loot_table/blocks/strawberry_lantern.json
+0d042535c48031c5a7f68de44bd240b63284c0d8 data/snsnf/loot_table/blocks/strawberry_lollipop_lantern.json
 d4c65635902234a6a2f5eface719f451e768a2f0 data/snsnf/loot_table/blocks/waffle_bed.json
 016864e82dd83539a2040458fda72cae15306ddc data/snsnf/loot_table/blocks/waffle_block.json
 c7729a4646038b0f55121a1be79d4fc0410c1c70 data/snsnf/loot_table/blocks/waffle_bricks.json

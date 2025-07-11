@@ -26,6 +26,8 @@ repositories {
         }
     }
     mavenLocal()
+    maven { url = 'https://maven.minecraftforge.net/' }
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
 }
 
 base {
@@ -121,6 +123,8 @@ configurations {
 
 dependencies {
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
+    implementation  group:'org.spongepowered', name: 'mixin', version: '0.8.5'
+    implementation  'com.github.glitchfiend:TerraBlender-neoforge:' + minecraft_version + '-' + terrablender_version
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

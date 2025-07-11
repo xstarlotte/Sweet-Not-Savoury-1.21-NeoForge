@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.xstarlotte.snsnf.worldgen.biome.SNSBiomes;
 
 
 import java.util.Set;
@@ -20,7 +21,10 @@ public class SNSWorldGenProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, SNSConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, SNSPlacedFeatures::bootstrap)
-            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, SNSBiomeModifiers::bootstrap);
+            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, SNSBiomeModifiers::bootstrap)
+            .add(Registries.BIOME, SNSBiomes::bootstrap)
+            ;
+
 
     public SNSWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(SNSNF.MOD_ID));

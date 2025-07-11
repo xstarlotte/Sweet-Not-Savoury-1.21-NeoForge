@@ -35,6 +35,8 @@ import net.xstarlotte.snsnf.item.SNSItem;
 import net.xstarlotte.snsnf.item.SNSTab;
 import net.xstarlotte.snsnf.mob_effects.SNSEffect;
 import net.xstarlotte.snsnf.network.SNSNFModVariables;
+import net.xstarlotte.snsnf.worldgen.biome.SNSBiomes;
+import net.xstarlotte.snsnf.worldgen.biome.SNSSurfaceRules;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -53,6 +55,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import terrablender.api.SurfaceRuleManager;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -93,6 +96,12 @@ public class SNSNF
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+
+            SNSBiomes.registerBiomes();
+
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, SNSSurfaceRules.makeCinnamonCraigRules());
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, SNSSurfaceRules.makePeppermintPlainsRules());
+
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_BUSH.getId(), SNSBlock.POTTED_CANDY_CANE_BUSH);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_CARNATION.getId(), SNSBlock.POTTED_CANDY_CANE_CARNATION);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(SNSBlock.CANDY_CANE_FLOWER.getId(), SNSBlock.POTTED_CANDY_CANE_FLOWER);

@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-15T19:33:42.4067147	Registries
+// 1.21.1	2025-07-11T13:56:42.3240562	Registries
 c02e2abfb1519117a225e5827e07fda3eb10caac data/snsnf/neoforge/biome_modifier/add_candy_cane.json
 6a2cd4d726d931eb63d449379b2790032f8d671f data/snsnf/neoforge/biome_modifier/add_candy_cane_2.json
 f7e6dfb29b3cddbb430d033b1bd5c7c048e0be5e data/snsnf/neoforge/biome_modifier/add_candy_cane_3.json
@@ -7,6 +7,8 @@ b6585a03527c4b2eeee38e22e425a92c9cd4f11e data/snsnf/neoforge/biome_modifier/add_
 b28986fe1ab0359fb6e7545ce4b8222c216a3f95 data/snsnf/neoforge/biome_modifier/add_candy_cane_6.json
 a07e29e67ffc955397e2dde030924a7c438c9110 data/snsnf/neoforge/biome_modifier/add_candy_cane_7.json
 e522f586831edd67702211ed7a1d06931d27fb8a data/snsnf/neoforge/biome_modifier/add_candy_cane_8.json
+7a1bc26e7c64c7bf729dcc94d44fe05f1ccd2d13 data/snsnf/worldgen/biome/cinnamon_craig.json
+49c9a29fbb770f9ceca109ba7d9b1f614bfae3e9 data/snsnf/worldgen/biome/peppermint_plains.json
 f837fda4ae22ac92a35d721b024bd0eebaff93b7 data/snsnf/worldgen/configured_feature/candy_cane.json
 4c6c1d61ed8abcd06b234b3b8b1e1d6db62be11b data/snsnf/worldgen/configured_feature/candy_cane_2.json
 ea2a531ff0cc25bea7eb46bfc86d765883e67369 data/snsnf/worldgen/configured_feature/candy_cane_3.json
